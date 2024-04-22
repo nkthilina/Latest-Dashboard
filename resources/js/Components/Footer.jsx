@@ -2,11 +2,11 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="text-blue-gray-600">
+    <footer className="text-blue-gray-600 mt-5">
       <footer className="py-2">
         <div className="flex w-full flex-wrap items-center justify-center gap-6 px-2 md:justify-between">
           <p className="block antialiased font-sans text-sm leading-normal font-normal text-inherit">
-            © 2023, made with{" "}
+            © 2024, made with{" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -20,9 +20,9 @@ function Footer() {
             <a
               href="https://www.creative-tim.com"
               target="_blank"
-              className="transition-colors hover:text-blue-500"
+              className="transition-colors hover:text-blue-500 font-bold"
             >
-              Creative Tim
+              Thilina Madhusanka
             </a>{" "}
             for a better web.{" "}
           </p>
@@ -33,7 +33,7 @@ function Footer() {
                 target="_blank"
                 className="block antialiased font-sans text-sm leading-normal py-0.5 px-1 font-normal text-inherit transition-colors hover:text-blue-500"
               >
-                Creative Tim
+                LinkedIn
               </a>
             </li>
             <li>
@@ -42,7 +42,7 @@ function Footer() {
                 target="_blank"
                 className="block antialiased font-sans text-sm leading-normal py-0.5 px-1 font-normal text-inherit transition-colors hover:text-blue-500"
               >
-                About Us
+                GitHub
               </a>
             </li>
             <li>
@@ -51,18 +51,18 @@ function Footer() {
                 target="_blank"
                 className="block antialiased font-sans text-sm leading-normal py-0.5 px-1 font-normal text-inherit transition-colors hover:text-blue-500"
               >
-                Blog
+                About us
               </a>
             </li>
-            <li>
+            {/* <li>
               <a
                 href="https://www.creative-tim.com/license"
                 target="_blank"
                 className="block antialiased font-sans text-sm leading-normal py-0.5 px-1 font-normal text-inherit transition-colors hover:text-blue-500"
               >
-                License
+                LinkedIn
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
       </footer>

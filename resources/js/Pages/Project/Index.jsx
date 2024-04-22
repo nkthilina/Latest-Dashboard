@@ -21,13 +21,12 @@ function Index({ auth, projects, queryParams = null }) {
       delete queryParams[name];
     }
     router.get(
-      route("project.index"),queryParams)
+      route("project.index"), queryParams)
   };
 
   const onKeyPress = (name, e) => {
-    if (e.key !== "Enter") {
+    if (e.key !== 'Enter') return;
       searchFieldChange(name, e.target.value);
-    }
   }
 
   return (
@@ -53,9 +52,9 @@ function Index({ auth, projects, queryParams = null }) {
         </div>
       </div> */}
 
-      <div className="mt-12">
+      {/* <div className="mt-12">
         <div className="mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-4">
-          {/* <div className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
+          <div className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
                 <div className="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-blue-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -87,8 +86,8 @@ function Index({ auth, projects, queryParams = null }) {
                     last week
                   </p>
                 </div>
-              </div> */}
-          {/* <div className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
+              </div>
+          <div className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
                 <div className="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-pink-600 to-pink-400 text-white shadow-pink-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -118,8 +117,8 @@ function Index({ auth, projects, queryParams = null }) {
                     last month
                   </p>
                 </div>
-              </div> */}
-          {/* <div className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
+              </div>
+          <div className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
                 <div className="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-green-600 to-green-400 text-white shadow-green-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -145,8 +144,8 @@ function Index({ auth, projects, queryParams = null }) {
                     yesterday
                   </p>
                 </div>
-              </div> */}
-          {/* <div className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
+              </div>
+          <div className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
                 <div className="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-orange-600 to-orange-400 text-white shadow-orange-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -172,12 +171,12 @@ function Index({ auth, projects, queryParams = null }) {
                     yesterday
                   </p>
                 </div>
-              </div> */}
+              </div>
         </div>
-      </div>
+      </div> */}
 
       {/* new table */}
-      <section className="container px-4 mx-auto">
+      <section className="container px-4 mx-auto mt-5">
         <div className="flex flex-col">
           <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
@@ -201,15 +200,16 @@ function Index({ auth, projects, queryParams = null }) {
                       ></th>
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-2 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       >
                         <TextInput
                           className="w-full"
+                          defaultValue={queryParams.name}
                           placeholder="Project name"
                           onBlur={(e) =>
-                            searchFieldChange("name", e.target.value)
+                            searchFieldChange('name', e.target.value)
                           }
-                          onKeyPress={(e) => onKeyPress("name", e)}
+                          onKeyPress={(e) => onKeyPress('name', e)}
                         />
                       </th>
                       <th
@@ -218,8 +218,9 @@ function Index({ auth, projects, queryParams = null }) {
                       >
                         <SelectInput
                           className="w-full"
+                          defaultValue={queryParams.status}
                           onChange={(e) =>
-                            searchFieldChange("status", e.target.value)
+                            searchFieldChange('status', e.target.value)
                           }
                         >
                           <option value="">Status</option>
@@ -301,7 +302,7 @@ function Index({ auth, projects, queryParams = null }) {
                       </th>
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-5 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       >
                         Status
                       </th>
@@ -344,10 +345,10 @@ function Index({ auth, projects, queryParams = null }) {
                           </div>
                         </td>
                         <td className="px-4 py-2 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                          <img src={projects.image_path} alt="" />
+                          <img src={projects.image_path} alt="" className=""/>
                         </td>
-                        <td className="px-4 py-4 text-sm font-medium text-gray-700 ">
-                          <div className="inline-flex items-center px-3 py-1 rounded-full gap-x-2 text-white hover:underline ">
+                        <td className=" py-3 text-sm font-medium text-gray-700 ">
+                          <div className="inline-flex items-center px-3 py-1 gap-x-2 text-white hover:underline ">
                             {/* <svg
                               width={12}
                               height={12}
@@ -363,7 +364,7 @@ function Index({ auth, projects, queryParams = null }) {
                                 strokeLinejoin="round"
                               />
                             </svg> */}
-                            <h2 className="text-sm font-normal">
+                            <h2 className=" text-sm font-normal">
                               {projects.name}
                             </h2>
                           </div>

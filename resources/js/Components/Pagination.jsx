@@ -1,24 +1,27 @@
-import React from 'react'
-import { Link } from '@inertiajs/react';
+import React from "react";
+import { Link } from "@inertiajs/react";
 
-function Pagination({links}) {
+function Pagination({ links }) {
   return (
     <div className="flex items-center justify-center mt-6">
-{links.map((link) => (
-<Link
-preserveScroll
-key={link.label}
-href={link.url ? link.url : '' }
-className={
-  (link.active
-    ? 'inline-flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700'
-    : 'inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700') +
-(!link.url ? ' !text-gray-500 cursor-not-allowed' : 'hover:bg-gray-50 dark:hover:bg-gray-800')
-}
-dangerouslySetInnerHTML={{__html: link.label}} ></Link>
-))}
+      {links.map((link) => (
+        <Link
+          preserveScroll
+          key={link.label}
+          href={link.url ? link.url : ""}
+          className={
+            (link.active
+              ? "inline-flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700"
+              : "inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700") +
+            (!link.url
+              ? " !text-gray-500 cursor-not-allowed"
+              : "hover:bg-gray-50 dark:hover:bg-gray-800")
+          }
+          dangerouslySetInnerHTML={{ __html: link.label }}
+        ></Link>
+      ))}
 
-{/* <div className="flex items-center justify-between mt-6">
+      {/* <div className="flex items-center justify-between mt-6">
           <a
             href="#"
             className="flex items-center px-5 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800"
@@ -105,8 +108,7 @@ dangerouslySetInnerHTML={{__html: link.label}} ></Link>
           </a>
         </div> */}
     </div>
-  )
+  );
 }
 
-export default Pagination
-
+export default Pagination;
