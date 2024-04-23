@@ -29,6 +29,20 @@ function Index({ auth, projects, queryParams = null }) {
       searchFieldChange(name, e.target.value);
   }
 
+  const sortChanged = (name) => {
+    if (name === queryParams.sort_field) {
+      if (queryParams.sort_direction === "asc") {
+        queryParams.sort_direction = "desc";
+      } else {
+        queryParams.sort_direction = "asc";
+      }
+    } else {
+      queryParams.sort_field = name;
+      queryParams.sort_direction = "asc";
+    }
+    router.get(route("project.index"), queryParams)
+  };
+
   return (
     <AuthenticatedLayout
       user={auth.user}
@@ -259,8 +273,8 @@ function Index({ auth, projects, queryParams = null }) {
                       >
                         <div className="flex items-center gap-x-3">
                           <button className="flex items-center gap-x-2">
-                            <span>ID</span>
-                            <svg
+                            <span onClick = {(e) => sortChanged("id")}>ID</span>
+                            {/* <svg
                               className="h-3"
                               viewBox="0 0 10 11"
                               fill="none"
@@ -284,7 +298,7 @@ function Index({ auth, projects, queryParams = null }) {
                                 stroke="currentColor"
                                 strokeWidth="0.3"
                               />
-                            </svg>
+                            </svg> */}
                           </button>
                         </div>
                       </th>
@@ -294,26 +308,26 @@ function Index({ auth, projects, queryParams = null }) {
                       >
                         Image
                       </th>
-                      <th
+                      <th onClick = {(e) => sortChanged("name")}
                         scope="col"
                         className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       >
                         Name
                       </th>
-                      <th
+                      <th onClick = {(e) => sortChanged("status")}
                         scope="col"
                         className="px-5 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       >
                         Status
                       </th>
 
-                      <th
+                      <th onClick = {(e) => sortChanged("created_at")}
                         scope="col"
                         className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       >
                         Created date
                       </th>
-                      <th
+                      <th onClick = {(e) => sortChanged("due_date")}
                         scope="col"
                         className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       >
