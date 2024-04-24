@@ -9,13 +9,13 @@ export default function Dashboard({ auth }) {
         >
             <Head title="Dashboard" />
 
-            <div className="py-12">
+            {/* <div className="py-12">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 text-gray-900 dark:text-gray-100">You're logged in!</div>
                     </div>
                 </div>
-            </div>
+            </div> */}
             <div className="mt-12">
         <div className="mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-4">
           <div className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">

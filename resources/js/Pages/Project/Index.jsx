@@ -9,6 +9,7 @@ import {
 } from "@/constants.jsx";
 import TextInput from "@/Components/TextInput";
 import SelectInput from "@/Components/SelectInput";
+import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
 //import { PROJECT_STATUS_CLASS_MAP, PROJECT_STATUS_TEXT_MAP } from "@/constants.jsx";
 
 function Index({ auth, projects, queryParams = null }) {
@@ -20,14 +21,13 @@ function Index({ auth, projects, queryParams = null }) {
     } else {
       delete queryParams[name];
     }
-    router.get(
-      route("project.index"), queryParams)
+    router.get(route("project.index"), queryParams);
   };
 
   const onKeyPress = (name, e) => {
-    if (e.key !== 'Enter') return;
-      searchFieldChange(name, e.target.value);
-  }
+    if (e.key !== "Enter") return;
+    searchFieldChange(name, e.target.value);
+  };
 
   const sortChanged = (name) => {
     if (name === queryParams.sort_field) {
@@ -40,7 +40,7 @@ function Index({ auth, projects, queryParams = null }) {
       queryParams.sort_field = name;
       queryParams.sort_direction = "asc";
     }
-    router.get(route("project.index"), queryParams)
+    router.get(route("project.index"), queryParams);
   };
 
   return (
@@ -221,9 +221,9 @@ function Index({ auth, projects, queryParams = null }) {
                           defaultValue={queryParams.name}
                           placeholder="Project name"
                           onBlur={(e) =>
-                            searchFieldChange('name', e.target.value)
+                            searchFieldChange("name", e.target.value)
                           }
-                          onKeyPress={(e) => onKeyPress('name', e)}
+                          onKeyPress={(e) => onKeyPress("name", e)}
                         />
                       </th>
                       <th
@@ -234,7 +234,7 @@ function Index({ auth, projects, queryParams = null }) {
                           className="w-full"
                           defaultValue={queryParams.status}
                           onChange={(e) =>
-                            searchFieldChange('status', e.target.value)
+                            searchFieldChange("status", e.target.value)
                           }
                         >
                           <option value="">Status</option>
@@ -273,9 +273,10 @@ function Index({ auth, projects, queryParams = null }) {
                       >
                         <div className="flex items-center gap-x-3">
                           <button className="flex items-center gap-x-2">
-                            <span onClick = {(e) => sortChanged("id")}>ID</span>
-                            {/* <svg
-                              className="h-3"
+                            <span>ID</span>
+                            <svg
+                              onClick={(e) => sortChanged("id")}
+                              className="h-3 cursor-pointer"
                               viewBox="0 0 10 11"
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
@@ -298,7 +299,7 @@ function Index({ auth, projects, queryParams = null }) {
                                 stroke="currentColor"
                                 strokeWidth="0.3"
                               />
-                            </svg> */}
+                            </svg>
                           </button>
                         </div>
                       </th>
@@ -308,30 +309,54 @@ function Index({ auth, projects, queryParams = null }) {
                       >
                         Image
                       </th>
-                      <th onClick = {(e) => sortChanged("name")}
+                      <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400 "
                       >
-                        Name
+                        <div className="flex items-center justify-between">
+                          Name
+                          <div onClick={(e) => sortChanged("name")}>
+                            <ChevronUpIcon className="w-4 h-4" />
+                            <ChevronDownIcon className="w-4 h-4 -mt-1" />
+                          </div>
+                        </div>
                       </th>
-                      <th onClick = {(e) => sortChanged("status")}
+                      <th
                         scope="col"
                         className="px-5 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       >
-                        Status
+                        <div className="flex items-center justify-between">
+                          Status
+                          <div onClick={(e) => sortChanged("status")}>
+                            <ChevronUpIcon className="w-4 h-4" />
+                            <ChevronDownIcon className="w-4 h-4 -mt-1" />
+                          </div>
+                        </div>
                       </th>
+                      <th
+                        scope="col"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                      >
+                        <div className="flex items-center justify-between text-nowrap gap-1">
+                          Created date
+                          <div onClick={(e) => sortChanged("created_at")}>
+                            <ChevronUpIcon className="w-4 h-4" />
+                            <ChevronDownIcon className="w-4 h-4 -mt-1" />
+                          </div>
+                        </div>
+                      </th>
+                      <th
 
-                      <th onClick = {(e) => sortChanged("created_at")}
                         scope="col"
                         className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       >
-                        Created date
-                      </th>
-                      <th onClick = {(e) => sortChanged("due_date")}
-                        scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
-                      >
+                      <div className="flex items-center justify-between" >
                         Due date
+                        <div onClick={(e) => sortChanged("due_date")}>
+                            <ChevronUpIcon className="w-4 h-4" />
+                            <ChevronDownIcon className="w-4 h-4 -mt-1" />
+                          </div>
+                      </div>
                       </th>
                       <th
                         scope="col"
@@ -359,7 +384,11 @@ function Index({ auth, projects, queryParams = null }) {
                           </div>
                         </td>
                         <td className="px-4 py-2 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                          <img src={projects.image_path} alt="" className=""/>
+                          <img
+                            src={projects.image_path}
+                            alt=""
+                            className="w-28 h-12"
+                          />
                         </td>
                         <td className=" py-3 text-sm font-medium text-gray-700 ">
                           <div className="inline-flex items-center px-3 py-1 gap-x-2 text-white hover:underline ">
@@ -378,7 +407,7 @@ function Index({ auth, projects, queryParams = null }) {
                                 strokeLinejoin="round"
                               />
                             </svg> */}
-                            <h2 className=" text-sm font-normal">
+                            <h2 className=" text-sm font-normal cursor-pointer">
                               {projects.name}
                             </h2>
                           </div>
@@ -410,13 +439,13 @@ function Index({ auth, projects, queryParams = null }) {
                         <td className="px-4 py-4 text-sm whitespace-nowrap space-x-2">
                           <Link
                             href={route("project.edit", projects.id)}
-                            className="text-gray-500 transition-colors duration-200 dark:hover:text-indigo-500 dark:text-gray-300 hover:text-indigo-500 focus:outline-none"
+                            className=" transition-colors duration-200  dark:text-indigo-300 dark:hover:text-blue-500 focus:outline-none"
                           >
                             Edit
                           </Link>
                           <Link
                             href={route("project.destroy", projects.id)}
-                            className="text-gray-500 transition-colors duration-200 dark:hover:text-red-500 dark:text-gray-300 hover:text-red-500 focus:outline-none"
+                            className="text-gray-500 transition-colors duration-200 dark:hover:text-red-500 dark:text-red-400 hover:text-red-500 focus:outline-none"
                           >
                             Delete
                           </Link>
