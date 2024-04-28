@@ -11,6 +11,7 @@ use Inertia\Inertia;
 
 class ProjectController extends Controller
 {
+    public static $wrap = false;
     /**
      * Display a listing of the resource.
      */
@@ -56,7 +57,9 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        //
+        return Inertia::render('Project/Show', [
+            'project' => new ProjectResource($project),
+        ]);
     }
 
     /**
