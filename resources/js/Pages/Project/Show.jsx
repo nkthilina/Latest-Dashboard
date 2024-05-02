@@ -19,7 +19,7 @@ function Show({ auth, project }) {
       {/* <Head title={`Project "${project.name}"`} /> */}
       {/* <pre>{JSON.stringify(project, null, 2)}</pre> */}
       <section className="container px-4 mx-auto mt-5 ">
-        <div className="flex flex-col bg-black">
+        <div className="flex flex-col bg-black rounded-lg">
           <div className="-mx-4 -my-2 overflow-x-auto overflow-y-auto sm:-mx-6 lg:-mx-8 ">
             <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
               <div className="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg ">
@@ -30,38 +30,38 @@ function Show({ auth, project }) {
                     className="w-full h-64 object-cover"
                   />
                 </div>
-                <div className="p-6 grid gap-1 grid-cols-2 mt-2">
-                  <div>
+                <div className="p-6 grid gap-1 grid-cols-2 ">
+                  <div className="grid grid-rows-4 grid-flow-col gap-4">
                     <div className="">
                       <label
-                        className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                        className=" block text-md font-medium text-gray-700 dark:text-gray-300"
                         htmlFor="name"
                       >
                         Project ID
                       </label>
-                      <p className="mt-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
+                      <p className=" block text-md font-medium text-gray-700 dark:text-gray-300">
                         {project.id}
                       </p>
                     </div>
                     <div className="">
                       <label
-                        className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                        className=" block text-md font-medium text-gray-700 dark:text-gray-300"
                         htmlFor="name"
                       >
                         Project Name
                       </label>
-                      <p className="mt-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
+                      <p className=" block text-md font-medium text-gray-700 dark:text-gray-300">
                         {project.name}
                       </p>
                     </div>
                     <div className="">
                       <label
-                        className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                        className=" block text-md font-medium text-gray-700 dark:text-gray-300"
                         htmlFor="name"
                       >
                         Project Status
                       </label>
-                      <p className="mt-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
+                      <p className=" block text-md font-medium text-gray-700 dark:text-gray-300">
                         <span
                           className={
                             "text-sm font-medium  whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2  bg-gray-800 " +
@@ -74,64 +74,63 @@ function Show({ auth, project }) {
                     </div>
                     <div className="">
                       <label
-                        className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                        className=" block text-md font-medium text-gray-700 dark:text-gray-300"
                         htmlFor="name"
                       >
                         Created By
                       </label>
-                      <p className="mt-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
+                      <p className=" block text-md font-medium text-gray-700 dark:text-gray-300">
                         {project.createdBy.name}
                       </p>
                     </div>
                   </div>
-                  <div>
+                  <div className="grid grid-rows-4 grid-flow-col gap-4">
                     <div className="">
                       <label
-                        className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                        className=" block text-md font-medium text-gray-700 dark:text-gray-300"
                         htmlFor="name"
                       >
                         Due Date
                       </label>
-                      <p className="mt-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
+                      <p className=" block text-md font-medium text-gray-700 dark:text-gray-300">
                         {project.due_date}
                       </p>
                     </div>
                     <div className="">
                       <label
-                        className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                        className=" block text-md font-medium text-gray-700 dark:text-gray-300"
                         htmlFor="name"
                       >
                         Create Date
                       </label>
-                      <p className="mt-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
+                      <p className=" block text-md font-medium text-gray-700 dark:text-gray-300">
                         {project.created_at}
                       </p>
                     </div>
                     <div className="">
                       <label
-                        className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                        className=" block text-md font-medium text-gray-700 dark:text-gray-300"
                         htmlFor="name"
                       >
                         Updated By
                       </label>
-                      <p className="mt-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
+                      <p className=" block text-md font-medium text-gray-700 dark:text-gray-300">
                         {project.updatedBy.name}
                       </p>
                     </div>
                   </div>
                 </div>
-                <div className="space-y-1">
-                      <label
-                        className="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                        htmlFor="name"
-                      >
-                        Description
-                      </label>
-                      <p className="mt-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
-                        {project.description}
-                      </p>
-                  </div>
-
+                <div className="pt-0 p-6">
+                  <label
+                    className="block text-md font-medium text-gray-700 dark:text-gray-300"
+                    htmlFor="name"
+                  >
+                    Description
+                  </label>
+                  <p className=" block text-md font-medium text-gray-700 dark:text-gray-300">
+                    {project.description}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
