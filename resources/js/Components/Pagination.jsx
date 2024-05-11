@@ -3,7 +3,7 @@ import { Link } from "@inertiajs/react";
 
 function Pagination({ links }) {
   return (
-    <div className="flex items-center justify-center mt-6">
+    <div className="flex items-center justify-center mt-6 text-nowrap">
       {links.map((link) => (
         <Link
           preserveScroll

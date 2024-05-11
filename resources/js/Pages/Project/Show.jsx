@@ -5,8 +5,9 @@ import {
   PROJECT_STATUS_TEXT_MAP,
 } from "@/constants.jsx";
 import { Head } from "@inertiajs/react";
+import TasksTable from "../Task/TasksTable";
 
-function Show({ auth, project }) {
+function Show({ auth, project, tasks, queryParams = null }) {
   return (
     <AuthenticatedLayout
       user={auth.user}
@@ -138,11 +139,11 @@ function Show({ auth, project }) {
       </section>
 
       <section className="container px-4 mx-auto mt-5 ">
-        <div className="flex flex-col rounded-lg bg-gradient-to-br from-gray-800 to-gray-900">
+        <div className="flex flex-col rounded-lg ">
           <div className="-mx-4 -my-2 overflow-x-auto overflow-y-auto sm:-mx-6 lg:-mx-8 ">
             <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-              <div className="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg ">
-                <div className=" p-6">
+              <div className="overflow-hidden  md:rounded-lg ">
+                {/* <div className=" p-6">
                   <label
                     className="block text-md font-medium text-gray-700 dark:text-gray-300"
                     htmlFor="name"
@@ -152,7 +153,8 @@ function Show({ auth, project }) {
                   <p className=" block text-md font-medium text-gray-700 dark:text-gray-300">
                     {project.description}
                   </p>
-                </div>
+                </div> */}
+                <TasksTable tasks={tasks} queryParams={queryParams}/>
               </div>
             </div>
           </div>
