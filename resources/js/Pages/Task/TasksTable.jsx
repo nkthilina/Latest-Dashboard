@@ -4,12 +4,9 @@ import Pagination from "@/Components/Pagination";
 import TextInput from "@/Components/TextInput";
 import SelectInput from "@/Components/SelectInput";
 import TableHeading from "@/Components/TableHeading";
-import {
-  TASK_STATUS_CLASS_MAP,
-  TASK_STATUS_TEXT_MAP,
-} from "@/constants.jsx";
+import { TASK_STATUS_CLASS_MAP, TASK_STATUS_TEXT_MAP } from "@/constants.jsx";
 
-function TasksTable({ tasks, queryParams = null }) {
+function TasksTable({ tasks, queryParams = null, hideProjectColumn = false }) {
   queryParams = queryParams || {};
 
   const searchFieldChange = (name, value) => {
@@ -26,7 +23,6 @@ function TasksTable({ tasks, queryParams = null }) {
     searchFieldChange(name, e.target.value);
   };
 
-
   const sortChanged = (name) => {
     if (name === queryParams.sort_field) {
       if (queryParams.sort_direction === "asc") {
@@ -40,7 +36,6 @@ function TasksTable({ tasks, queryParams = null }) {
     }
     router.get(route("task.index"), queryParams);
   };
-
 
   return (
     <div>
@@ -65,6 +60,12 @@ function TasksTable({ tasks, queryParams = null }) {
                       scope="col"
                       className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                     ></th>
+                    {!hideProjectColumn && (
+                      <th
+                        scope="col"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                      ></th>
+                    )}
                     <th
                       scope="col"
                       className="px-2 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
@@ -135,6 +136,14 @@ function TasksTable({ tasks, queryParams = null }) {
                     >
                       Image
                     </th>
+                    {!hideProjectColumn && (
+                      <th
+                        scope="col"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400 text-nowrap"
+                      >
+                        Project Name
+                      </th>
+                    )}
                     <TableHeading
                       name="name"
                       sort_field={queryParams.sort_field}
@@ -204,27 +213,13 @@ function TasksTable({ tasks, queryParams = null }) {
                           className="w-28 h-12"
                         />
                       </td>
-                      <td className=" py-3 text-sm font-medium text-gray-700 ">
-                        <div className="inline-flex items-center px-3 py-1 gap-x-2 text-white hover:underline ">
-                          {/* <svg
-                              width={12}
-                              height={12}
-                              viewBox="0 0 12 12"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M10 3L4.5 8.5L2 6"
-                                stroke="currentColor"
-                                strokeWidth="1.5"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                            </svg> */}
-                          <h2 className=" text-sm font-normal cursor-pointer">
-                            {tasks.name}
-                          </h2>
-                        </div>
+                      {!hideProjectColumn && (
+                        <td className=" py-3 text-sm   items-center px-3  gap-x-2 text-white hover:underline  font-normal cursor-pointer">
+                          {tasks.project.name}
+                        </td>
+                      )}
+                      <td className=" py-3 text-sm  inline-flex items-center px-3  gap-x-2 text-white hover:underline  font-normal cursor-pointer">
+                        {tasks.name}
                       </td>
                       <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
                         <div className="flex items-center gap-x-2">
