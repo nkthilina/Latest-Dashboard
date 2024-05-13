@@ -65,6 +65,12 @@ function Index({ auth, projects, queryParams = null }) {
         </div>
       </div> */}
 
+      <div className="mb-4">
+        <div>
+          Add new project
+        </div>{" "}
+      </div>
+
       {/* new table */}
       <section className="container px-4 mx-auto mt-5">
         <div className="flex flex-col">
@@ -230,9 +236,9 @@ function Index({ auth, projects, queryParams = null }) {
                         <td className=" py-3 text-sm font-medium text-gray-700 ">
                           <div className="inline-flex items-center px-3 py-1 gap-x-2 text-white hover:underline ">
                             <h2 className=" text-sm font-normal cursor-pointer">
-                            <Link href={route('project.show', projects.id)}>
-                              {projects.name}
-                            </Link>
+                              <Link href={route("project.show", projects.id)}>
+                                {projects.name}
+                              </Link>
                             </h2>
                           </div>
                         </td>
