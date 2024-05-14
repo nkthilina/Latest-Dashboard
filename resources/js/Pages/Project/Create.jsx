@@ -1,6 +1,6 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import React from "react";
-import { Head, useForm } from "@inertiajs/react";
+import { Head, Link, useForm } from "@inertiajs/react";
 import InputLabel from "@/Components/InputLabel";
 import TextInput from "@/Components/TextInput";
 import InputError from "@/Components/InputError";
@@ -18,7 +18,7 @@ function Create({ auth }) {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    post(route("project.create"));
+    post(route("project.store"));
   };
 
   return (
@@ -54,38 +54,17 @@ function Create({ auth }) {
                     <InputError message={errors.image} className="mt-2" />
                   </div>
                   <div className="mt-4">
-                    <InputLabel
-                      forInput="project_name"
-                      value="Project Name"
-                    />
+                    <InputLabel forInput="project_name" value="Project Name" />
                     <TextInput
                       id="project_name"
                       type="text"
                       name="name"
                       value={data.name}
                       className="mt-1 block w-full"
-                      isFocused = {true}
+                      isFocused={true}
                       onChange={(e) => setData("name", e.target.value)}
                     />
                     <InputError message={errors.name} className="mt-2" />
-                  </div>
-                  <div className="mt-4">
-                    <InputLabel
-                      forInput="project_status"
-                      value="Project Status"
-                    />
-                    <SelectInput
-                      id="project_status"
-                      name="status"
-                      className="mt-1 block w-full"
-                      onChange={(e) => setData("status", e.target.value)}
-                    >
-                      <option value=""></option>
-                      <option value="pending">Pending</option>
-                      <option value="in_progress">In Progress</option>
-                      <option value="completed">Completed</option>
-                      </SelectInput>
-                    <InputError message={errors.status} className="mt-2" />
                   </div>
                   <div className="mt-4">
                     <InputLabel
@@ -116,6 +95,38 @@ function Create({ auth }) {
                       onChange={(e) => setData("due_date", e.target.value)}
                     />
                     <InputError message={errors.due_date} className="mt-2" />
+                  </div>
+                  <div className="mt-4">
+                    <InputLabel
+                      forInput="project_status"
+                      value="Project Status"
+                    />
+                    <SelectInput
+                      id="project_status"
+                      name="status"
+                      className="mt-1 block w-full"
+                      onChange={(e) => setData("status", e.target.value)}
+                    >
+                      <option value="">Select Status</option>
+                      <option value="pending">Pending</option>
+                      <option value="in_progress">In Progress</option>
+                      <option value="completed">Completed</option>
+                    </SelectInput>
+                    <InputError message={errors.status} className="mt-2" />
+                  </div>
+                  <div className="mt-4  flex justify-end">
+                    <Link
+                      href={route("project.index")}
+                      className=" mr-2 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+                    >
+                      Cancel
+                    </Link>
+                    <button
+                      type="submit"
+                      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+                    >
+                      Submit
+                    </button>
                   </div>
                 </form>
               </div>
