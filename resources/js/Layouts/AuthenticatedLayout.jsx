@@ -7,7 +7,6 @@ import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
 import { Link } from "@inertiajs/react";
 
 export default function AuthenticatedLayout({ user, header, children }) {
-  // const [hideProject, setHideProject] = useState(true);
   const [showingNavigationDropdown, setShowingNavigationDropdown] =
     useState(false);
 
@@ -420,9 +419,9 @@ export default function AuthenticatedLayout({ user, header, children }) {
                       />
                     </svg>
 
-                    <p className="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
+                    <Link href={route("project.create")} className="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
                       Add projects
-                    </p>
+                    </Link>
                   </button>
                 </a>
               </li>
@@ -447,9 +446,9 @@ export default function AuthenticatedLayout({ user, header, children }) {
                       />
                     </svg>
 
-                    <p className="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
+                    <Link href={route("task.create")} className="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
                       Add tasks
-                    </p>
+                    </Link>
                   </button>
                 </a>
               </li>
@@ -474,9 +473,9 @@ export default function AuthenticatedLayout({ user, header, children }) {
                       />
                     </svg>
 
-                    <p className="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
+                    <Link href={route("user.create")} className="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
                       Add users
-                    </p>
+                    </Link>
                   </button>
                 </a>
               </li>
