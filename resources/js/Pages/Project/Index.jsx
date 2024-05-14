@@ -65,11 +65,6 @@ function Index({ auth, projects, queryParams = null }) {
         </div>
       </div> */}
 
-      <div className="mb-4">
-        <div>
-          Add new project
-        </div>{" "}
-      </div>
 
       {/* new table */}
       <section className="container px-4 mx-auto mt-5">
