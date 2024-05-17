@@ -139,10 +139,6 @@ function Index({ auth, users, queryParams = null, success }) {
                       </th>
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
-                      ></th>
-                      <th
-                        scope="col"
                         className="px-2 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       >
                         <TextInput
@@ -172,7 +168,6 @@ function Index({ auth, users, queryParams = null, success }) {
                           <option value="completed">Completed</option>
                         </SelectInput>
                       </th>
-
                       <th
                         scope="col"
                         className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
@@ -181,14 +176,10 @@ function Index({ auth, users, queryParams = null, success }) {
                         scope="col"
                         className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       ></th>
-                      <th
+                      {/* <th
                         scope="col"
                         className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400 text-nowrap"
-                      ></th>
-                      <th
-                        scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-right rtl:text-right text-gray-500 dark:text-gray-400"
-                      ></th>
+                      ></th> */}
                       {/* <th scope="col" className="relative py-3.5 px-4">
                         <span className="sr-only">Actions</span>
                       </th> */}
@@ -202,67 +193,44 @@ function Index({ auth, users, queryParams = null, success }) {
                         sort_direction={queryParams.sort_direction}
                         sortChanged={sortChanged}
                       >
-                        {" "}
-                        ID{" "}
+                        ID
                       </TableHeading>
-                      <th
-                        scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
-                      >
-                        Image
-                      </th>
                       <TableHeading
                         name="name"
                         sort_field={queryParams.sort_field}
                         sort_direction={queryParams.sort_direction}
                         sortChanged={sortChanged}
                       >
-                        {" "}
-                        Name{" "}
+                        Name
                       </TableHeading>
                       <TableHeading
-                        name="status"
+                        name="email"
                         sort_field={queryParams.sort_field}
                         sort_direction={queryParams.sort_direction}
                         sortChanged={sortChanged}
                       >
-                        {" "}
-                        Status{" "}
+                        Email
                       </TableHeading>
                       <TableHeading
-                        name="created_date"
+                        name="created_at"
                         sort_field={queryParams.sort_field}
                         sort_direction={queryParams.sort_direction}
                         sortChanged={sortChanged}
                       >
-                        {" "}
-                        Created date{" "}
+                        Created date
                       </TableHeading>
-                      <TableHeading
-                        name="due_date"
-                        sort_field={queryParams.sort_field}
-                        sort_direction={queryParams.sort_direction}
-                        sortChanged={sortChanged}
-                      >
-                        {" "}
-                        Due date{" "}
-                      </TableHeading>
-
-                      <th
+                      {/* <th
                         scope="col"
                         className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400 text-nowrap"
                       >
                         Created by
-                      </th>
+                      </th> */}
                       <th
                         scope="col"
                         className="px-4 py-3.5 text-sm font-normal text-right rtl:text-right text-gray-500 dark:text-gray-400"
                       >
                         Actions
                       </th>
-                      {/* <th scope="col" className="relative py-3.5 px-4">
-                        <span className="sr-only">Actions</span>
-                      </th> */}
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900 ">
@@ -273,19 +241,10 @@ function Index({ auth, users, queryParams = null, success }) {
                             <span>{users.id}</span>
                           </div>
                         </td>
-                        <td className="px-4 py-2 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                          <img
-                            src={users.image_path}
-                            alt=""
-                            className="w-28 h-12"
-                          />
-                        </td>
                         <td className=" py-3 text-sm font-medium text-gray-700 ">
-                          <div className="inline-flex items-center px-3 py-1 gap-x-2 text-white hover:underline ">
+                          <div className="inline-flex items-center px-3 py-1 gap-x-2 text-white ">
                             <h2 className=" text-sm font-normal cursor-pointer">
-                              <Link href={route("user.show", users.id)}>
                                 {users.name}
-                              </Link>
                             </h2>
                           </div>
                         </td>
@@ -293,25 +252,12 @@ function Index({ auth, users, queryParams = null, success }) {
                           <div className="flex items-center gap-x-2">
                             <h2 className="text-sm font-medium text-gray-800 dark:text-white ">
                               {/* <span className=" text-sm font-medium text-gray-700 whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2 text-emerald-500 bg-emerald-100/60 dark:bg-gray-800"> */}
-                              <span
-                                className={
-                                  "text-sm font-medium  whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2  bg-gray-800 " +
-                                  USER_STATUS_CLASS_MAP[users.status]
-                                }
-                              >
-                                {USER_STATUS_TEXT_MAP[users.status]}
-                              </span>
+                              {users.email}
                             </h2>
                           </div>
                         </td>
                         <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
                           {users.created_at}
-                        </td>
-                        <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                          {users.due_date}
-                        </td>
-                        <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                          {users.createdBy.name}
                         </td>
                         <td className="px-4 py-4 text-sm whitespace-nowrap space-x-2">
                           <Link

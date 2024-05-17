@@ -119,8 +119,9 @@ class ProjectController extends Controller
             }
             $data['image_path'] = $image->store('project/'. Str::random(), 'public');
         }
+        $name = $project->name;
         $project->update($data);
-        return to_route('project.index')->with('success', "Project \" $project->name \" updated successfully.");
+        return to_route('project.index')->with('success', "Project \" $name \" updated successfully.");
     }
 
     /**

@@ -327,14 +327,14 @@ function ExpDash() {
                       aria-labelledby="dropdown-button"
                     >
                       <a
-                        className="flex block rounded-md px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 active:bg-blue-100 cursor-pointer"
+                        className="flex  rounded-md px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 active:bg-blue-100 cursor-pointer"
                         role="menuitem"
                         onClick={() => console.log("Light theme selected")}
                       >
                         Light
                       </a>
                       <a
-                        className="flex block rounded-md px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 active:bg-blue-100 cursor-pointer"
+                        className="flex  rounded-md px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 active:bg-blue-100 cursor-pointer"
                         role="menuitem"
                         onClick={() => console.log("Dark theme selected")}
                       >
