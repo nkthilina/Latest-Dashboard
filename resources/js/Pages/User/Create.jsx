@@ -6,7 +6,7 @@ import TextInput from "@/Components/TextInput";
 import InputError from "@/Components/InputError";
 
 function Create({ auth }) {
-  const { data, setData, post, errors, reset } = useForm({
+  const { data, setData, post, processing, errors, reset } = useForm({
     image: "",
     name: "",
     email: "",

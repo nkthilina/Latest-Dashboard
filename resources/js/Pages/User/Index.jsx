@@ -156,19 +156,17 @@ function Index({ auth, users, queryParams = null, success }) {
                       </th>
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-2 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       >
                         <TextInput
                           className="w-full"
                           defaultValue={queryParams.email}
                           placeholder="Email"
-                          onChange={(e) =>
+                          onBlur={(e) =>
                             searchFieldChange("email", e.target.value)
                           }
                           onKeyPress={(e) => onKeyPress("email", e)}
-
-                        >
-                        </TextInput>
+                        />
                       </th>
                       <th
                         scope="col"

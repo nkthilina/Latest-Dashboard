@@ -8,7 +8,7 @@ import TextAreaInput from "@/Components/TextAreaInput";
 import SelectInput from "@/Components/SelectInput";
 
 function Create({ auth }) {
-  const { data, setData, post, errors, reset } = useForm({
+  const { data, setData, post, processing, errors, reset } = useForm({
     image: "",
     name: "",
     status: "",

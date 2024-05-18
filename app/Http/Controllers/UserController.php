@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\UserCRUDResource;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUserRequest;
@@ -32,7 +33,7 @@ class UserController extends Controller
         $users = $query->orderBy($sortField, $sortDirection)->paginate(5);
         // $users = $query->paginate(10)->onEachSide(1);
         return Inertia::render('User/Index', [
-            'users' => UserResource::collection($users),
+            'users' => UserCRUDResource::collection($users),
             'queryParams' => request()->query() ? : null,
             'success' => session('success'),
         ]);
@@ -52,14 +53,15 @@ class UserController extends Controller
     public function store(StoreUserRequest $request)
     {
         $data = $request->validated();
+        $data['password'] = bcrypt($data['password']);
         /** @var $image \Illuminate\Http\UploadedFile  */
         $image = $data['image'] ?? null;
-        dd($data);
+        // dd($data);
         if ($image) {
             $data['image_path'] = $image->store('user/'. Str::random(), 'public');
         }
         User::create($data);
-        return to_route('user.index')->with('success', 'Project created successfully');
+        return to_route('user.index')->with('success', 'User created successfully');
     }
 
     /**
