@@ -3,7 +3,6 @@ import React from "react";
 import { Head, Link, router } from "@inertiajs/react";
 import Pagination from "@/Components/Pagination";
 import Footer from "@/Components/Footer";
-import { USER_STATUS_CLASS_MAP, USER_STATUS_TEXT_MAP } from "@/constants.jsx";
 import TextInput from "@/Components/TextInput";
 import SelectInput from "@/Components/SelectInput";
 import TableHeading from "@/Components/TableHeading";
@@ -139,6 +138,10 @@ function Index({ auth, users, queryParams = null, success }) {
                       </th>
                       <th
                         scope="col"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                      ></th>
+                      <th
+                        scope="col"
                         className="px-2 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       >
                         <TextInput
@@ -155,18 +158,17 @@ function Index({ auth, users, queryParams = null, success }) {
                         scope="col"
                         className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       >
-                        <SelectInput
+                        <TextInput
                           className="w-full"
-                          defaultValue={queryParams.status}
+                          defaultValue={queryParams.email}
+                          placeholder="Email"
                           onChange={(e) =>
-                            searchFieldChange("status", e.target.value)
+                            searchFieldChange("email", e.target.value)
                           }
+                          onKeyPress={(e) => onKeyPress("email", e)}
+
                         >
-                          <option value="">Status</option>
-                          <option value="pending">Pending</option>
-                          <option value="in_progress">In Progress</option>
-                          <option value="completed">Completed</option>
-                        </SelectInput>
+                        </TextInput>
                       </th>
                       <th
                         scope="col"
@@ -195,6 +197,12 @@ function Index({ auth, users, queryParams = null, success }) {
                       >
                         ID
                       </TableHeading>
+                      <th
+                        scope="col"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                      >
+                        Image
+                      </th>
                       <TableHeading
                         name="name"
                         sort_field={queryParams.sort_field}
@@ -241,6 +249,13 @@ function Index({ auth, users, queryParams = null, success }) {
                             <span>{users.id}</span>
                           </div>
                         </td>
+                        <td className="px-4 py-2 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap ">
+                          <img
+                            src={users.image_path}
+                            alt=""
+                            className=" w-12 h-12 rounded-full"
+                          />
+                        </td>
                         <td className=" py-3 text-sm font-medium text-gray-700 ">
                           <div className="inline-flex items-center px-3 py-1 gap-x-2 text-white ">
                             <h2 className=" text-sm font-normal cursor-pointer">
@@ -259,7 +274,7 @@ function Index({ auth, users, queryParams = null, success }) {
                         <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
                           {users.created_at}
                         </td>
-                        <td className="px-4 py-4 text-sm whitespace-nowrap space-x-2">
+                        <td className="px-4 py-4 text-sm whitespace-nowrap space-x-2 text-right">
                           <Link
                             href={route("user.edit", users.id)}
                             className=" transition-colors duration-200  dark:text-indigo-300 dark:hover:text-blue-500 focus:outline-none"

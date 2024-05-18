@@ -4,16 +4,14 @@ import { Head, Link, useForm } from "@inertiajs/react";
 import InputLabel from "@/Components/InputLabel";
 import TextInput from "@/Components/TextInput";
 import InputError from "@/Components/InputError";
-import TextAreaInput from "@/Components/TextAreaInput";
-import SelectInput from "@/Components/SelectInput";
 
 function Create({ auth }) {
   const { data, setData, post, errors, reset } = useForm({
     image: "",
     name: "",
-    status: "",
-    description: "",
-    due_date: "",
+    email: "",
+    password: "",
+    password_confirmation: "",
   });
 
   const onSubmit = (e) => {
@@ -44,7 +42,7 @@ function Create({ auth }) {
                       id="user_image_path"
                       type="file"
                       name="image"
-                      className="mt-1 block w-full"
+                      className="mt-1 block w-full rounded-full"
                       onChange={(e) => setData("image", e.target.files[0])}
                     />
                     <InputError message={errors.image} className="mt-2" />
@@ -63,50 +61,45 @@ function Create({ auth }) {
                     <InputError message={errors.name} className="mt-2" />
                   </div>
                   <div className="mt-4">
-                    <InputLabel
-                      forInput="user_description"
-                      value="User Description"
-                    />
-                    <TextAreaInput
-                      id="user_description"
+                    <InputLabel forInput="user_email" value="User Email" />
+                    <TextInput
+                      id="user_email"
                       type="text"
-                      name="description"
-                      value={data.description}
+                      name="email"
+                      value={data.email}
                       className="mt-1 block w-full"
-                      onChange={(e) => setData("description", e.target.value)}
+                      onChange={(e) => setData("email", e.target.value)}
                     />
-                    <InputError message={errors.description} className="mt-2" />
+                    <InputError message={errors.email} className="mt-2" />
+                  </div>
+                  <div className="mt-4">
+                    <InputLabel forInput="user_password" value="User Password" />
+                    <TextInput
+                      id="user_password"
+                      type="password"
+                      name="password"
+                      value={data.password}
+                      className="mt-1 block w-full"
+                      onChange={(e) => setData("password", e.target.value)}
+                    />
+                    <InputError message={errors.password} className="mt-2" />
                   </div>
                   <div className="mt-4">
                     <InputLabel
-                      forInput="user_due_date"
-                      value="User Deadline"
+                      forInput="user_password_confirmation"
+                      value="Confirm Password"
                     />
                     <TextInput
-                      id="user_due_date"
-                      type="date"
-                      name="due_date"
-                      value={data.due_date}
+                      id="user_password_confirmation"
+                      type="password"
+                      name="password_confirmation"
+                      value={data.password_confirmation}
                       className="mt-1 block w-full"
-                      onChange={(e) => setData("due_date", e.target.value)}
+                      onChange={(e) => setData("password_confirmation", e.target.value)}
                     />
-                    <InputError message={errors.due_date} className="mt-2" />
+                    <InputError message={errors.password_confirmation} className="mt-2" />
                   </div>
-                  <div className="mt-4">
-                    <InputLabel forInput="user_status" value="User Status" />
-                    <SelectInput
-                      id="user_status"
-                      name="status"
-                      className="mt-1 block w-full"
-                      onChange={(e) => setData("status", e.target.value)}
-                    >
-                      <option value="">Select Status</option>
-                      <option value="pending">Pending</option>
-                      <option value="in_progress">In Progress</option>
-                      <option value="completed">Completed</option>
-                    </SelectInput>
-                    <InputError message={errors.status} className="mt-2" />
-                  </div>
+
                   <div className="mt-4  flex justify-end">
                     <Link
                       href={route("user.index")}
