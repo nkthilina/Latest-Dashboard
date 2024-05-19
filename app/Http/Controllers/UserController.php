@@ -53,6 +53,7 @@ class UserController extends Controller
     public function store(StoreUserRequest $request)
     {
         $data = $request->validated();
+        $data['email_verified_at'] = time();
         $data['password'] = bcrypt($data['password']);
         /** @var $image \Illuminate\Http\UploadedFile  */
         $image = $data['image'] ?? null;
@@ -60,8 +61,9 @@ class UserController extends Controller
         if ($image) {
             $data['image_path'] = $image->store('user/'. Str::random(), 'public');
         }
+        $name = $data['name'];
         User::create($data);
-        return to_route('user.index')->with('success', 'User created successfully');
+        return to_route('user.index')->with('success', "User \"$name\" created successfully");
     }
 
     /**
@@ -88,16 +90,18 @@ class UserController extends Controller
     public function update(UpdateUserRequest $request, User $user)
     {
         $data = $request->validated();
+        $name = $user->name;
         $password = $data['password'] ?? null;
         if ($password) {
             $data['password'] = bcrypt($password);
+        } else {
+            unset($data['password']);
         }
         /** @var $image \Illuminate\Http\UploadedFile  */
         $image = $data['image'] ?? null;
         if ($image) {
             $data['image_path'] = $image->store('user/'. Str::random(), 'public');
         }
-        $name = $user->name;
         $user->update($data);
         return to_route('user.index')->with('success', "User \"$name\" updated successfully");
     }
