@@ -11,8 +11,10 @@ function Edit({ auth, user }) {
   const { data, setData, post, errors, reset } = useForm({
     image: "",
     name: user.name || "",
-    status: user.status || "",
-    description: user.description || "",
+    email: user.email || "",
+    password: user.password || "",
+    password_confirmation: user.password || "",
+    created_at: user.created_at || "",
     due_date: user.due_date || "",
     _method: "PUT",
   });
@@ -74,18 +76,18 @@ function Edit({ auth, user }) {
                   </div>
                   <div className="mt-4">
                     <InputLabel
-                      forInput="user_description"
-                      value="User Description"
+                      forInput="user_email"
+                      value="User Email"
                     />
                     <TextAreaInput
-                      id="user_description"
+                      id="user_email"
                       type="text"
-                      name="description"
-                      value={data.description}
+                      name="email"
+                      value={data.email}
                       className="mt-1 block w-full"
-                      onChange={(e) => setData("description", e.target.value)}
+                      onChange={(e) => setData("email", e.target.value)}
                     />
-                    <InputError message={errors.description} className="mt-2" />
+                    <InputError message={errors.email} className="mt-2" />
                   </div>
                   <div className="mt-4">
                     <InputLabel
