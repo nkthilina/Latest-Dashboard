@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Storage;
 
 class UserCRUDResource extends JsonResource
 {
+    public static $wrap = false;
     /**
      * Transform the resource into an array.
      *

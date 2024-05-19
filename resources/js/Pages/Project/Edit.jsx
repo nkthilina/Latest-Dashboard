@@ -39,14 +39,14 @@ function Edit({ auth, project }) {
             <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
               <div className="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg min-w-full divide-y divide-gray-200 dark:bg-gray-800">
                 <form onSubmit={onSubmit} className="flex flex-col gap-4 p-4 ">
-                  { project.image_path && <div>
+                  { project.image_path && (<div>
                     <img
                       src={project.image_path}
                       alt=""
                       className="w-full h-64 object-cover"
                     />
                   </div>
-                  }
+                  )}
                   <div className="mt-4">
                     <InputLabel
                       forInput="project_image_path"

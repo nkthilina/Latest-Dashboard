@@ -7,7 +7,7 @@ use App\Models\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
-use App\Http\Resources\UserResource;
+use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 use Illuminate\Support\Str;
 
@@ -77,7 +77,9 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return Inertia::render('User/Edit', [
+            'user' => new UserCRUDResource($user),
+        ]);
     }
 
     /**
@@ -85,7 +87,19 @@ class UserController extends Controller
      */
     public function update(UpdateUserRequest $request, User $user)
     {
-        //
+        $data = $request->validated();
+        $password = $data['password'] ?? null;
+        if ($password) {
+            $data['password'] = bcrypt($password);
+        }
+        /** @var $image \Illuminate\Http\UploadedFile  */
+        $image = $data['image'] ?? null;
+        if ($image) {
+            $data['image_path'] = $image->store('user/'. Str::random(), 'public');
+        }
+        $name = $user->name;
+        $user->update($data);
+        return to_route('user.index')->with('success', "User \"$name\" updated successfully");
     }
 
     /**
@@ -93,6 +107,11 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $name = $user->name;
+        $user->delete();
+        if ($user->image_path) {
+            Storage::disk('public')->deleteDirectory(dirname($user->image_path));
+        }
+        return to_route('user.index')->with('success', "User \"$name\" deleted successfully");
     }
 }
