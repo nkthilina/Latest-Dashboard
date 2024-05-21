@@ -142,7 +142,7 @@ function TasksTable({ tasks, queryParams = null, hideProjectColumn = false }) {
                         scope="col"
                         className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400 text-nowrap"
                       >
-                        Task Name
+                        Project Name
                       </th>
                     )}
                     <TableHeading
