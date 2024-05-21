@@ -6,6 +6,7 @@ import SelectInput from "@/Components/SelectInput";
 import TableHeading from "@/Components/TableHeading";
 import { TASK_STATUS_CLASS_MAP, TASK_STATUS_TEXT_MAP } from "@/constants.jsx";
 
+
 function TasksTable({ tasks, queryParams = null, hideProjectColumn = false }) {
   queryParams = queryParams || {};
 
@@ -141,7 +142,7 @@ function TasksTable({ tasks, queryParams = null, hideProjectColumn = false }) {
                         scope="col"
                         className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400 text-nowrap"
                       >
-                        Project Name
+                        Task Name
                       </th>
                     )}
                     <TableHeading
