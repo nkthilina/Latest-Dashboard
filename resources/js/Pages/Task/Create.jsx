@@ -39,6 +39,19 @@ function Create({ auth }) {
               <div className="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg min-w-full divide-y divide-gray-200 dark:bg-gray-800">
                 <form onSubmit={onSubmit} className="flex flex-col gap-4 p-4 ">
                   <div className="mt-4">
+                    <InputLabel forInput="task_project_id" value="Project Name" />
+                    <SelectInput
+                      name="project_id"
+                      id="project_id"
+                      className="mt-1 block w-full"
+                      onChange={(e) => setData("project_id", e.target.value)}
+                    >
+                      <option value="">Select Project</option>
+                      <option value="">Test</option>
+                    </SelectInput>
+                    <InputError message={errors.project_id} className="mt-2" />
+                  </div>
+                  <div className="mt-4">
                     <InputLabel forInput="task_image_path" value="Task Image" />
                     <TextInput
                       id="task_image_path"
@@ -122,6 +135,20 @@ function Create({ auth }) {
                     </SelectInput>
                     <InputError message={errors.priority} className="mt-2" />
                   </div>
+                  <div className="mt-4">
+                    <InputLabel forInput="task_assigned_user" value="Assigned User" />
+                    <SelectInput
+                      name="assigned_user_id"
+                      id="task_assigned_user"
+                      className="mt-1 block w-full"
+                      onChange={(e) => setData("assigned_user_id", e.target.value)}
+                    >
+                      <option value="">Select User</option>
+                      <option value="">Test</option>
+                    </SelectInput>
+                    <InputError message={errors.assigned_user_id} className="mt-2" />
+                  </div>
+
                   <div className="mt-4  flex justify-end">
                     <Link
                       href={route("task.index")}
