@@ -112,6 +112,7 @@ function Edit({ auth, project }) {
                     <SelectInput
                       id="project_status"
                       name="status"
+                      value={data.status}
                       className="mt-1 block w-full"
                       onChange={(e) => setData("status", e.target.value)}
                     >

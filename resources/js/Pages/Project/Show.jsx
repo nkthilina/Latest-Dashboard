@@ -6,7 +6,7 @@ import {
 } from "@/constants.jsx";
 import TasksTable from "../Task/TasksTable";
 
-function Show({ auth, project, tasks, queryParams = null }) {
+function Show({ auth, success, project, tasks, queryParams = null }) {
   return (
     <AuthenticatedLayout
       user={auth.user}
@@ -142,7 +142,7 @@ function Show({ auth, project, tasks, queryParams = null }) {
           <div className="-mx-4 -my-2 overflow-x-auto overflow-y-auto sm:-mx-6 lg:-mx-8 ">
             <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
               <div className="overflow-hidden  md:rounded-lg ">
-                <TasksTable tasks={tasks} queryParams={queryParams} hideProjectColumn={true}/>
+                <TasksTable tasks={tasks} success={success} queryParams={queryParams} hideProjectColumn={true}/>
               </div>
             </div>
           </div>

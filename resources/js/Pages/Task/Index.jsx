@@ -4,7 +4,7 @@ import { Head } from "@inertiajs/react";
 import Footer from "@/Components/Footer";
 import TasksTable from "./TasksTable";
 
-function Index({ auth, tasks, queryParams = null }) {
+function Index({ auth, success, tasks, queryParams = null }) {
 
   return (
     <AuthenticatedLayout
@@ -31,7 +31,9 @@ function Index({ auth, tasks, queryParams = null }) {
 
       {/* new table */}
       <section className="container px-4 mx-auto mt-5">
-       <TasksTable tasks={tasks} queryParams={queryParams}/>
+
+       <TasksTable tasks={tasks} queryParams={queryParams} success={success}/>
+
       </section>
 
       <Footer />

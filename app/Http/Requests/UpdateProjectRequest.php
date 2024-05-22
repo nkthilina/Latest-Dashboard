@@ -28,7 +28,6 @@ class UpdateProjectRequest extends FormRequest
             'status' => ['required', Rule::in(['pending', 'in_progress', 'completed']), ],
             'description' => ['required', 'string', 'max:255'],
             'due_date' => ['required', 'date']
-
         ];
     }
 }

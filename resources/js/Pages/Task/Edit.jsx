@@ -42,6 +42,7 @@ function Edit({ auth, task, projects, users }) {
             <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
               <div className="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg min-w-full divide-y divide-gray-200 dark:bg-gray-800">
                 <form onSubmit={onSubmit} className="flex flex-col gap-4 p-4 ">
+                {/* {data.project_id} */}
                   <div className="mt-4">
                     <InputLabel
                       forInput="task_project_id"
@@ -50,6 +51,7 @@ function Edit({ auth, task, projects, users }) {
                     <SelectInput
                       name="project_id"
                       id="project_id"
+                      value={data.project_id}
                       className="mt-1 block w-full"
                       onChange={(e) => setData("project_id", e.target.value)}
                     >
@@ -131,6 +133,7 @@ function Edit({ auth, task, projects, users }) {
                     <SelectInput
                       id="task_status"
                       name="status"
+                      value={data.status}
                       className="mt-1 block w-full"
                       onChange={(e) => setData("status", e.target.value)}
                     >
@@ -149,6 +152,7 @@ function Edit({ auth, task, projects, users }) {
                     <SelectInput
                       id="task_priority"
                       name="priority"
+                      value={data.priority}
                       className="mt-1 block w-full"
                       onChange={(e) => setData("priority", e.target.value)}
                     >
@@ -167,6 +171,7 @@ function Edit({ auth, task, projects, users }) {
                     <SelectInput
                       name="assigned_user_id"
                       id="task_assigned_user"
+                      value={data.assigned_user_id}
                       className="mt-1 block w-full"
                       onChange={(e) =>
                         setData("assigned_user_id", e.target.value)
