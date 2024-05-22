@@ -6,7 +6,11 @@ use App\Models\Task;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreTaskRequest;
 use App\Http\Requests\UpdateTaskRequest;
+use App\Http\Resources\ProjectResource;
 use App\Http\Resources\TaskResource;
+use App\Http\Resources\UserResource;
+use App\Models\Project;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
@@ -43,7 +47,13 @@ class TaskController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Task/Create');
+        $projects = Project::query()->orderBy('name')->get();
+        $users = User::all();
+        return Inertia::render('Task/Create', [
+            'projects' => ProjectResource::collection($projects),
+            'users' => UserResource::collection($users),
+
+        ]);
     }
 
     /**

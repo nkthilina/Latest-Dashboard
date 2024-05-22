@@ -7,13 +7,16 @@ import InputError from "@/Components/InputError";
 import TextAreaInput from "@/Components/TextAreaInput";
 import SelectInput from "@/Components/SelectInput";
 
-function Edit({ auth, task }) {
+function Edit({ auth, task, projects, users }) {
   const { data, setData, post, errors, reset } = useForm({
+    project_id: task.project_id,
     image: "",
     name: task.name || "",
     status: task.status || "",
     description: task.description || "",
     due_date: task.due_date || "",
+    priority: task.priority || "",
+    assigned_user_id: task.assigned_user_id || "",
     _method: "PUT",
   });
 
@@ -39,6 +42,27 @@ function Edit({ auth, task }) {
             <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
               <div className="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg min-w-full divide-y divide-gray-200 dark:bg-gray-800">
                 <form onSubmit={onSubmit} className="flex flex-col gap-4 p-4 ">
+                  <div className="mt-4">
+                    <InputLabel
+                      forInput="task_project_id"
+                      value="Project Name"
+                    />
+                    <SelectInput
+                      name="project_id"
+                      id="project_id"
+                      className="mt-1 block w-full"
+                      onChange={(e) => setData("project_id", e.target.value)}
+                    >
+                      <option value="">Select Project</option>
+                      {projects.data.map((project) => (
+                        <option key={project.id} value={project.id}>
+                          {project.name}
+                        </option>
+                      ))}
+                    </SelectInput>
+                    <InputError message={errors.project_id} className="mt-2" />
+                  </div>
+
                   {task.image_path && (
                     <div>
                       <img
@@ -116,6 +140,49 @@ function Edit({ auth, task }) {
                       <option value="completed">Completed</option>
                     </SelectInput>
                     <InputError message={errors.status} className="mt-2" />
+                  </div>
+                  <div className="mt-4">
+                    <InputLabel
+                      forInput="task_priority"
+                      value="Task Priority"
+                    />
+                    <SelectInput
+                      id="task_priority"
+                      name="priority"
+                      className="mt-1 block w-full"
+                      onChange={(e) => setData("priority", e.target.value)}
+                    >
+                      <option value="">Select Priority</option>
+                      <option value="low">Low</option>
+                      <option value="medium">Medium</option>
+                      <option value="high">High</option>
+                    </SelectInput>
+                    <InputError message={errors.priority} className="mt-2" />
+                  </div>
+                  <div className="mt-4">
+                    <InputLabel
+                      forInput="task_assigned_user"
+                      value="Assigned User"
+                    />
+                    <SelectInput
+                      name="assigned_user_id"
+                      id="task_assigned_user"
+                      className="mt-1 block w-full"
+                      onChange={(e) =>
+                        setData("assigned_user_id", e.target.value)
+                      }
+                    >
+                      <option value="">Select User</option>
+                      {users.data.map((user) => (
+                        <option key={user.id} value={user.id}>
+                          {user.name}
+                        </option>
+                      ))}
+                    </SelectInput>
+                    <InputError
+                      message={errors.assigned_user_id}
+                      className="mt-2"
+                    />
                   </div>
                   <div className="mt-4  flex justify-end">
                     <Link

@@ -7,7 +7,7 @@ import InputError from "@/Components/InputError";
 import TextAreaInput from "@/Components/TextAreaInput";
 import SelectInput from "@/Components/SelectInput";
 
-function Create({ auth }) {
+function Create({ auth, projects, users }) {
   const { data, setData, post, processing, errors, reset } = useForm({
     image: "",
     name: "",
@@ -32,6 +32,7 @@ function Create({ auth }) {
     >
       <Head title="Tasks" />
 
+      {/* <pre>{JSON.stringify(projects, undefined, 2)}</pre> */}
       <section className="container px-4 mx-auto mt-5">
         <div className="flex flex-col">
           <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -39,7 +40,10 @@ function Create({ auth }) {
               <div className="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg min-w-full divide-y divide-gray-200 dark:bg-gray-800">
                 <form onSubmit={onSubmit} className="flex flex-col gap-4 p-4 ">
                   <div className="mt-4">
-                    <InputLabel forInput="task_project_id" value="Project Name" />
+                    <InputLabel
+                      forInput="task_project_id"
+                      value="Project Name"
+                    />
                     <SelectInput
                       name="project_id"
                       id="project_id"
@@ -47,7 +51,11 @@ function Create({ auth }) {
                       onChange={(e) => setData("project_id", e.target.value)}
                     >
                       <option value="">Select Project</option>
-                      <option value="">Test</option>
+                      {projects.data.map((project) => (
+                        <option key={project.id} value={project.id}>
+                          {project.name}
+                        </option>
+                      ))}
                     </SelectInput>
                     <InputError message={errors.project_id} className="mt-2" />
                   </div>
@@ -121,7 +129,10 @@ function Create({ auth }) {
                     <InputError message={errors.status} className="mt-2" />
                   </div>
                   <div className="mt-4">
-                    <InputLabel forInput="task_priority" value="Task Priority" />
+                    <InputLabel
+                      forInput="task_priority"
+                      value="Task Priority"
+                    />
                     <SelectInput
                       id="task_priority"
                       name="priority"
@@ -136,17 +147,29 @@ function Create({ auth }) {
                     <InputError message={errors.priority} className="mt-2" />
                   </div>
                   <div className="mt-4">
-                    <InputLabel forInput="task_assigned_user" value="Assigned User" />
+                    <InputLabel
+                      forInput="task_assigned_user"
+                      value="Assigned User"
+                    />
                     <SelectInput
                       name="assigned_user_id"
                       id="task_assigned_user"
                       className="mt-1 block w-full"
-                      onChange={(e) => setData("assigned_user_id", e.target.value)}
+                      onChange={(e) =>
+                        setData("assigned_user_id", e.target.value)
+                      }
                     >
                       <option value="">Select User</option>
-                      <option value="">Test</option>
+                      {users.data.map((user) => (
+                        <option key={user.id} value={user.id}>
+                          {user.name}
+                        </option>
+                      ))}
                     </SelectInput>
-                    <InputError message={errors.assigned_user_id} className="mt-2" />
+                    <InputError
+                      message={errors.assigned_user_id}
+                      className="mt-2"
+                    />
                   </div>
 
                   <div className="mt-4  flex justify-end">
