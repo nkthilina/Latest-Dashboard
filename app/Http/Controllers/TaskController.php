@@ -39,6 +39,7 @@ class TaskController extends Controller
         return Inertia::render('Task/Index', [
             'tasks' => TaskResource::collection($tasks),
             'queryParams' => request()->query() ? : null,
+            'success' => session('success'),
         ]);
     }
 
@@ -78,20 +79,8 @@ class TaskController extends Controller
      */
     public function show(Task $task)
     {
-        $query = $task->task();
-        $sortField = request("sort_field", 'created_at');
-        $sortDirection = request("sort_direction", "desc");
-        if (request("name")) {
-            $query->where("name", "LIKE", "%" . request("name") . "%");
-        }
-        if (request("status")) {
-            $query->where("status", "LIKE", "%" . request("status") . "%");
-            // $query->where("status", request("status"));
-        }
-        $tasks = $query->orderBy($sortField, $sortDirection)->paginate(5);
         return Inertia::render('Task/Show', [
             'task' => new TaskResource($task),
-            'tasks' => TaskResource::collection($tasks),
         ]);
     }
 

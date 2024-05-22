@@ -134,21 +134,7 @@ function Show({ auth, task, tasks, queryParams = null }) {
         </div>
       </section>
 
-      <section className="container px-4 mx-auto mt-5 ">
-        <div className="flex flex-col rounded-lg ">
-          <div className="-mx-4 -my-2 overflow-x-auto overflow-y-auto sm:-mx-6 lg:-mx-8 ">
-            <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-              <div className="overflow-hidden  md:rounded-lg ">
-                <TasksTable
-                  tasks={tasks}
-                  queryParams={queryParams}
-                  hideTaskColumn={true}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
     </AuthenticatedLayout>
   );
 }
