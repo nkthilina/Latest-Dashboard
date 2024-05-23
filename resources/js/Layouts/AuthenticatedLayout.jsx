@@ -345,6 +345,34 @@ export default function AuthenticatedLayout({ user, header, children }) {
                   </button>
                 </Link>
               </li>
+              <li>
+                <Link
+                  href={route("task.myTasks")}
+                  active={route().current("task.myTasks")}
+                  className="block antialiased font-sans  leading-relaxed text-inherit capitalize"
+                >
+                  <button
+                    className="middle none font-sans  center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-base py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
+                    type="button"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-5 text-inherit"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6 6.878V6a2.25 2.25 0 0 1 2.25-2.25h7.5A2.25 2.25 0 0 1 18 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 0 0 4.5 9v.878m13.5-3A2.25 2.25 0 0 1 19.5 9v.878m0 0a2.246 2.246 0 0 0-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0 1 21 12v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6c0-.98.626-1.813 1.5-2.122"
+                      />
+                    </svg>
+                    My Tasks
+                  </button>
+                </Link>
+              </li>
             </ul>
             <ul className="mb-4 flex flex-col gap-1">
               <li className="mx-3.5 mt-4 mb-2">
@@ -399,7 +427,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
                 </a>
               </li> */}
               <li>
-                <Link  href={route("project.create")} className="group">
+                <Link href={route("project.create")} className="group">
                   <button
                     className="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                     type="button"
@@ -479,8 +507,6 @@ export default function AuthenticatedLayout({ user, header, children }) {
                   </button>
                 </Link>
               </li>
-
-
             </ul>
           </div>
         </aside>
