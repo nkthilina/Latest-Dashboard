@@ -38,10 +38,10 @@ export default function Dashboard({ auth }) {
                 </div>
                 <div className="p-4 text-right">
                   <p className="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">
-                    Today's Money
+                    Pending Tasks
                   </p>
                   <h4 className="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">
-                    $53k
+                    {myPendingTasks} / {totalPendingTasks}
                   </h4>
                 </div>
                 <div className="border-t border-blue-gray-50 p-4">
