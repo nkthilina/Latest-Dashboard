@@ -20,8 +20,8 @@ export const TASK_STATUS_TEXT_MAP = {
   completed: "Completed",
 };
 export const TASK_PRIORITY_CLASS_MAP = {
-  low: "bg-gray-600",
-  medium: "bg-amber-600",
+  low: "bg-red-900",
+  medium: "bg-red-800",
   high: "bg-red-600",
 };
 export const TASK_PRIORITY_TEXT_MAP = {

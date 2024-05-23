@@ -1,9 +1,14 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import React from "react";
-import { TASK_STATUS_CLASS_MAP, TASK_STATUS_TEXT_MAP } from "@/constants.jsx";
-import TasksTable from "../Task/TasksTable";
+import {
+  TASK_STATUS_CLASS_MAP,
+  TASK_STATUS_TEXT_MAP,
+  TASK_PRIORITY_CLASS_MAP,
+  TASK_PRIORITY_TEXT_MAP,
+} from "@/constants.jsx";
+import { Link } from "@inertiajs/react";
 
-function Show({ auth, task, tasks, queryParams = null }) {
+function Show({ auth, task }) {
   return (
     <AuthenticatedLayout
       user={auth.user}
@@ -28,7 +33,7 @@ function Show({ auth, task, tasks, queryParams = null }) {
                   />
                 </div>
                 <div className="p-6 grid gap-1 grid-cols-2 ">
-                  <div className="grid grid-rows-4 grid-flow-col gap-4">
+                  <div className="grid grid-rows-5 grid-flow-col gap-4">
                     <div className="">
                       <label
                         className=" block text-md font-medium text-gray-700 dark:text-gray-300"
@@ -74,6 +79,24 @@ function Show({ auth, task, tasks, queryParams = null }) {
                         className=" block text-md font-medium text-gray-700 dark:text-gray-300"
                         htmlFor="name"
                       >
+                        Task Priority
+                      </label>
+                      <p className="mt-2 block text-md font-medium text-gray-700 dark:text-gray-300">
+                        <span
+                          className={
+                            "text-sm font-medium  whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2  bg-gray-800 " +
+                            TASK_PRIORITY_CLASS_MAP[task.priority]
+                          }
+                        >
+                          {TASK_PRIORITY_TEXT_MAP[task.priority]}
+                        </span>
+                      </p>
+                    </div>
+                    <div className="">
+                      <label
+                        className=" block text-md font-medium text-gray-700 dark:text-gray-300"
+                        htmlFor="name"
+                      >
                         Created By
                       </label>
                       <p className=" block text-md font-medium text-gray-700 dark:text-gray-300">
@@ -81,7 +104,7 @@ function Show({ auth, task, tasks, queryParams = null }) {
                       </p>
                     </div>
                   </div>
-                  <div className="grid grid-rows-4 grid-flow-col gap-4">
+                  <div className="grid grid-rows-5 grid-flow-col gap-4">
                     <div className="">
                       <label
                         className=" block text-md font-medium text-gray-700 dark:text-gray-300"
@@ -115,6 +138,30 @@ function Show({ auth, task, tasks, queryParams = null }) {
                         {task.updatedBy.name}
                       </p>
                     </div>
+                    <div className="">
+                      <label
+                        className=" block text-md font-medium text-gray-700 dark:text-gray-300"
+                        htmlFor="name"
+                      >
+                        Project
+                      </label>
+                      <p className=" block text-md font-medium text-gray-700 dark:text-gray-300 hover:underline">
+                        <Link href={route("project.show", task.project.id)}>
+                          {task.project.name}
+                        </Link>
+                      </p>
+                    </div>
+                    <div className="">
+                      <label
+                        className=" block text-md font-medium text-gray-700 dark:text-gray-300"
+                        htmlFor="name"
+                      >
+                        Assigned User
+                      </label>
+                      <p className=" block text-md font-medium text-gray-700 dark:text-gray-300">
+                        {task.assignedUser.name}
+                      </p>
+                    </div>
                   </div>
                 </div>
                 <div className="pt-0 p-6">
@@ -128,13 +175,19 @@ function Show({ auth, task, tasks, queryParams = null }) {
                     {task.description}
                   </p>
                 </div>
+                <div className="pt-0 p-6 flex justify-end">
+                  <Link
+                    href={route("task.edit", task.id)}
+                    class="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none  font-medium rounded-lg text-md px-5 py-2 text-center inline-flex items-center  me-2 mb-2"
+                  >
+                    Edit
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      
     </AuthenticatedLayout>
   );
 }
