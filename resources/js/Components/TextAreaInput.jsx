@@ -1,4 +1,4 @@
-import { Children, forwardRef, useEffect, useRef } from "react";
+import {  forwardRef, useEffect, useRef } from "react";
 
 export default forwardRef(function TextAreaInput(
   { className = "", isFocused = false, children, ...props },
