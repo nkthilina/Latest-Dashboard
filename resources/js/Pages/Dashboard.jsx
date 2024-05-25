@@ -1,4 +1,6 @@
+import TableHeading from "@/Components/TableHeading";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
+import {  TASK_STATUS_CLASS_MAP, TASK_STATUS_TEXT_MAP } from "@/constants";
 import { Head } from "@inertiajs/react";
 
 export default function Dashboard({
@@ -10,6 +12,7 @@ export default function Dashboard({
   myCompletedTasks,
   totalCompletedTasks,
   myTasks,
+  activeTasks,
 }) {
   return (
     <AuthenticatedLayout
@@ -160,37 +163,60 @@ export default function Dashboard({
             </div>
           </div>
         </div>
-
-          <div className="w-full">
-            <div className="relative flex flex-col bg-clip-border rounded-xl bg-gray-50 dark:bg-gray-800 text-gray-700 shadow-md">
-              <div className="p-4">
-              <p>My Tasks</p>
-              </div>
-              <div className="p-4">
-                <table>
-                  <thead>
-                    <tr>
-                      <th className="p-4 border border-gray-300">Task</th>
-                      <th className="p-4 border border-gray-300">Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {/* {tasks.map((task) => (
-                      <tr key={task.id}>
-                        <td className="p-4 border border-gray-300">
-                          {task.name}
-                        </td>
-                        <td className="p-4 border border-gray-300">
-                          {task.status}
-                        </td>
-                      </tr>
-                    ))} */}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-              </div>
       </div>
+
+      {/* testing */}
+      <div className="flex flex-col">
+        <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+          <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+            <div className="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg text-white">
+              <div className="p-4 dark:bg-gray-800">
+                <p>My Tasks</p>
+              </div>
+
+              <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                <thead className=" dark:bg-gray-800">
+                  <tr>
+                    <th className="p-4 ">ID</th>
+                    <th className="p-4 ">Project Name</th>
+                    <th className="p-4 ">Name</th>
+                    <th className="p-4 ">Status</th>
+                    <th className="p-4 ">Due Date</th>
+                  </tr>
+                </thead>
+                <tbody className=" divide-y  dark:divide-gray-700 dark:bg-gray-900 ">
+                  {activeTasks.data.map((task) => (
+                    <tr key={task.id}>
+                      <td className="p-4 ">{task.id}</td>
+                      <td className="p-4 ">{task.project.name}</td>
+                      <td className="p-4 ">{task.name}</td>
+                      <td className="p-4 ">
+                      <span
+                              className={
+                                "text-sm font-medium  whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2  bg-gray-800 " +
+                                TASK_STATUS_CLASS_MAP[task.status]
+                              }
+                            >
+                              {TASK_STATUS_TEXT_MAP[task.status]}
+                            </span>
+                      </td>
+                      <td className="p-4 text-nowrap">{task.due_date}</td>
+                    </tr>
+                  ))}
+                  <tr>
+                    <td className="p-4 ">1</td>
+                    <td className="p-4 ">2</td>
+                    <td className="p-4 ">3</td>
+                    <td className="p-4 ">4</td>
+                    <td className="p-4 ">5</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* end testing */}
     </AuthenticatedLayout>
   );
 }
