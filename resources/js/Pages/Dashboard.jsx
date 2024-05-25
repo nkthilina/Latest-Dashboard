@@ -160,6 +160,36 @@ export default function Dashboard({
             </div>
           </div>
         </div>
+
+          <div className="w-full">
+            <div className="relative flex flex-col bg-clip-border rounded-xl bg-gray-50 dark:bg-gray-800 text-gray-700 shadow-md">
+              <div className="p-4">
+              <p>My Tasks</p>
+              </div>
+              <div className="p-4">
+                <table>
+                  <thead>
+                    <tr>
+                      <th className="p-4 border border-gray-300">Task</th>
+                      <th className="p-4 border border-gray-300">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {/* {tasks.map((task) => (
+                      <tr key={task.id}>
+                        <td className="p-4 border border-gray-300">
+                          {task.name}
+                        </td>
+                        <td className="p-4 border border-gray-300">
+                          {task.status}
+                        </td>
+                      </tr>
+                    ))} */}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+              </div>
       </div>
     </AuthenticatedLayout>
   );
