@@ -1,6 +1,6 @@
 import TableHeading from "@/Components/TableHeading";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
-import {  TASK_STATUS_CLASS_MAP, TASK_STATUS_TEXT_MAP } from "@/constants";
+import { TASK_STATUS_CLASS_MAP, TASK_STATUS_TEXT_MAP } from "@/constants";
 import { Head } from "@inertiajs/react";
 
 export default function Dashboard({
@@ -13,7 +13,24 @@ export default function Dashboard({
   totalCompletedTasks,
   myTasks,
   activeTasks,
+  queryParams = null,
 }) {
+  queryParams = queryParams || {};
+
+  const sortChanged = (name) => {
+    if (name === queryParams.sort_field) {
+      if (queryParams.sort_direction === "asc") {
+        queryParams.sort_direction = "desc";
+      } else {
+        queryParams.sort_direction = "asc";
+      }
+    } else {
+      queryParams.sort_field = name;
+      queryParams.sort_direction = "asc";
+    }
+    router.get(route("project.index"), queryParams);
+  };
+
   return (
     <AuthenticatedLayout
       user={auth.user}
@@ -174,31 +191,77 @@ export default function Dashboard({
                 <p>My Tasks</p>
               </div>
 
-              <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+              <table className="min-w-full dark:divide-gray-700">
+                <thead className=" dark:bg-gray-800">
+                  <TableHeading
+                    name="id"
+                    sort_field={queryParams.sort_field}
+                    sort_direction={queryParams.sort_direction}
+                    sortChanged={sortChanged}
+                  >
+                    ID
+                  </TableHeading>
+                  <TableHeading
+                        name="name"
+                        sort_field={queryParams.sort_field}
+                        sort_direction={queryParams.sort_direction}
+                        sortChanged={sortChanged}
+                      >
+                        Project Name
+                      </TableHeading>
+                  <TableHeading
+                        name="name"
+                        sort_field={queryParams.sort_field}
+                        sort_direction={queryParams.sort_direction}
+                        sortChanged={sortChanged}
+                      >
+                        Name
+                      </TableHeading>
+                      <TableHeading
+                        name="status"
+                        sort_field={queryParams.sort_field}
+                        sort_direction={queryParams.sort_direction}
+                        sortChanged={sortChanged}
+                      >
+                        {" "}
+                        Status{" "}
+                      </TableHeading>
+                      <TableHeading
+                        name="due_date"
+                        sort_field={queryParams.sort_field}
+                        sort_direction={queryParams.sort_direction}
+                        sortChanged={sortChanged}
+                      >
+                        {" "}
+                        Due date{" "}
+                      </TableHeading>
+                </thead>
                 <thead className=" dark:bg-gray-800">
                   <tr>
-                    <th className="p-4 ">ID</th>
-                    <th className="p-4 ">Project Name</th>
-                    <th className="p-4 ">Name</th>
-                    <th className="p-4 ">Status</th>
-                    <th className="p-4 ">Due Date</th>
+                    <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal">ID</th>
+                    <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal">Project Name</th>
+                    <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal">Name</th>
+                    <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal">Status</th>
+                    <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal">Due Date</th>
                   </tr>
                 </thead>
-                <tbody className=" divide-y  dark:divide-gray-700 dark:bg-gray-900 ">
+                <tbody className=" divide-y  dark:divide-gray-700 dark:bg-gray-900 text-sm">
                   {activeTasks.data.map((task) => (
                     <tr key={task.id}>
                       <td className="p-4 ">{task.id}</td>
-                      <td className="p-4 ">{task.project.name}</td>
+                      <td className="p-4 ">
+                      <Link href={route("task.show", task.id)}>{task.project.name}</Link>
+                      </td>
                       <td className="p-4 ">{task.name}</td>
                       <td className="p-4 ">
-                      <span
-                              className={
-                                "text-sm font-medium  whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2  bg-gray-800 " +
-                                TASK_STATUS_CLASS_MAP[task.status]
-                              }
-                            >
-                              {TASK_STATUS_TEXT_MAP[task.status]}
-                            </span>
+                        <span
+                          className={
+                            "text-sm font-medium  whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2  bg-gray-800 " +
+                            TASK_STATUS_CLASS_MAP[task.status]
+                          }
+                        >
+                          {TASK_STATUS_TEXT_MAP[task.status]}
+                        </span>
                       </td>
                       <td className="p-4 text-nowrap">{task.due_date}</td>
                     </tr>
