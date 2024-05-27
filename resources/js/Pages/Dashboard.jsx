@@ -1,7 +1,12 @@
 import TableHeading from "@/Components/TableHeading";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
-import { TASK_STATUS_CLASS_MAP, TASK_STATUS_TEXT_MAP } from "@/constants";
-import { Head } from "@inertiajs/react";
+import {
+  TASK_PRIORITY_CLASS_MAP,
+  TASK_PRIORITY_TEXT_MAP,
+  TASK_STATUS_CLASS_MAP,
+  TASK_STATUS_TEXT_MAP,
+} from "@/constants";
+import { Head, Link } from "@inertiajs/react";
 
 export default function Dashboard({
   auth,
@@ -35,7 +40,7 @@ export default function Dashboard({
     <AuthenticatedLayout
       user={auth.user}
       header={
-        <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+        <h2 className="font-semibold leading-tight  text-lg text-gray-600 ">
           Dashboard
         </h2>
       }
@@ -193,56 +198,25 @@ export default function Dashboard({
 
               <table className="min-w-full dark:divide-gray-700">
                 <thead className=" dark:bg-gray-800">
-                  <TableHeading
-                    name="id"
-                    sort_field={queryParams.sort_field}
-                    sort_direction={queryParams.sort_direction}
-                    sortChanged={sortChanged}
-                  >
-                    ID
-                  </TableHeading>
-                  <TableHeading
-                        name="name"
-                        sort_field={queryParams.sort_field}
-                        sort_direction={queryParams.sort_direction}
-                        sortChanged={sortChanged}
-                      >
-                        Project Name
-                      </TableHeading>
-                  <TableHeading
-                        name="name"
-                        sort_field={queryParams.sort_field}
-                        sort_direction={queryParams.sort_direction}
-                        sortChanged={sortChanged}
-                      >
-                        Name
-                      </TableHeading>
-                      <TableHeading
-                        name="status"
-                        sort_field={queryParams.sort_field}
-                        sort_direction={queryParams.sort_direction}
-                        sortChanged={sortChanged}
-                      >
-                        {" "}
-                        Status{" "}
-                      </TableHeading>
-                      <TableHeading
-                        name="due_date"
-                        sort_field={queryParams.sort_field}
-                        sort_direction={queryParams.sort_direction}
-                        sortChanged={sortChanged}
-                      >
-                        {" "}
-                        Due date{" "}
-                      </TableHeading>
-                </thead>
-                <thead className=" dark:bg-gray-800">
                   <tr>
-                    <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal">ID</th>
-                    <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal">Project Name</th>
-                    <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal">Name</th>
-                    <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal">Status</th>
-                    <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal">Due Date</th>
+                    <th className=" p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal text-left">
+                      ID
+                    </th>
+                    <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal text-left">
+                      Project Name
+                    </th>
+                    <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal text-left">
+                      Name
+                    </th>
+                    <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal text-left">
+                      Status
+                    </th>
+                    <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal text-left">
+                      Priority
+                    </th>
+                    <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal text-left">
+                      Due Date
+                    </th>
                   </tr>
                 </thead>
                 <tbody className=" divide-y  dark:divide-gray-700 dark:bg-gray-900 text-sm">
@@ -250,9 +224,14 @@ export default function Dashboard({
                     <tr key={task.id}>
                       <td className="p-4 ">{task.id}</td>
                       <td className="p-4 ">
-                      <Link href={route("task.show", task.id)}>{task.project.name}</Link>
+                        <Link
+                          href={route("task.show", task.id)}
+                          className="hover:underline"
+                        >
+                          {task.project.name}
+                        </Link>
                       </td>
-                      <td className="p-4 ">{task.name}</td>
+                      <td className="p-4">{task.name}</td>
                       <td className="p-4 ">
                         <span
                           className={
@@ -261,6 +240,16 @@ export default function Dashboard({
                           }
                         >
                           {TASK_STATUS_TEXT_MAP[task.status]}
+                        </span>
+                      </td>
+                      <td className="p-4 ">
+                        <span
+                          className={
+                            "text-sm font-medium  whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2  bg-gray-800 " +
+                            TASK_PRIORITY_CLASS_MAP[task.priority]
+                          }
+                        >
+                          {TASK_PRIORITY_TEXT_MAP[task.priority]}
                         </span>
                       </td>
                       <td className="p-4 text-nowrap">{task.due_date}</td>
