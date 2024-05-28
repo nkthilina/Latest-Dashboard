@@ -14,7 +14,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
 
         User::factory()->create([
             'name' => 'Test User',
@@ -22,6 +21,15 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password@123'),
             'email_verified_at' => time(),
         ]);
+
+        User::factory()->create([
+            'name' => 'Test Admin',
+            'email' => 'admin@example.com',
+            'password' => bcrypt('password@123'),
+            'email_verified_at' => time(),
+        ]);
+
+        User::factory(10)->create();
 
         Project::factory()
             ->count(30)
