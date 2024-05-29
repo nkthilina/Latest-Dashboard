@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => time(),
         ]);
 
-        User::factory(10)->create();
+        User::factory()->count(10)->create();
 
         Project::factory()
             ->count(30)

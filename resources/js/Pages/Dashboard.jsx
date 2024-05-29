@@ -1,3 +1,4 @@
+import Footer from "@/Components/Footer";
 import TableHeading from "@/Components/TableHeading";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import {
@@ -88,7 +89,7 @@ export default function Dashboard({
               </p>
             </div>
           </div>
-          <div className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
+          <div className=" flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
             <div className="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-pink-600 to-pink-400 text-white shadow-pink-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -120,7 +121,7 @@ export default function Dashboard({
               </p>
             </div>
           </div>
-          <div className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
+          <div className=" flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
             <div className="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-green-600 to-green-400 text-white shadow-green-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -152,8 +153,8 @@ export default function Dashboard({
               </p>
             </div>
           </div>
-          <div className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
-            <div className="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-orange-600 to-orange-400 text-white shadow-orange-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center">
+          <div className=" flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
+            <div className="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-orange-600 to-orange-400 text-white shadow-orange-500/40 shadow-lg  -mt-4 grid h-16 w-16 place-items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -169,7 +170,7 @@ export default function Dashboard({
                 />
               </svg>
             </div>
-            <div className="p-4 text-right">
+            <div className="p-4 text-right -mt-12">
               <p className="block antialiased font-sans text-md leading-normal font-normal text-blue-gray-600">
                 My Tasks
               </p>
@@ -269,6 +270,7 @@ export default function Dashboard({
         </div>
       </div>
       {/* end testing */}
+      <Footer/>
     </AuthenticatedLayout>
   );
 }

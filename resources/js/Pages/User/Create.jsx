@@ -4,6 +4,7 @@ import { Head, Link, useForm } from "@inertiajs/react";
 import InputLabel from "@/Components/InputLabel";
 import TextInput from "@/Components/TextInput";
 import InputError from "@/Components/InputError";
+import Footer from "@/Components/Footer";
 
 function Create({ auth }) {
   const { data, setData, post, processing, errors, reset } = useForm({
@@ -120,6 +121,7 @@ function Create({ auth }) {
           </div>
         </div>
       </section>
+      <Footer />
     </AuthenticatedLayout>
   );
 }

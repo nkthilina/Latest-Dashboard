@@ -7,6 +7,7 @@ import {
   TASK_PRIORITY_TEXT_MAP,
 } from "@/constants.jsx";
 import { Link } from "@inertiajs/react";
+import Footer from "@/Components/Footer";
 
 function Show({ auth, task }) {
   return (
@@ -188,6 +189,7 @@ function Show({ auth, task }) {
           </div>
         </div>
       </section>
+      <Footer/>
     </AuthenticatedLayout>
   );
 }

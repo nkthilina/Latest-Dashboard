@@ -6,6 +6,7 @@ import TextInput from "@/Components/TextInput";
 import InputError from "@/Components/InputError";
 import TextAreaInput from "@/Components/TextAreaInput";
 import SelectInput from "@/Components/SelectInput";
+import Footer from "@/Components/Footer";
 
 function Edit({ auth, task, projects, users }) {
   const { data, setData, post, errors, reset } = useForm({
@@ -209,6 +210,7 @@ function Edit({ auth, task, projects, users }) {
           </div>
         </div>
       </section>
+      <Footer/>
     </AuthenticatedLayout>
   );
 }

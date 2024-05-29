@@ -5,6 +5,7 @@ import {
   PROJECT_STATUS_TEXT_MAP,
 } from "@/constants.jsx";
 import TasksTable from "../Task/TasksTable";
+import Footer from "@/Components/Footer";
 
 function Show({ auth, success, project, tasks, queryParams = null }) {
   return (
@@ -148,6 +149,7 @@ function Show({ auth, success, project, tasks, queryParams = null }) {
           </div>
         </div>
       </section>
+      <Footer/>
     </AuthenticatedLayout>
   );
 }

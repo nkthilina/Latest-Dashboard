@@ -6,6 +6,7 @@ import TextInput from "@/Components/TextInput";
 import InputError from "@/Components/InputError";
 import TextAreaInput from "@/Components/TextAreaInput";
 import SelectInput from "@/Components/SelectInput";
+import Footer from "@/Components/Footer";
 
 function Create({ auth, projects, users }) {
   const { data, setData, post, processing, errors, reset } = useForm({
@@ -192,6 +193,7 @@ function Create({ auth, projects, users }) {
           </div>
         </div>
       </section>
+      <Footer/>
     </AuthenticatedLayout>
   );
 }

@@ -2,6 +2,7 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import React from "react";
 import { USER_STATUS_CLASS_MAP, USER_STATUS_TEXT_MAP } from "@/constants.jsx";
 import TasksTable from "../Task/TasksTable";
+import Footer from "@/Components/Footer";
 
 function Show({ auth, user, tasks, queryParams = null }) {
   return (
@@ -149,6 +150,7 @@ function Show({ auth, user, tasks, queryParams = null }) {
           </div>
         </div>
       </section>
+      <Footer/>
     </AuthenticatedLayout>
   );
 }
