@@ -39,14 +39,10 @@ function Edit({ auth, user }) {
             <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
               <div className="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg min-w-full divide-y divide-gray-200 dark:bg-gray-800">
                 <form onSubmit={onSubmit} className="flex flex-col gap-4 p-4 ">
-                {/* <pre>{JSON.stringify(user, undefined, 2)}</pre> */}
+                  {/* <pre>{JSON.stringify(user, undefined, 2)}</pre> */}
                   {user.image_path && (
                     <div className="flex justify-center">
-                      <img
-                        src={user.image_path}
-                        alt=""
-                        className="w-48 h-48"
-                      />
+                      <img src={user.image_path} alt="" className="w-48 h-48" />
                     </div>
                   )}
                   <div className="mt-4">
@@ -86,10 +82,14 @@ function Edit({ auth, user }) {
                     <InputError message={errors.email} className="mt-2" />
                   </div>
                   <div className="mt-4">
-                    <InputLabel forInput="user_password" value="User Password" />
+                    <InputLabel
+                      forInput="user_password"
+                      value="User Password"
+                    />
                     <TextInput
                       id="user_password"
-       _confirmation               type="password"
+                      _confirmation
+                      type="password"
                       name="password"
                       value={data.password}
                       className="mt-1 block w-full"
@@ -98,16 +98,24 @@ function Edit({ auth, user }) {
                     <InputError message={errors.password} className="mt-2" />
                   </div>
                   <div className="mt-4">
-                    <InputLabel forInput="user_password_confirmation" value="Confirm Password" />
+                    <InputLabel
+                      forInput="user_password_confirmation"
+                      value="Confirm Password"
+                    />
                     <TextInput
                       id="user_password_confirmation"
                       type="password"
                       name="password_confirmation"
                       value={data.password_confirmation}
                       className="mt-1 block w-full"
-                      onChange={(e) => setData("password_confirmation", e.target.value)}
+                      onChange={(e) =>
+                        setData("password_confirmation", e.target.value)
+                      }
                     />
-                    <InputError message={errors.password_confirmation} className="mt-2" />
+                    <InputError
+                      message={errors.password_confirmation}
+                      className="mt-2"
+                    />
                   </div>
 
                   <div className="mt-4  flex justify-end">
@@ -130,7 +138,7 @@ function Edit({ auth, user }) {
           </div>
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </AuthenticatedLayout>
   );
 }

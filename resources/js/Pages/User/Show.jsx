@@ -135,6 +135,7 @@ function Show({ auth, user, tasks, queryParams = null }) {
         </div>
       </section>
 
+      {/* user task table  */}
       <section className="container px-4 mx-auto mt-5 ">
         <div className="flex flex-col rounded-lg ">
           <div className="-mx-4 -my-2 overflow-x-auto overflow-y-auto sm:-mx-6 lg:-mx-8 ">
@@ -150,7 +151,9 @@ function Show({ auth, user, tasks, queryParams = null }) {
           </div>
         </div>
       </section>
-      <Footer/>
+      {/* end user task table  */}
+
+      <Footer />
     </AuthenticatedLayout>
   );
 }

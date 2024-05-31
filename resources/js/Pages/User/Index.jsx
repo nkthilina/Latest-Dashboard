@@ -257,7 +257,7 @@ function Index({ auth, users, queryParams = null, success }) {
                         <td className=" py-3 text-sm font-medium text-gray-700 ">
                           <div className="inline-flex items-center px-3 py-1 gap-x-2 text-white ">
                             <h2 className=" text-sm font-normal cursor-pointer">
-                                {users.name}
+                              {users.name}
                             </h2>
                           </div>
                         </td>
@@ -290,20 +290,10 @@ function Index({ auth, users, queryParams = null, success }) {
                         </td>
                       </tr>
                     ))}
+
+                    {/*  testing */}
                     {/* <tr>
-                      <td className="px-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
-                        <div className="inline-flex items-center gap-x-3">
-                          <input
-                            type="checkbox"
-                            className="text-blue-500 border-gray-300 rounded dark:bg-gray-900 dark:ring-offset-gray-900 dark:border-gray-700"
-                          />
-                          <span>#3065</span>
-                        </div>
-                      </td>
-                      <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                        Jan 5, 2022
-                      </td>
-                      <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
+                      <td className="px-4 py-4 text-sm font-medium text-gray-700 ">
                         <div className="inline-flex items-center px-3 py-1 text-red-500 rounded-full gap-x-2 bg-red-100/60 dark:bg-gray-800">
                           <svg
                             width={12}
@@ -341,25 +331,23 @@ function Index({ auth, users, queryParams = null, success }) {
                           <h2 className="text-sm font-normal">Refunded</h2>
                         </div>
                         <div className="inline-flex items-center px-3 py-1 rounded-full gap-x-2 text-emerald-500 bg-emerald-100/60 dark:bg-gray-800">
-                            <svg
-                              width={12}
-                              height={12}
-                              viewBox="0 0 12 12"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M10 3L4.5 8.5L2 6"
-                                stroke="currentColor"
-                                strokeWidth="1.5"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                            </svg>
-                            <h2 className="text-sm font-normal">
-                              completed
-                            </h2>
-                          </div>
+                          <svg
+                            width={12}
+                            height={12}
+                            viewBox="0 0 12 12"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M10 3L4.5 8.5L2 6"
+                              stroke="currentColor"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                          <h2 className="text-sm font-normal">completed</h2>
+                        </div>
                       </td>
                       <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
                         <div className="flex items-center gap-x-2">
@@ -378,9 +366,6 @@ function Index({ auth, users, queryParams = null, success }) {
                           </div>
                         </div>
                       </td>
-                      <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                        Monthly subscription
-                      </td>
                       <td className="px-4 py-4 text-sm whitespace-nowrap">
                         <div className="flex items-center gap-x-6">
                           <button className="text-gray-500 transition-colors duration-200 dark:hover:text-indigo-500 dark:text-gray-300 hover:text-indigo-500 focus:outline-none">
@@ -392,6 +377,7 @@ function Index({ auth, users, queryParams = null, success }) {
                         </div>
                       </td>
                     </tr> */}
+                    {/* end testing */}
                   </tbody>
                 </table>
               </div>
