@@ -29,7 +29,6 @@ class ProjectController extends Controller
         }
         if (request("status")) {
             $query->where("status", "LIKE", "%" . request("status") . "%");
-            // $query->where("status", request("status"));
         }
 
         $projects = $query->orderBy($sortField, $sortDirection)->paginate(5);
@@ -58,7 +57,6 @@ class ProjectController extends Controller
         /** @var $image \Illuminate\Http\UploadedFile  */
         $image = $data['image'] ?? null;
         // $data['created_by'] = auth()->user()->id;
-        // $data['updated_by'] = auth()->user()->id;
         $data['created_by'] = Auth::id();
         $data['updated_by'] = Auth::id();
         // dd($data);

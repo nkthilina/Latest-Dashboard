@@ -31,7 +31,6 @@ class UserController extends Controller
         }
 
         $users = $query->orderBy($sortField, $sortDirection)->paginate(5);
-        // $users = $query->paginate(10)->onEachSide(1);
         return Inertia::render('User/Index', [
             'users' => UserCRUDResource::collection($users),
             'queryParams' => request()->query() ? : null,

@@ -21,7 +21,7 @@ class Project extends Model
 
     public function tasks()
     {
-        return $this->hasMany(Task::class);
+        return $this->hasMany(Task::class); // Select * from Task where user_id = 1
     }
 
     public function createdBy()
