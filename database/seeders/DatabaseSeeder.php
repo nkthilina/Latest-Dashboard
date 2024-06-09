@@ -29,11 +29,11 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => time(),
         ]);
 
-        User::factory()->count(10)->create();
+        // User::factory()->count(10)->create();
 
-        Project::factory()
-            ->count(30)
-            ->hasTasks(30)
-            ->create();
+        // Project::factory()
+        //     ->count(30)
+        //     ->hasTasks(30)
+        //     ->create();
     }
 }

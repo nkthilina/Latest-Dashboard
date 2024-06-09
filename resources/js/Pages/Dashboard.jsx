@@ -258,7 +258,7 @@ export default function Dashboard({
         </div>
       </div>
       {/* end table */}
-      <Footer />
+      <Footer className="items-end"/>
     </AuthenticatedLayout>
   );
 }

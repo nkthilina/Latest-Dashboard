@@ -2,8 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="text-blue-gray-600 mt-5">
-      <footer className="py-2">
+      <footer className="py-2 items-end bottom-0  text-blue-gray-600 mt-5">
         <div className="flex w-full flex-wrap items-center justify-center gap-6 px-2 md:justify-between">
           <p className="block antialiased font-sans text-sm leading-normal font-normal text-inherit">
             © 2024, made with{" "}
@@ -29,7 +28,7 @@ function Footer() {
           <ul className="flex items-center gap-4">
             <li>
               <a
-                href="https://www.creative-tim.com"
+                href="https://www.linkedin.com/in/thilina-madhusanka-9585a81a9/"
                 target="_blank"
                 className="block antialiased font-sans text-sm leading-normal py-0.5 px-1 font-normal text-inherit transition-colors hover:text-blue-500"
               >
@@ -38,7 +37,7 @@ function Footer() {
             </li>
             <li>
               <a
-                href="https://www.creative-tim.com/presentation"
+                href="https://github.com/nkthilina?tab=overview&from=2024-06-01&to=2024-06-09"
                 target="_blank"
                 className="block antialiased font-sans text-sm leading-normal py-0.5 px-1 font-normal text-inherit transition-colors hover:text-blue-500"
               >
@@ -66,7 +65,6 @@ function Footer() {
           </ul>
         </div>
       </footer>
-    </footer>
   );
 }
 
