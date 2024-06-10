@@ -248,11 +248,19 @@ function Index({ auth, users, queryParams = null, success }) {
                           </div>
                         </td>
                         <td className="px-4 py-2 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap ">
-                          <img
-                            src={users.image_path}
-                            alt=""
-                            className=" w-12 h-12 rounded-full"
-                          />
+                          {users.image_path ? (
+                            <img
+                              src={users.image_path}
+                              alt=""
+                              className=" w-12 h-12 rounded-full"
+                            />
+                          ) : (
+                            <img
+                              src="/storage/male.png"
+                              alt="default user"
+                              className=" w-12 h-12 rounded-full"
+                            />
+                          )}
                         </td>
                         <td className=" py-3 text-sm font-medium text-gray-700 ">
                           <div className="inline-flex items-center px-3 py-1 gap-x-2 text-white ">

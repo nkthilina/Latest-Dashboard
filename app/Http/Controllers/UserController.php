@@ -29,7 +29,6 @@ class UserController extends Controller
             $query->where("email", "LIKE", "%" . request("email") . "%");
             // $query->where("status", request("status"));
         }
-
         $users = $query->orderBy($sortField, $sortDirection)->paginate(5);
         return Inertia::render('User/Index', [
             'users' => UserCRUDResource::collection($users),
@@ -55,11 +54,12 @@ class UserController extends Controller
         $data['email_verified_at'] = time();
         $data['password'] = bcrypt($data['password']);
         /** @var $image \Illuminate\Http\UploadedFile  */
-        $image = $data['image'] ?? null;
+        $image = $data['image'] ?? 'public/storage/male.png';
         // dd($data);
         if ($image) {
             $data['image_path'] = $image->store('user/'. Str::random(), 'public');
         }
+        
         $name = $data['name'];
         User::create($data);
         return to_route('user.index')->with('success', "User \"$name\" created successfully");
