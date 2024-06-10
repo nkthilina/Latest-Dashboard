@@ -273,7 +273,7 @@ function TasksTable({ tasks, success, queryParams = null, hideProjectColumn = fa
                           {tasks.project.name}
                         </td>
                       )}
-                      <td className=" py-3 text-sm  inline-flex items-center px-3  gap-x-2 text-white hover:underline  font-normal cursor-pointer">
+                      <td className=" py-3 text-sm items-center px-3  gap-x-2 text-white hover:underline  font-normal cursor-pointer">
                       <Link href={route("task.show", tasks.id)} >
                         {tasks.name}
                       </Link>
