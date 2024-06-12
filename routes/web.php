@@ -28,6 +28,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Route::put('/project/{project}', [ProjectController::class, 'update'])->name('project.update');
     // Route::delete('/project/{project}', [ProjectController::class, 'destroy'])->name('project.destroy');
     // Route::get('/project/{project}/edit', [ProjectController::class, 'edit'])->name('project.edit');
+    // Route::get('/project/{project}/edit', [ProjectController::class, 'edit'])->name('project.edit');
+    // Route::get('/project/{project}/edit', [ProjectController::class, 'edit'])->name('project.edit');
 
 });
 
