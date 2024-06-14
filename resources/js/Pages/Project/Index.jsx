@@ -119,193 +119,197 @@ function Index({ auth, projects, queryParams = null, success }) {
         )}
         {/* alert end */}
 
-        <div className="flex flex-col">
-          <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-            <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-              <div className="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg ">
-                <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                  <thead className=" dark:bg-gray-800">
-                    <tr>
-                      <th></th>
-                      <th></th>
-                      <th
-                        scope="col"
-                        className="px-2 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
-                      >
-                        <TextInput
-                          className="w-full"
-                          defaultValue={queryParams.name}
-                          placeholder="Project name"
-                          onBlur={(e) =>
-                            searchFieldChange("name", e.target.value)
-                          }
-                          onKeyPress={(e) => onKeyPress("name", e)}
-                        />
-                      </th>
-                      <th
-                        scope="col"
-                        className="px-2 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
-                      >
-                        <SelectInput
-                          className="w-full"
-                          defaultValue={queryParams.status}
-                          onChange={(e) =>
-                            searchFieldChange("status", e.target.value)
-                          }
-                        >
-                          <option value="">Status</option>
-                          <option value="pending">Pending</option>
-                          <option value="in_progress">In Progress</option>
-                          <option value="completed">Completed</option>
-                        </SelectInput>
-                      </th>
-                      <th></th>
-                      <th></th>
-                      <th></th>
-                      <th></th>
-                      {/* <th scope="col" className="relative py-3.5 px-4">
+        {projects.data.length > 0 ? (
+          <div>
+            <div className="flex flex-col">
+              <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+                  <div className="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg ">
+                    <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                      <thead className=" dark:bg-gray-800">
+                        <tr>
+                          <th></th>
+                          <th></th>
+                          <th
+                            scope="col"
+                            className="px-2 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                          >
+                            <TextInput
+                              className="w-full"
+                              defaultValue={queryParams.name}
+                              placeholder="Project name"
+                              onBlur={(e) =>
+                                searchFieldChange("name", e.target.value)
+                              }
+                              onKeyPress={(e) => onKeyPress("name", e)}
+                            />
+                          </th>
+                          <th
+                            scope="col"
+                            className="px-2 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                          >
+                            <SelectInput
+                              className="w-full"
+                              defaultValue={queryParams.status}
+                              onChange={(e) =>
+                                searchFieldChange("status", e.target.value)
+                              }
+                            >
+                              <option value="">Status</option>
+                              <option value="pending">Pending</option>
+                              <option value="in_progress">In Progress</option>
+                              <option value="completed">Completed</option>
+                            </SelectInput>
+                          </th>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                          {/* <th scope="col" className="relative py-3.5 px-4">
                         <span className="sr-only">Actions</span>
                       </th> */}
-                    </tr>
-                  </thead>
-                  <thead className="bg-gray-50 dark:bg-gray-800">
-                    <tr>
-                      <TableHeading
-                        name="id"
-                        sort_field={queryParams.sort_field}
-                        sort_direction={queryParams.sort_direction}
-                        sortChanged={sortChanged}
-                      >
-                        {" "}
-                        ID{" "}
-                      </TableHeading>
-                      <th
-                        scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
-                      >
-                        Image
-                      </th>
-                      <TableHeading
-                        name="name"
-                        sort_field={queryParams.sort_field}
-                        sort_direction={queryParams.sort_direction}
-                        sortChanged={sortChanged}
-                      >
-                        {" "}
-                        Name{" "}
-                      </TableHeading>
-                      <TableHeading
-                        name="status"
-                        sort_field={queryParams.sort_field}
-                        sort_direction={queryParams.sort_direction}
-                        sortChanged={sortChanged}
-                      >
-                        {" "}
-                        Status{" "}
-                      </TableHeading>
-                      <TableHeading
-                        name="created_date"
-                        sort_field={queryParams.sort_field}
-                        sort_direction={queryParams.sort_direction}
-                        sortChanged={sortChanged}
-                      >
-                        {" "}
-                        Created date{" "}
-                      </TableHeading>
-                      <TableHeading
-                        name="due_date"
-                        sort_field={queryParams.sort_field}
-                        sort_direction={queryParams.sort_direction}
-                        sortChanged={sortChanged}
-                      >
-                        {" "}
-                        Due date{" "}
-                      </TableHeading>
+                        </tr>
+                      </thead>
+                      <thead className="bg-gray-50 dark:bg-gray-800">
+                        <tr>
+                          <TableHeading
+                            name="id"
+                            sort_field={queryParams.sort_field}
+                            sort_direction={queryParams.sort_direction}
+                            sortChanged={sortChanged}
+                          >
+                            {" "}
+                            ID{" "}
+                          </TableHeading>
+                          <th
+                            scope="col"
+                            className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                          >
+                            Image
+                          </th>
+                          <TableHeading
+                            name="name"
+                            sort_field={queryParams.sort_field}
+                            sort_direction={queryParams.sort_direction}
+                            sortChanged={sortChanged}
+                          >
+                            {" "}
+                            Name{" "}
+                          </TableHeading>
+                          <TableHeading
+                            name="status"
+                            sort_field={queryParams.sort_field}
+                            sort_direction={queryParams.sort_direction}
+                            sortChanged={sortChanged}
+                          >
+                            {" "}
+                            Status{" "}
+                          </TableHeading>
+                          <TableHeading
+                            name="created_date"
+                            sort_field={queryParams.sort_field}
+                            sort_direction={queryParams.sort_direction}
+                            sortChanged={sortChanged}
+                          >
+                            {" "}
+                            Created date{" "}
+                          </TableHeading>
+                          <TableHeading
+                            name="due_date"
+                            sort_field={queryParams.sort_field}
+                            sort_direction={queryParams.sort_direction}
+                            sortChanged={sortChanged}
+                          >
+                            {" "}
+                            Due date{" "}
+                          </TableHeading>
 
-                      <th
-                        scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400 text-nowrap"
-                      >
-                        Created by
-                      </th>
-                      <th
-                        scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-right rtl:text-right text-gray-500 dark:text-gray-400"
-                      >
-                        Actions
-                      </th>
-                      {/* <th scope="col" className="relative py-3.5 px-4">
+                          <th
+                            scope="col"
+                            className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400 text-nowrap"
+                          >
+                            Created by
+                          </th>
+                          <th
+                            scope="col"
+                            className="px-4 py-3.5 text-sm font-normal text-right rtl:text-right text-gray-500 dark:text-gray-400"
+                          >
+                            Actions
+                          </th>
+                          {/* <th scope="col" className="relative py-3.5 px-4">
                         <span className="sr-only">Actions</span>
                       </th> */}
-                    </tr>
-                  </thead>
-                  <tbody className=" divide-y  dark:divide-gray-700 dark:bg-gray-900 ">
-                    {projects.data.map((projects) => (
-                      <tr key={projects.id}>
-                        <td className="px-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
-                          <div className="inline-flex items-center gap-x-3">
-                            <span>{projects.id}</span>
-                          </div>
-                        </td>
-                        <td className="px-4 py-2 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                          <img
-                            src={projects.image_path}
-                            alt=""
-                            className="w-28 h-12"
-                          />
-                        </td>
-                        <td className=" py-3 text-sm font-medium text-gray-700 ">
-                          <div className="inline-flex items-center px-3 py-1 gap-x-2 text-white hover:underline ">
-                            <h2 className=" text-sm font-normal cursor-pointer">
-                              <Link href={route("project.show", projects.id)}>
-                                {projects.name}
-                              </Link>
-                            </h2>
-                          </div>
-                        </td>
-                        <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                          <div className="flex items-center gap-x-2">
-                            <h2 className="text-sm font-medium text-gray-800 dark:text-white ">
-                              {/* <span className=" text-sm font-medium text-gray-700 whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2 text-emerald-500 bg-emerald-100/60 dark:bg-gray-800"> */}
-                              <span
-                                className={
-                                  "text-sm font-medium  whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2  bg-gray-800 " +
-                                  PROJECT_STATUS_CLASS_MAP[projects.status]
-                                }
+                        </tr>
+                      </thead>
+                      <tbody className=" divide-y  dark:divide-gray-700 dark:bg-gray-900 ">
+                        {projects.data.map((projects) => (
+                          <tr key={projects.id}>
+                            <td className="px-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
+                              <div className="inline-flex items-center gap-x-3">
+                                <span>{projects.id}</span>
+                              </div>
+                            </td>
+                            <td className="px-4 py-2 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                              <img
+                                src={projects.image_path}
+                                alt=""
+                                className="w-28 h-12"
+                              />
+                            </td>
+                            <td className=" py-3 text-sm font-medium text-gray-700 ">
+                              <div className="inline-flex items-center px-3 py-1 gap-x-2 text-white hover:underline ">
+                                <h2 className=" text-sm font-normal cursor-pointer">
+                                  <Link
+                                    href={route("project.show", projects.id)}
+                                  >
+                                    {projects.name}
+                                  </Link>
+                                </h2>
+                              </div>
+                            </td>
+                            <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                              <div className="flex items-center gap-x-2">
+                                <h2 className="text-sm font-medium text-gray-800 dark:text-white ">
+                                  {/* <span className=" text-sm font-medium text-gray-700 whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2 text-emerald-500 bg-emerald-100/60 dark:bg-gray-800"> */}
+                                  <span
+                                    className={
+                                      "text-sm font-medium  whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2  bg-gray-800 " +
+                                      PROJECT_STATUS_CLASS_MAP[projects.status]
+                                    }
+                                  >
+                                    {PROJECT_STATUS_TEXT_MAP[projects.status]}
+                                  </span>
+                                </h2>
+                              </div>
+                            </td>
+                            <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                              {projects.created_at}
+                            </td>
+                            <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                              {projects.due_date}
+                            </td>
+                            <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                              {projects.createdBy.name}
+                            </td>
+                            <td className="px-4 py-4 text-sm whitespace-nowrap space-x-2">
+                              <Link
+                                href={route("project.edit", projects.id)}
+                                className=" transition-colors duration-200  dark:text-indigo-300 dark:hover:text-blue-500 focus:outline-none"
                               >
-                                {PROJECT_STATUS_TEXT_MAP[projects.status]}
-                              </span>
-                            </h2>
-                          </div>
-                        </td>
-                        <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                          {projects.created_at}
-                        </td>
-                        <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                          {projects.due_date}
-                        </td>
-                        <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                          {projects.createdBy.name}
-                        </td>
-                        <td className="px-4 py-4 text-sm whitespace-nowrap space-x-2">
-                          <Link
-                            href={route("project.edit", projects.id)}
-                            className=" transition-colors duration-200  dark:text-indigo-300 dark:hover:text-blue-500 focus:outline-none"
-                          >
-                            Edit
-                          </Link>
-                          <button
-                            type="button"
-                            onClick={(e) => deleteProject(projects)}
-                            // onClick={() => destroy(projects.id)}
-                            className="text-gray-500 transition-colors duration-200 dark:hover:text-red-500 dark:text-red-400 hover:text-red-500 focus:outline-none"
-                          >
-                            Delete
-                          </button>
-                        </td>
-                      </tr>
-                    ))}
-                    {/* <tr>
+                                Edit
+                              </Link>
+                              <button
+                                type="button"
+                                onClick={(e) => deleteProject(projects)}
+                                // onClick={() => destroy(projects.id)}
+                                className="text-gray-500 transition-colors duration-200 dark:hover:text-red-500 dark:text-red-400 hover:text-red-500 focus:outline-none"
+                              >
+                                Delete
+                              </button>
+                            </td>
+                          </tr>
+                        ))}
+                        {/* <tr>
                       <td className="px-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
                         <div className="inline-flex items-center gap-x-3">
                           <input
@@ -407,15 +411,22 @@ function Index({ auth, projects, queryParams = null, success }) {
                         </div>
                       </td>
                     </tr> */}
-                  </tbody>
-                </table>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
               </div>
             </div>
+
+            {/* pagination */}
+            <Pagination links={projects.meta.links} />
+            {/* end pagination */}
           </div>
-        </div>
-        {/* pagination */}
-        <Pagination links={projects.meta.links} />
-        {/* pagination end */}
+        ) : (
+          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 my-20 rounded">
+            <span>Error! No projects are found. Create a new one.</span>
+          </div>
+        )}
       </section>
 
       <Footer />

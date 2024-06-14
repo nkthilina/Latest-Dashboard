@@ -183,82 +183,89 @@ export default function Dashboard({
       </div>
       {/* end cards */}
 
-      {/* table */}
-      <div className="flex flex-col">
-        <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-          <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-            <div className="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg text-white">
-              <div className="p-4 dark:bg-gray-800">
-                <p>My Tasks</p>
-              </div>
+      {activeTasks.data.length > 0 ? (
+        // start table
+        <div className="flex flex-col">
+          <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+              <div className="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg text-white">
+                <div className="p-4 dark:bg-gray-800">
+                  <p>My Tasks</p>
+                </div>
 
-              <table className="min-w-full dark:divide-gray-700">
-                <thead className=" dark:bg-gray-800">
-                  <tr>
-                    <th className=" p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal text-left">
-                      ID
-                    </th>
-                    <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal text-left">
-                      Project Name
-                    </th>
-                    <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal text-left">
-                      Name
-                    </th>
-                    <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal text-left">
-                      Status
-                    </th>
-                    <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal text-left">
-                      Priority
-                    </th>
-                    <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal text-left">
-                      Due Date
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className=" divide-y  dark:divide-gray-700 dark:bg-gray-900 text-sm">
-                  {activeTasks.data.map((task) => (
-                    <tr key={task.id}>
-                      <td className="p-4 ">{task.id}</td>
-                      <td className="p-4 ">
-                        <Link
-                          href={route("task.show", task.id)}
-                          className="hover:underline"
-                        >
-                          {task.project.name}
-                        </Link>
-                      </td>
-                      <td className="p-4">{task.name}</td>
-                      <td className="p-4 ">
-                        <span
-                          className={
-                            "text-sm font-medium  whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2  bg-gray-800 " +
-                            TASK_STATUS_CLASS_MAP[task.status]
-                          }
-                        >
-                          {TASK_STATUS_TEXT_MAP[task.status]}
-                        </span>
-                      </td>
-                      <td className="p-4 ">
-                        <span
-                          className={
-                            "text-sm font-medium  whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2  bg-gray-800 " +
-                            TASK_PRIORITY_CLASS_MAP[task.priority]
-                          }
-                        >
-                          {TASK_PRIORITY_TEXT_MAP[task.priority]}
-                        </span>
-                      </td>
-                      <td className="p-4 text-nowrap">{task.due_date}</td>
+                <table className="min-w-full dark:divide-gray-700">
+                  <thead className=" dark:bg-gray-800">
+                    <tr>
+                      <th className=" p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal text-left">
+                        ID
+                      </th>
+                      <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal text-left">
+                        Project Name
+                      </th>
+                      <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal text-left">
+                        Name
+                      </th>
+                      <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal text-left">
+                        Status
+                      </th>
+                      <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal text-left">
+                        Priority
+                      </th>
+                      <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal text-left">
+                        Due Date
+                      </th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody className=" divide-y  dark:divide-gray-700 dark:bg-gray-900 text-sm">
+                    {activeTasks.data.map((task) => (
+                      <tr key={task.id}>
+                        <td className="p-4 ">{task.id}</td>
+                        <td className="p-4 ">
+                          <Link
+                            href={route("task.show", task.id)}
+                            className="hover:underline"
+                          >
+                            {task.project.name}
+                          </Link>
+                        </td>
+                        <td className="p-4">{task.name}</td>
+                        <td className="p-4 ">
+                          <span
+                            className={
+                              "text-sm font-medium  whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2  bg-gray-800 " +
+                              TASK_STATUS_CLASS_MAP[task.status]
+                            }
+                          >
+                            {TASK_STATUS_TEXT_MAP[task.status]}
+                          </span>
+                        </td>
+                        <td className="p-4 ">
+                          <span
+                            className={
+                              "text-sm font-medium  whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2  bg-gray-800 " +
+                              TASK_PRIORITY_CLASS_MAP[task.priority]
+                            }
+                          >
+                            {TASK_PRIORITY_TEXT_MAP[task.priority]}
+                          </span>
+                        </td>
+                        <td className="p-4 text-nowrap">{task.due_date}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      {/* end table */}
-      <Footer className="items-end"/>
+        // end table
+      ) : (
+        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 my-20 rounded">
+          <span>Error! No tasks are found. Create a new one.</span>
+        </div>
+      )}
+
+      <Footer className="items-end" />
     </AuthenticatedLayout>
   );
 }

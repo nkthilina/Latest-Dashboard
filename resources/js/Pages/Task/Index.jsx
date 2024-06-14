@@ -29,12 +29,18 @@ function Index({ auth, success, tasks, queryParams = null }) {
         </div>
       </div> */}
 
-      {/* new table */}
-      <section className="container px-4 mx-auto mt-5">
+{tasks.length > 0 ? (
+
+      <div className="container px-4 mx-auto mt-5">
 
        <TasksTable tasks={tasks} queryParams={queryParams} success={success}/>
 
-      </section>
+      </div>
+) : (
+  <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 my-20 rounded">
+  <span>Error! No tasks are found. Create a new one.</span>
+</div>
+)}
 
       <Footer />
     </AuthenticatedLayout>
