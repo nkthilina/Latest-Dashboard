@@ -10,8 +10,10 @@ import {
 import TextInput from "@/Components/TextInput";
 import SelectInput from "@/Components/SelectInput";
 import TableHeading from "@/Components/TableHeading";
+import { useState, useEffect } from "react";
 
 function Index({ auth, projects, queryParams = null, success }) {
+  const [visible, setVisible] = useState(true);
   queryParams = queryParams || {};
 
   const searchFieldChange = (name, value) => {
@@ -53,6 +55,14 @@ function Index({ auth, projects, queryParams = null, success }) {
     return;
   };
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setVisible(false);
+    }, 3000);
+
+    return () => clearTimeout(timer); // Cleanup the timer if the component unmounts
+  }, []);
+
   return (
     <AuthenticatedLayout
       user={auth.user}
@@ -80,42 +90,63 @@ function Index({ auth, projects, queryParams = null, success }) {
       <section className="container px-4 mx-auto mt-5">
         {/* alert */}
         {success && (
-          <div className="py-5 bg-white dark:bg-dark">
-            <div className="container">
-              <div className="border-green-700 bg-green-200 flex w-full rounded-lg border-l-[6px] px-7 py-8  ">
-                <div className="bg-green-700 mr-5 flex h-7 w-full max-w-7 items-center justify-center rounded-md">
-                  <svg
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g clipPath="url(#clip0_961_15637)">
-                      <path
-                        d="M8.99998 0.506248C4.3031 0.506248 0.506226 4.30312 0.506226 9C0.506226 13.6969 4.3031 17.5219 8.99998 17.5219C13.6969 17.5219 17.5219 13.6969 17.5219 9C17.5219 4.30312 13.6969 0.506248 8.99998 0.506248ZM8.99998 16.2562C5.00623 16.2562 1.77185 12.9937 1.77185 9C1.77185 5.00625 5.00623 1.77187 8.99998 1.77187C12.9937 1.77187 16.2562 5.03437 16.2562 9.02812C16.2562 12.9937 12.9937 16.2562 8.99998 16.2562Z"
-                        fill="white"
-                      />
-                      <path
-                        d="M11.4187 6.38437L8.07183 9.64687L6.55308 8.15625C6.29996 7.90312 5.90621 7.93125 5.65308 8.15625C5.39996 8.40937 5.42808 8.80312 5.65308 9.05625L7.45308 10.8C7.62183 10.9687 7.84683 11.0531 8.07183 11.0531C8.29683 11.0531 8.52183 10.9687 8.69058 10.8L12.3187 7.3125C12.5718 7.05937 12.5718 6.66562 12.3187 6.4125C12.0656 6.15937 11.6718 6.15937 11.4187 6.38437Z"
-                        fill="white"
-                      />
-                    </g>
-                    <div>
-                      <clipPath id="clip0_961_15637">
-                        <rect width="18" height="18" fill="white" />
-                      </clipPath>
-                    </div>
-                  </svg>
-                </div>
-                <div className="w-full ">
-                  <h5 className=" text-md font-semibold text-[#004434] leading-relaxed">
-                    {success}
-                  </h5>
-                </div>
-              </div>
+          <div>
+            <link
+              rel="stylesheet"
+              href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+            />
+            <div className="place-items-center">
+              {visible && (
+                <button
+                  type="button"
+                  className="fixed right-4 top-4 z-50 rounded-md bg-green-500 px-4 py-2 text-white transition hover:bg-green-600"
+                >
+                  <div className="flex items-center space-x-2">
+                    <span className="text-3xl">
+                      <i className="bx bx-check" />
+                    </span>
+                    <p className="font-bold">{success}</p>
+                  </div>
+                </button>
+              )}
             </div>
           </div>
+          // <div className="py-5 bg-white dark:bg-dark">
+          //   <div className="container">
+          //     <div className="border-green-700 bg-green-200 flex w-full rounded-lg border-l-[6px] px-7 py-8  ">
+          //       <div className="bg-green-700 mr-5 flex h-7 w-full max-w-7 items-center justify-center rounded-md">
+          //         <svg
+          //           width="18"
+          //           height="18"
+          //           viewBox="0 0 18 18"
+          //           fill="none"
+          //           xmlns="http://www.w3.org/2000/svg"
+          //         >
+          //           <g clipPath="url(#clip0_961_15637)">
+          //             <path
+          //               d="M8.99998 0.506248C4.3031 0.506248 0.506226 4.30312 0.506226 9C0.506226 13.6969 4.3031 17.5219 8.99998 17.5219C13.6969 17.5219 17.5219 13.6969 17.5219 9C17.5219 4.30312 13.6969 0.506248 8.99998 0.506248ZM8.99998 16.2562C5.00623 16.2562 1.77185 12.9937 1.77185 9C1.77185 5.00625 5.00623 1.77187 8.99998 1.77187C12.9937 1.77187 16.2562 5.03437 16.2562 9.02812C16.2562 12.9937 12.9937 16.2562 8.99998 16.2562Z"
+          //               fill="white"
+          //             />
+          //             <path
+          //               d="M11.4187 6.38437L8.07183 9.64687L6.55308 8.15625C6.29996 7.90312 5.90621 7.93125 5.65308 8.15625C5.39996 8.40937 5.42808 8.80312 5.65308 9.05625L7.45308 10.8C7.62183 10.9687 7.84683 11.0531 8.07183 11.0531C8.29683 11.0531 8.52183 10.9687 8.69058 10.8L12.3187 7.3125C12.5718 7.05937 12.5718 6.66562 12.3187 6.4125C12.0656 6.15937 11.6718 6.15937 11.4187 6.38437Z"
+          //               fill="white"
+          //             />
+          //           </g>
+          //           <div>
+          //             <clipPath id="clip0_961_15637">
+          //               <rect width="18" height="18" fill="white" />
+          //             </clipPath>
+          //           </div>
+          //         </svg>
+          //       </div>
+          //       <div className="w-full ">
+          //         <h5 className=" text-md font-semibold text-[#004434] leading-relaxed">
+          //           {success}
+          //         </h5>
+          //       </div>
+          //     </div>
+          //   </div>
+          // </div>
         )}
         {/* alert end */}
 

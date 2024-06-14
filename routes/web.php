@@ -17,17 +17,19 @@ Route::redirect('/', '/dashboard');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::resource('project', ProjectController::class);
+    // Route::resource('project', ProjectController::class);
     Route::get('/task/my-tasks', [TaskController::class, 'myTasks'])->name('task.myTasks');
     Route::resource('task', TaskController::class);
     Route::resource('user', UserController::class);
-    // Route::get('/project', [ProjectController::class, 'index'])->name('project.index');
-    // Route::post('/project', [ProjectController::class, 'store'])->name('project.store');
-    // Route::get('/project/create', [ProjectController::class, 'create'])->name('project.create');
-    // Route::get('/project/{project}', [ProjectController::class, 'show'])->name('project.show');
-    // Route::put('/project/{project}', [ProjectController::class, 'update'])->name('project.update');
-    // Route::delete('/project/{project}', [ProjectController::class, 'destroy'])->name('project.destroy');
-    // Route::get('/project/{project}/edit', [ProjectController::class, 'edit'])->name('project.edit');
+
+    // Routes without resources
+    Route::get('/project', [ProjectController::class, 'index'])->name('project.index');
+    Route::post('/project', [ProjectController::class, 'store'])->name('project.store');
+    Route::get('/project/create', [ProjectController::class, 'create'])->name('project.create');
+    Route::get('/project/{project}', [ProjectController::class, 'show'])->name('project.show');
+    Route::put('/project/{project}', [ProjectController::class, 'update'])->name('project.update');
+    Route::delete('/project/{project}', [ProjectController::class, 'destroy'])->name('project.destroy');
+    Route::get('/project/{project}/edit', [ProjectController::class, 'edit'])->name('project.edit');
 });
 
 Route::middleware('auth')->group(function () {
