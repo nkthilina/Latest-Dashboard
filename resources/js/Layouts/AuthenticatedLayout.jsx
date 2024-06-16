@@ -308,7 +308,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
                       <ol className="flex flex-wrap items-center w-full bg-opacity-60 rounded-md bg-transparent p-0 transition-all">
                         <li className="flex items-center text-blue-gray-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-light-blue-500">
                           <a href="#">
-                            <p className="block antialiased font-sans text-sm leading-normal text-blue-900 font-normal opacity-50 transition-all hover:text-blue-500 hover:opacity-100">
+                            <p className="block antialiased font-sans text-lg leading-normal text-blue-900 font-bold opacity-60 transition-all hover:text-blue-500 hover:opacity-100">
                               dashboard
                             </p>
                           </a>
@@ -316,8 +316,8 @@ export default function AuthenticatedLayout({ user, header, children }) {
                             /
                           </span>
                         </li>
-                        <li className="flex items-center text-blue-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-blue-500">
-                          <p className="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal">
+                        <li className="flex items-center opacity-60 text-blue-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-blue-500 hover:opacity-100">
+                          <p className="block antialiased font-sans text-lg leading-normal text-blue-gray-900 font-bold">
                             Home
                           </p>
                         </li>

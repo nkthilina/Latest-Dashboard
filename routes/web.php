@@ -11,7 +11,7 @@ use Inertia\Inertia;
 
 Route::redirect('/', '/dashboard');
 
-// Route::get('/dashboard', function () {
+// Route::get('/dash', function () {
 //     return Inertia::render('Dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
