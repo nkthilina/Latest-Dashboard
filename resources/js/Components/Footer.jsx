@@ -74,21 +74,16 @@ function Footer() {
       {/* Modal component */}
       <div className="flex items-center justify-center ">
         {showModal && (
-          <div>
+          <div className="">
             {/* Background overlay */}
             <div className="fixed z-10 inset-0 overflow-y-auto">
-              <div className="absolute inset-0 bg-gray-500 opacity-75">fu</div>
+              <div className="absolute inset-0 bg-gray-500 opacity-75" />
             </div>
             {/* Modal */}
             <div className="fixed z-10 inset-0 overflow-y-auto ">
               <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0 ">
                 {/* Modal panel */}
-                <div
-                  className="w-full inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
-                  role="dialog"
-                  aria-modal="true"
-                  aria-labelledby="modal-headline"
-                >
+                <div className="w-full inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
                   <div className="bg-gray-50 px-4 pt-5 pb-4 sm:p-6 sm:pb-4 ">
                     {/* Modal content */}
                     <div className="sm:flex sm:items-start">
@@ -134,6 +129,103 @@ function Footer() {
           </div>
         )}
       </div>
+
+      {/* testing Modal component */}
+      <div className="flex items-center justify-center ">
+        <div className="">
+          {/* Background overlay */}
+          <div className="fixed z-10 inset-0 overflow-y-auto">
+            <div className="absolute inset-0 bg-gray-500 opacity-95" />
+          </div>
+          {/* Modal */}
+          <div className="fixed z-10 inset-0 overflow-y-auto ">
+            <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0 ">
+              <div className="w-full inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div className="flex bg-gray-50 px-4 pt-5 pb-4 sm:p-6 sm:pb-4 ">
+                  <div className="sm:flex sm:items-start">
+                    <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left sm:flex-row-reverse">
+                      {/* <button className="absolute top-1 right-0 pt-4 pr-4">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="size-6"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M6 18 18 6M6 6l12 12"
+                          />
+                        </svg>
+                      </button> */}
+                    </div>
+                  </div>
+                </div>
+                {/*  */}
+                <div>
+                  <div className="bg-gray-100 lg:py-12 lg:flex lg:justify-center">
+                  <button className="absolute  top-14 right-2  pr-4">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="size-6"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M6 18 18 6M6 6l12 12"
+                          />
+                        </svg>
+                      </button>
+
+                    <div className="bg-white lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
+
+
+                      <div className="lg:w-1/2">
+                        <div
+                          className=" bg-cover lg:rounded-lg lg:h-full"
+                          style={{
+                            backgroundImage:
+                              'url("https://images.unsplash.com/photo-1497493292307-31c376b6e479?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80")',
+                          }}
+                        />
+                      </div>
+                      <div className="py-12 px-6 max-w-xl lg:max-w-5xl lg:w-1/2">
+                        <h2 className="text-3xl text-gray-800 font-bold">
+                          Build Your New{" "}
+                          <span className="text-indigo-600">Idea</span>
+                        </h2>
+                        <p className="mt-4 text-gray-600">
+                          Lorem, ipsum dolor sit amet consectetur adipisicing
+                          elit. Quidem modi reprehenderit vitae exercitationem
+                          aliquid dolores ullam temporibus enim expedita aperiam
+                          mollitia iure consectetur dicta tenetur, porro
+                          consequuntur saepe accusantium consequatur.
+                        </p>
+                        <div className="mt-8">
+                          <a
+                            href="#"
+                            className="bg-gray-900 text-gray-100 px-5 py-3 font-semibold rounded"
+                          >
+                            Start Now
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/*  */}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Modal component end */}
     </footer>
   );
