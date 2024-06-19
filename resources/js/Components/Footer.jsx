@@ -3,6 +3,7 @@ import React, { useState } from "react";
 function Footer() {
   const [showModal, setShowModal] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(1);
+
   const images = [
     "https://unsplash.it/640/425?image=30",
     "https://unsplash.it/640/425?image=40",
@@ -88,57 +89,124 @@ function Footer() {
           {/* end testing */}
         </ul>
       </div>
-
-      {/* Modal component */}
-      <div className="flex items-center justify-center ">
+      {/* testing Modal component */}
+      <div>
         {showModal && (
-          <div className="">
-            {/* Background overlay */}
-            <div className="fixed z-10 inset-0 overflow-y-auto">
-              <div className="absolute inset-0 bg-gray-500 opacity-75" />
-            </div>
-            {/* Modal */}
-            <div className="fixed z-10 inset-0 overflow-y-auto ">
-              <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0 ">
-                {/* Modal panel */}
-                <div className="w-full inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-                  <div className="bg-gray-50 px-4 pt-5 pb-4 sm:p-6 sm:pb-4 ">
-                    {/* Modal content */}
-                    <div className="sm:flex sm:items-start">
-                      <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left sm:flex-row-reverse">
-                        <button
-                          onClick={() => setShowModal(false)}
-                          className="absolute top-1 right-0 pt-4 pr-4"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke-width="1.5"
-                            stroke="currentColor"
-                            class="size-6"
-                          >
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              d="M6 18 18 6M6 6l12 12"
-                            />
-                          </svg>
-                        </button>
-                        <h3
-                          className="text-lg leading-6 font-medium text-gray-900"
-                          id="modal-headline"
-                        >
-                          Delete Item{" "}
-                        </h3>
-                        <div className="mt-2">
-                          <p className="text-sm text-gray-500">
-                            Are you sure you want to delete{" "}
-                            <span className="font-bold">Sample Item</span>? This
-                            action cannot be undone.{" "}
-                          </p>
-                        </div>
+          <div className="fixed inset-0 z-10">
+            <div className="fixed inset-0 bg-gray-500 opacity-60" />
+
+            <div className="fixed end-5 bottom-0 p-10 z-20">
+              <div className="relative max-w-4xl rounded-lg bg-gray-100 p-6 shadow-sm">
+                <button
+                  type="button"
+                  className="group absolute -end-1 hover:-end-2 -top-1 hover:-top-2 rounded-full border border-gray-200 bg-gray-200 p-1 text-gray-400"
+                  onClick={() => setShowModal(false)}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="size-4 group-hover:size-6 text-black"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </button>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2">
+                  <main className=" place-content-center ">
+                    <div className="relative  overflow-hidden rounded-md bg-gray-100">
+                      <div className="absolute right-12 top-5 z-10 rounded-full bg-gray-600 px-2 text-center text-sm text-white">
+                        <span>{currentIndex}</span>/<span>{images.length}</span>
                       </div>
+
+                      <button
+                        onClick={previous}
+                        className="absolute left-2 top-1/2 z-10 flex size-7 -translate-y-1/2 items-center justify-center rounded-full bg-gray-100 shadow-md"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth="1.5"
+                          stroke="currentColor"
+                          className="size-5 text-2xl font-bold text-gray-500"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M15.75 19.5 8.25 12l7.5-7.5"
+                          />
+                        </svg>
+                      </button>
+
+                      <button
+                        onClick={forward}
+                        className="absolute right-12 top-1/2 z-10 flex size-7 -translate-y-1/2 items-center justify-center rounded-full bg-gray-100 shadow-md"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth="1.5"
+                          stroke="currentColor"
+                          className="size-5 text-2xl font-bold text-gray-500"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                          />
+                        </svg>
+                      </button>
+
+                      <div className="relative h-60 w-96">
+                        {images.map((image, index) => (
+                          <div
+                            key={index}
+                            className={`absolute top-0 transition-opacity duration-300 ${
+                              currentIndex === index + 1
+                                ? "opacity-100"
+                                : "opacity-0"
+                            }`}
+                          >
+                            <img
+                              src={image}
+                              alt={`Slide ${index + 1}`}
+                              className="rounded-sm"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </main>
+                  {/* <img
+                    alt=""
+                    src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                    className="h-full w-full rounded-xl object-cover"
+                  /> */}
+
+                  <div>
+                    <h2 className="text-lg font-medium">
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    </h2>
+
+                    <p className="mt-4 text-sm text-gray-500">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Voluptates, eos. Inventore dolor delectus commodi
+                      laudantium adipisci, illum amet itaque optio!
+                    </p>
+
+                    <div className="mt-6 sm:text-right">
+                      <a
+                        href="#"
+                        className="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
+                      >
+                        Find out more
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -146,67 +214,7 @@ function Footer() {
             </div>
           </div>
         )}
-      </div>
-
-      {/* testing Modal component */}
-      {/* new */}
-      <div className="fixed  end-5 bottom-0 p-4">
-        <div className="relative max-w-4xl rounded-lg bg-gray-100 p-6 shadow-sm">
-          <div className="fixed z-10 inset-0 overflow-y-auto">
-            <div className="absolute inset-0 bg-gray-500 opacity-75" />
-          </div>
-          <div className="z-50  overflow-y-auto" >
-            <button
-              type="button"
-              className="absolute -end-1 -top-1 rounded-full border border-gray-200 bg-white p-1 text-gray-400"
-            >
-              <span className="sr-only">Close</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-3 w-3"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </button>
-
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <img
-                alt=""
-                src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                className="h-full w-full rounded-xl object-cover"
-              />
-
-              <div>
-                <h2 className="text-lg font-medium">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                </h2>
-
-                <p className="mt-4 text-sm text-gray-500">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Voluptates, eos. Inventore dolor delectus commodi laudantium
-                  adipisci, illum amet itaque optio!
-                </p>
-
-                <div className="mt-6 sm:text-right">
-                  <a
-                    href="#"
-                    className="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
-                  >
-                    Find out more
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* end new */}
+      </div>{" "}
       {/* Modal component end */}
     </footer>
   );
