@@ -2,6 +2,24 @@ import React, { useState } from "react";
 
 function Footer() {
   const [showModal, setShowModal] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(1);
+  const images = [
+    "https://unsplash.it/640/425?image=30",
+    "https://unsplash.it/640/425?image=40",
+    "https://unsplash.it/640/425?image=50",
+  ];
+
+  const previous = () => {
+    if (currentIndex > 1) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
+
+  const forward = () => {
+    if (currentIndex < images.length) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
 
   return (
     <footer className="py-2 items-end bottom-0  text-blue-gray-600 mt-5">
@@ -131,76 +149,64 @@ function Footer() {
       </div>
 
       {/* testing Modal component */}
-      <div className="flex items-center justify-center ">
-        <div className="">
-          {/* Background overlay */}
+      {/* new */}
+      <div className="fixed  end-5 bottom-0 p-4">
+        <div className="relative max-w-4xl rounded-lg bg-gray-100 p-6 shadow-sm">
           <div className="fixed z-10 inset-0 overflow-y-auto">
-            <div className="absolute inset-0 bg-gray-500 opacity-95" />
+            <div className="absolute inset-0 bg-gray-500 opacity-75" />
           </div>
-          {/* Modal */}
-          <div className="fixed z-20 inset-0 overflow-y-auto ">
-            <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0 ">
-              <div className="w-full inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full">
-                {/*  */}
-                <div>
-                  <div className="bg-gray-100 lg:py-12 lg:flex lg:justify-center">
-                    <button className="absolute  top-3 hover:top-2 right-3 hover:right-2 bg-gray-300 rounded-full">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="size-6 p-1 hover:size-8"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M6 18 18 6M6 6l12 12"
-                        />
-                      </svg>
-                    </button>
-                    <div className="bg-white lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
-                      <div className="lg:w-1/2">
-                        <div
-                          className=" bg-cover lg:rounded-lg lg:h-full"
-                          style={{
-                            backgroundImage:
-                              'url("https://images.unsplash.com/photo-1497493292307-31c376b6e479?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80")',
-                          }}
-                        />
-                      </div>
-                      <div className="py-12 px-6 max-w-xl lg:max-w-5xl lg:w-1/2">
-                        <h2 className="text-3xl text-gray-800 font-bold">
-                          Build Your New{" "}
-                          <span className="text-indigo-600">Idea</span>
-                        </h2>
-                        <p className="mt-4 text-gray-600">
-                          Lorem, ipsum dolor sit amet consectetur adipisicing
-                          elit. Quidem modi reprehenderit vitae exercitationem
-                          aliquid dolores ullam temporibus enim expedita aperiam
-                          mollitia iure consectetur dicta tenetur, porro
-                          consequuntur saepe accusantium consequatur.
-                        </p>
-                        <div className="mt-8">
-                          <a
-                            href="#"
-                            className="bg-gray-900 text-gray-100 px-5 py-3 font-semibold rounded"
-                          >
-                            Start Now
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+          <div className="z-50  overflow-y-auto" >
+            <button
+              type="button"
+              className="absolute -end-1 -top-1 rounded-full border border-gray-200 bg-white p-1 text-gray-400"
+            >
+              <span className="sr-only">Close</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-3 w-3"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </button>
+
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <img
+                alt=""
+                src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                className="h-full w-full rounded-xl object-cover"
+              />
+
+              <div>
+                <h2 className="text-lg font-medium">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                </h2>
+
+                <p className="mt-4 text-sm text-gray-500">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptates, eos. Inventore dolor delectus commodi laudantium
+                  adipisci, illum amet itaque optio!
+                </p>
+
+                <div className="mt-6 sm:text-right">
+                  <a
+                    href="#"
+                    className="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
+                  >
+                    Find out more
+                  </a>
                 </div>
-                {/*  */}
               </div>
             </div>
           </div>
         </div>
       </div>
-
+      {/* end new */}
       {/* Modal component end */}
     </footer>
   );
