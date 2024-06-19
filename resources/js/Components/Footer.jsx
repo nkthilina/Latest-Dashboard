@@ -138,54 +138,29 @@ function Footer() {
             <div className="absolute inset-0 bg-gray-500 opacity-95" />
           </div>
           {/* Modal */}
-          <div className="fixed z-10 inset-0 overflow-y-auto ">
+          <div className="fixed z-20 inset-0 overflow-y-auto ">
             <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0 ">
-              <div className="w-full inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-                <div className="flex bg-gray-50 px-4 pt-5 pb-4 sm:p-6 sm:pb-4 ">
-                  <div className="sm:flex sm:items-start">
-                    <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left sm:flex-row-reverse">
-                      {/* <button className="absolute top-1 right-0 pt-4 pr-4">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke-width="1.5"
-                          stroke="currentColor"
-                          class="size-6"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M6 18 18 6M6 6l12 12"
-                          />
-                        </svg>
-                      </button> */}
-                    </div>
-                  </div>
-                </div>
+              <div className="w-full inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full">
                 {/*  */}
                 <div>
                   <div className="bg-gray-100 lg:py-12 lg:flex lg:justify-center">
-                  <button className="absolute  top-14 right-2  pr-4">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke-width="1.5"
-                          stroke="currentColor"
-                          class="size-6"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M6 18 18 6M6 6l12 12"
-                          />
-                        </svg>
-                      </button>
-
+                    <button className="absolute  top-3 hover:top-2 right-3 hover:right-2 bg-gray-300 rounded-full">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="size-6 p-1 hover:size-8"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M6 18 18 6M6 6l12 12"
+                        />
+                      </svg>
+                    </button>
                     <div className="bg-white lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
-
-
                       <div className="lg:w-1/2">
                         <div
                           className=" bg-cover lg:rounded-lg lg:h-full"
