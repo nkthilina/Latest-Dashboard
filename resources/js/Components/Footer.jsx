@@ -65,19 +65,7 @@ function Footer() {
               GitHub
             </a>
           </li>
-          {/* <li>
-            <a
-              href="https://www.creative-tim.com/blog"
-              target="_blank"
-              className="block antialiased font-sans text-sm leading-normal py-0.5 px-1 font-normal text-inherit transition-colors hover:text-blue-500"
-            >
-              About us
-            </a>
-          </li> */}
-
-          {/* testing */}
           <li>
-            {/* Button to open the modal */}
             <button
               onClick={() => setShowModal(true)}
               type="button"
@@ -86,7 +74,6 @@ function Footer() {
               About us
             </button>
           </li>
-          {/* end testing */}
         </ul>
       </div>
       {/* testing Modal component */}
@@ -99,12 +86,12 @@ function Footer() {
               <div className="relative max-w-4xl rounded-lg bg-gray-100 p-6 shadow-sm">
                 <button
                   type="button"
-                  className="group absolute -end-1 hover:-end-2 -top-1 hover:-top-2 rounded-full border border-gray-200 bg-gray-200 p-1 text-gray-400"
+                  className="group absolute -end-3 hover:-end-4 -top-3 hover:-top-4 rounded-full border border-gray-200 bg-gray-200 p-1 text-gray-400 "
                   onClick={() => setShowModal(false)}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="size-4 group-hover:size-6 text-black"
+                    className="size-4 group-hover:size-6 text-black "
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
@@ -116,91 +103,108 @@ function Footer() {
                   </svg>
                 </button>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2">
-                  <main className=" place-content-center ">
-                    <div className="relative  overflow-hidden rounded-md bg-gray-100">
-                      <div className="absolute right-12 top-5 z-10 rounded-full bg-gray-600 px-2 text-center text-sm text-white">
-                        <span>{currentIndex}</span>/<span>{images.length}</span>
-                      </div>
-
-                      <button
-                        onClick={previous}
-                        className="absolute left-2 top-1/2 z-10 flex size-7 -translate-y-1/2 items-center justify-center rounded-full bg-gray-100 shadow-md"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth="1.5"
-                          stroke="currentColor"
-                          className="size-5 text-2xl font-bold text-gray-500"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M15.75 19.5 8.25 12l7.5-7.5"
-                          />
-                        </svg>
-                      </button>
-
-                      <button
-                        onClick={forward}
-                        className="absolute right-12 top-1/2 z-10 flex size-7 -translate-y-1/2 items-center justify-center rounded-full bg-gray-100 shadow-md"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth="1.5"
-                          stroke="currentColor"
-                          className="size-5 text-2xl font-bold text-gray-500"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="m8.25 4.5 7.5 7.5-7.5 7.5"
-                          />
-                        </svg>
-                      </button>
-
-                      <div className="relative h-60 w-96">
-                        {images.map((image, index) => (
-                          <div
-                            key={index}
-                            className={`absolute top-0 transition-opacity duration-300 ${
-                              currentIndex === index + 1
-                                ? "opacity-100"
-                                : "opacity-0"
-                            }`}
-                          >
-                            <img
-                              src={image}
-                              alt={`Slide ${index + 1}`}
-                              className="rounded-sm"
-                            />
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <div className="grid grid-rows-3 grid-flow-col ">
+                    <div className=" row-span-2">
+                      {/* ++++++++++++ */}
+                      <div className=" bg-gray-100  flex flex-col justify-center pt-5">
+                        <div className="relative  sm:max-w-xl sm:mx-auto">
+                          <div className="absolute inset-0 bg-gradient-to-r from-blue-300 to-blue-600 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
+                          <div className="relative  bg-white shadow-lg sm:rounded-3xl ">
+                            <div className="max-w-md mx-auto">
+                              <img
+                                alt=""
+                                src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                                className="h-full w-full rounded-3xl object-cover"
+                              />
+                            </div>
                           </div>
-                        ))}
+                        </div>
                       </div>
+                      {/* ++++++++++++ */}
                     </div>
-                  </main>
-                  {/* <img
-                    alt=""
-                    src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                    className="h-full w-full rounded-xl object-cover"
-                  /> */}
-
+                    <p className="mt-10 text-sm text-gray-500">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                  </div>
                   <div>
                     <h2 className="text-lg font-medium">
                       Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                     </h2>
+                    <main className=" place-content-center ">
+                      <div className="relative  overflow-hidden rounded-xl bg-gray-100">
+                        <div className="absolute right-12 top-5 z-10 rounded-full bg-gray-600 px-2 text-center text-sm text-white">
+                          <span>{currentIndex}</span>/
+                          <span>{images.length}</span>
+                        </div>
 
+                        <button
+                          onClick={previous}
+                          className="group absolute left-4 top-1/2 z-10 flex size-7 -translate-y-1/2 items-center justify-center rounded-full bg-gray-100 shadow-md hover:bg-gray-300"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth="1.5"
+                            stroke="currentColor"
+                            className="size-5 text-2xl font-bold  text-gray-500 group-hover:text-black "
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M15.75 19.5 8.25 12l7.5-7.5"
+                            />
+                          </svg>
+                        </button>
+
+                        <button
+                          onClick={forward}
+                          className="group absolute right-4 top-1/2 z-10 flex size-7 -translate-y-1/2 items-center justify-center rounded-full bg-gray-100 shadow-md hover:bg-gray-300"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth="1.5"
+                            stroke="currentColor"
+                            className="size-5 text-2xl font-bold  text-gray-500 group-hover:text-black "
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                            />
+                          </svg>
+                        </button>
+
+                        <div className="relative h-60 w-full">
+                          {images.map((image, index) => (
+                            <div
+                              key={index}
+                              className={`absolute top-0 transition-opacity duration-300 ${
+                                currentIndex === index + 1
+                                  ? "opacity-100"
+                                  : "opacity-0"
+                              }`}
+                            >
+                              <img
+                                src={image}
+                                alt={`Slide ${index + 1}`}
+                                className="rounded-sm"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </main>
                     <p className="mt-4 text-sm text-gray-500">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Voluptates, eos. Inventore dolor delectus commodi
                       laudantium adipisci, illum amet itaque optio!
                     </p>
 
-                    <div className="mt-6 sm:text-right">
+                    <div className="mt-2 sm:text-right">
                       <a
                         href="#"
                         className="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
