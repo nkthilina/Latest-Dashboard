@@ -14,28 +14,57 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // User::factory()->create([
+        //     'name' => 'Test Admin',
+        //     'email' => 'admin@example.com',
+        //     'password' => bcrypt('password@123'),
+        //     'email_verified_at' => time(),
+        // ]);
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-            'role' => 'user',
-            'password' => bcrypt('password@123'),
-            'email_verified_at' => time(),
-        ]);
+        // User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'user@example.com',
+        //     'password' => bcrypt('password@123'),
+        //     'email_verified_at' => time(),
+        // ]);
 
-        User::factory()->create([
-            'name' => 'Test Admin',
-            'email' => 'admin@example.com',
-            'role' => 'admin',
-            'password' => bcrypt('password@123'),
-            'email_verified_at' => time(),
-        ]);
+        // User::factory()->create([
+        //     'name' => 'Test Super Admin',
+        //     'email' => 'superadmin@example.com',
+        //     'password' => bcrypt('password@123'),
+        //     'email_verified_at' => time(),
+        // ]);
 
-        User::factory()->count(5)->create();
+        $users = [
+            [
+                'name' => 'Test Super Admin',
+                'email' => 'superadmin@example.com',
+                'password' => bcrypt('password@123'),
+                'email_verified_at' => now(),
+            ],
+            [
+                'name' => 'Test Admin',
+                'email' => 'admin@example.com',
+                'password' => bcrypt('password@123'),
+                'email_verified_at' => now(),
+            ],
+            [
+                'name' => 'Test User',
+                'email' => 'user@example.com',
+                'password' => bcrypt('password@123'),
+                'email_verified_at' => now(),
+            ],
+        ];
 
-        Project::factory()
-            ->count(15)
-            ->hasTasks(6)
-            ->create();
+        foreach ($users as $user) {
+            User::factory()->create($user);
+        }
+
+        // User::factory()->count(5)->create();
+
+        // Project::factory()
+        //     ->count(15)
+        //     ->hasTasks(6)
+        //     ->create();
     }
 }

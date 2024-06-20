@@ -37,13 +37,13 @@ function Footer() {
             <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
           </svg>{" "}
           by{" "}
-          <a
-            href="https://www.creative-tim.com"
-            target="_blank"
+          <button
+            onClick={() => setShowModal(true)}
+            type="button"
             className="transition-colors hover:text-blue-500 font-bold"
           >
             Thilina Madhusanka
-          </a>{" "}
+          </button>{" "}
           for a better web.{" "}
         </p>
         <ul className="flex items-center gap-4">
@@ -123,24 +123,26 @@ function Footer() {
                       </div>
                       {/* ++++++++++++ */}
                     </div>
-                    <div>
-                    <p className="mt-10 text-md text-gray-600">
-                      Software Engineer
-                    </p>
-                    <span className="text-md text-gray-600">Graduate in Computer Science & Statistics</span>
+                    <div className="flex flex-col justify-center items-center">
+                      <p className="mt-10 text-md text-gray-600">
+                        Software Engineer
+                      </p>
+                      <span className="text-md text-gray-600">
+                        Graduate in Computer Science & Statistics
+                      </span>
                     </div>
 
                     <span></span>
                   </div>
                   <div>
                     <h2 className="mb-4 text-2xl font-bold text-gray-700">
-                        Build Your New{" "}
-                        <span className="text-indigo-600">Idea.</span>
-                      </h2>
+                      Build Your New{" "}
+                      <span className="text-indigo-600">Idea.</span>
+                    </h2>
 
                     <main className=" place-content-center ">
                       <div className="relative  overflow-hidden rounded-xl bg-gray-100">
-                        <div className="absolute right-12 top-5 z-10 rounded-full bg-gray-600 px-2 text-center text-sm text-white">
+                        <div className="absolute right-4 top-5 z-10 rounded-full bg-gray-600 px-2 text-center text-sm text-white">
                           <span>{currentIndex}</span>/
                           <span>{images.length}</span>
                         </div>

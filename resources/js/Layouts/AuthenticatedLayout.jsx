@@ -101,7 +101,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
                 <Link
                   href={route("project.index")}
                   active={route().current("project.index")}
-                  className="block antialiased font-sans  leading-relaxed text-inherit capitalize"
+                  className="block antialiased font-sans  leading-relaxed text-inherit capitalize {{(request()->routeIsActive('project.index')) ? 'bg-blue-800' : ''}}"
                 >
                   <button
                     className="middle none font-sans  center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-base py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
