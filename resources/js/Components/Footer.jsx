@@ -103,7 +103,7 @@ function Footer() {
                   </svg>
                 </button>
 
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div className="grid grid-cols-1  sm:grid-cols-2">
                   <div className="grid grid-rows-3 grid-flow-col ">
                     <div className=" row-span-2">
                       {/* ++++++++++++ */}
@@ -115,7 +115,7 @@ function Footer() {
                               <img
                                 alt=""
                                 src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                                className="h-full w-full rounded-3xl object-cover"
+                                className="h-80 w-60 rounded-3xl object-cover"
                               />
                             </div>
                           </div>
@@ -123,14 +123,21 @@ function Footer() {
                       </div>
                       {/* ++++++++++++ */}
                     </div>
-                    <p className="mt-10 text-sm text-gray-500">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    <div>
+                    <p className="mt-10 text-md text-gray-600">
+                      Software Engineer
                     </p>
+                    <span className="text-md text-gray-600">Graduate in Computer Science & Statistics</span>
+                    </div>
+
+                    <span></span>
                   </div>
                   <div>
-                    <h2 className="text-lg font-medium">
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    </h2>
+                    <h2 className="mb-4 text-2xl font-bold text-gray-700">
+                        Build Your New{" "}
+                        <span className="text-indigo-600">Idea.</span>
+                      </h2>
+
                     <main className=" place-content-center ">
                       <div className="relative  overflow-hidden rounded-xl bg-gray-100">
                         <div className="absolute right-12 top-5 z-10 rounded-full bg-gray-600 px-2 text-center text-sm text-white">
