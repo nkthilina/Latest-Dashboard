@@ -5,9 +5,14 @@ function Footer() {
   const [currentIndex, setCurrentIndex] = useState(1);
 
   const images = [
-    "https://unsplash.it/640/425?image=30",
-    "https://unsplash.it/640/425?image=40",
-    "https://unsplash.it/640/425?image=50",
+    "/storage/Login.png",
+    "/storage/contact.png",
+    "/storage/dashboard.png",
+    "/storage/restaurant.png",
+
+    // "https://unsplash.it/640/425?image=30",
+    // "https://unsplash.it/640/425?image=40",
+    // "https://unsplash.it/640/425?image=50",
   ];
 
   const previous = () => {
@@ -200,7 +205,7 @@ function Footer() {
                               <img
                                 src={image}
                                 alt={`Slide ${index + 1}`}
-                                className="rounded-sm"
+                                className="rounded-sm h-full w-full object-cover object-center sm:h-60 "
                               />
                             </div>
                           ))}
