@@ -125,18 +125,27 @@ function Footer() {
                       {/* ++++++++++++ */}
                     </div>
                     <div className="flex flex-col justify-center items-center">
-                      <p className="mt-10 text-md text-gray-600">
+                      <p className="mt-10 text-md text-neutral-600">
                         Software Engineer
                       </p>
-                      <span className="text-md text-gray-600">
-                        Graduate in Computer Science & Statistics
+                      <span className="text-md text-neutral-600">
+                        Graduate in Computer Science, Statistics & Mathematics
+                      </span>
+                      <span className="text-md text-neutral-600">
+                        Front-end Web Development
+                      </span>
+                      <span className="text-md text-neutral-600">
+                        Back-end Web Development
+                      </span>
+                      <span className="text-md text-neutral-600">
+                        Full Stack Web Development
                       </span>
                     </div>
 
                     <span></span>
                   </div>
                   <div>
-                    <h2 className="mb-4 text-2xl font-bold text-gray-700">
+                    <h2 className="mb-8 text-2xl font-bold text-gray-700">
                       Build Your New{" "}
                       <span className="text-indigo-600">Idea.</span>
                     </h2>
@@ -208,7 +217,7 @@ function Footer() {
                         </div>
                       </div>
                     </main>
-                    <p className="mt-4 text-sm text-gray-500">
+                    <p className="mt-8 text-sm text-gray-500">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Voluptates, eos. Inventore dolor delectus commodi
                       laudantium adipisci, illum amet itaque optio!
