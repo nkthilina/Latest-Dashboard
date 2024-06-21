@@ -9,10 +9,6 @@ function Footer() {
     "/storage/contact.png",
     "/storage/dashboard.png",
     "/storage/restaurant.png",
-
-    // "https://unsplash.it/640/425?image=30",
-    // "https://unsplash.it/640/425?image=40",
-    // "https://unsplash.it/640/425?image=50",
   ];
 
   const previous = () => {
