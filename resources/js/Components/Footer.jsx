@@ -3,6 +3,7 @@ import React, { useState } from "react";
 function Footer() {
   const [showModal, setShowModal] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(1);
+  const myImage = "/storage/MyImage.png";
 
   const images = [
     "/storage/Login.png",
@@ -77,12 +78,11 @@ function Footer() {
           </li>
         </ul>
       </div>
-      {/* testing Modal component */}
+      {/* Modal component */}
       <div>
         {showModal && (
           <div className="fixed inset-0 z-10">
             <div className="fixed inset-0 bg-gray-500 opacity-60" />
-
             <div className="fixed end-5 bottom-0 p-10 z-20">
               <div className="relative max-w-4xl rounded-lg bg-gray-100 p-6 shadow-sm">
                 <button
@@ -103,11 +103,9 @@ function Footer() {
                     />
                   </svg>
                 </button>
-
                 <div className="grid grid-cols-1  sm:grid-cols-2">
                   <div className="grid grid-rows-3 grid-flow-col ">
                     <div className=" row-span-2">
-                      {/* ++++++++++++ */}
                       <div className=" bg-gray-100  flex flex-col justify-center pt-5">
                         <div className="relative  sm:max-w-xl sm:mx-auto">
                           <div className="absolute inset-0 bg-gradient-to-r from-blue-300 to-blue-600 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
@@ -115,14 +113,14 @@ function Footer() {
                             <div className="max-w-md mx-auto">
                               <img
                                 alt=""
-                                src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                                src={myImage}
+                                // src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
                                 className="h-80 w-60 rounded-3xl object-cover"
                               />
                             </div>
                           </div>
                         </div>
                       </div>
-                      {/* ++++++++++++ */}
                     </div>
                     <div className="flex flex-col justify-center items-center">
                       <p className="mt-10 text-md text-neutral-600">
@@ -141,7 +139,6 @@ function Footer() {
                         Full Stack Web Development
                       </span>
                     </div>
-
                     <span></span>
                   </div>
                   <div>
@@ -149,8 +146,7 @@ function Footer() {
                       Build Your New{" "}
                       <span className="text-indigo-600">Idea.</span>
                     </h2>
-
-                    <main className=" place-content-center ">
+                    <div className=" place-content-center ">
                       <div className="relative  overflow-hidden rounded-xl bg-gray-100">
                         <div className="absolute right-4 top-5 z-10 rounded-full bg-gray-600 px-2 text-center text-sm text-white">
                           <span>{currentIndex}</span>/
@@ -176,7 +172,6 @@ function Footer() {
                             />
                           </svg>
                         </button>
-
                         <button
                           onClick={forward}
                           className="group absolute right-4 top-1/2 z-10 flex size-7 -translate-y-1/2 items-center justify-center rounded-full bg-gray-100 shadow-md hover:bg-gray-300"
@@ -196,7 +191,6 @@ function Footer() {
                             />
                           </svg>
                         </button>
-
                         <div className="relative h-60 w-full">
                           {images.map((image, index) => (
                             <div
@@ -216,13 +210,11 @@ function Footer() {
                           ))}
                         </div>
                       </div>
-                    </main>
-                    <p className="mt-8 text-sm text-gray-500">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Voluptates, eos. Inventore dolor delectus commodi
-                      laudantium adipisci, illum amet itaque optio!
+                    </div>
+                    <p className="mt-8 text-sm text-gray-500 px-2">
+                    Join me for top-notch web development services! <br />
+                    As a skilled Software Engineer, I offer expertise in Front-end, Back-end, and Full Stack Web Development to bring your projects to life with efficiency and innovation.
                     </p>
-
                     <div className="mt-2 sm:text-right">
                       <a
                         href="#"
@@ -237,7 +229,7 @@ function Footer() {
             </div>
           </div>
         )}
-      </div>{" "}
+      </div>
       {/* Modal component end */}
     </footer>
   );
