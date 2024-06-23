@@ -41,11 +41,6 @@ function Edit({ auth, user }) {
               <div className="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg min-w-full divide-y divide-gray-200 dark:bg-gray-800">
                 <form onSubmit={onSubmit} className="flex flex-col gap-4 p-4 ">
                   {/* <pre>{JSON.stringify(user, undefined, 2)}</pre> */}
-                  {/* {user.image_path && (
-                    <div className="flex justify-center">
-                      <img src={user.image_path} alt="" className="w-48 h-48" />
-                    </div>
-                  )} */}
                   <div className="flex justify-center">
                     <img
                       src={user.image_path ? user.image_path : defaultImagePath}
