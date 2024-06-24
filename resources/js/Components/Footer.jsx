@@ -114,7 +114,7 @@ function Footer() {
                               <img
                                 alt=""
                                 src={myImage}
-                                className="h-80 w-60 rounded-3xl object-cover"
+                                className="h-80 w-60 rounded-3xl object-none"
                               />
                             </div>
                           </div>
@@ -211,12 +211,25 @@ function Footer() {
                       </div>
                     </div>
                     <p className="mt-8 text-sm text-gray-500 px-2">
-                    Join me for top-notch web development services! <br />
-                    As a skilled Software Engineer, I offer expertise in Front-end, Back-end, and Full Stack Web Development to bring your projects to life with efficiency and innovation.
+                      Join me for top-notch web development services! <br />
+                      As a skilled Software Engineer, I offer expertise in{" "}
+                      <span className="text-indigo-600 font-bold">
+                        Front-end
+                      </span>
+                      ,{" "}
+                      <span className="text-indigo-600 font-bold">
+                        Back-end
+                      </span>
+                      , and{" "}
+                      <span className="text-indigo-600 font-bold">
+                        Full Stack Web Development
+                      </span>{" "}
+                      to bring your projects to life with efficiency and
+                      innovation.
                     </p>
-                    <div className="mt-2 sm:text-right">
+                    <div className="mt-10 sm:text-right">
                       <a
-                        href="#"
+                        href="https://www.linkedin.com/in/thilina-madhusanka-9585a81a9/"
                         className="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
                       >
                         Find out more
