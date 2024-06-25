@@ -6,7 +6,7 @@ import NavLink from "@/Components/NavLink";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
 import { Link } from "@inertiajs/react";
 
-export default function AuthenticatedLayout({ user, header, children }) {
+export default function AuthenticatedLayout({ user, header, children, userRole }) {
   const [showingNavigationDropdown, setShowingNavigationDropdown] =
     useState(false);
 
@@ -234,7 +234,6 @@ export default function AuthenticatedLayout({ user, header, children }) {
                         d="M12 4.5v15m7.5-7.5h-15"
                       />
                     </svg>
-
                     <span className="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
                       Add projects
                     </span>

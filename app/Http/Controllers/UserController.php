@@ -19,6 +19,7 @@ class UserController extends Controller
      */
     public function index()
     {
+        $userRole = auth()->user()->role;
         $query = User::query();
         $sortField = request("sort_field", 'created_at');
         $sortDirection = request("sort_direction", "desc");
@@ -34,6 +35,7 @@ class UserController extends Controller
             'users' => UserCRUDResource::collection($users),
             'queryParams' => request()->query() ? : null,
             'success' => session('success'),
+            'userRole' => $userRole,
         ]);
     }
 
@@ -59,7 +61,7 @@ class UserController extends Controller
         if ($image) {
             $data['image_path'] = $image->store('user/'. Str::random(), 'public');
         }
-        
+
         $name = $data['name'];
         User::create($data);
         return to_route('user.index')->with('success', "User \"$name\" created successfully");
