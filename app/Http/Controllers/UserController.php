@@ -117,6 +117,7 @@ class UserController extends Controller
         if ($user->image_path) {
             Storage::disk('public')->deleteDirectory(dirname($user->image_path));
         }
-        return to_route('user.index')->with('success', "User \"$name\" deleted successfully");
+        return to_route('user.index');
+        // return to_route('user.index')->with('success', "User \"$name\" deleted successfully");
     }
 }
