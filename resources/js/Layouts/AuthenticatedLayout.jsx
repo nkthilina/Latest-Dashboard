@@ -1,12 +1,12 @@
 // import { useState } from "react";
 import React, { useState, useEffect, useRef } from "react";
-import ApplicationLogo from "@/Components/ApplicationLogo";
-import Dropdown from "@/Components/Dropdown";
-import NavLink from "@/Components/NavLink";
-import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
+// import ApplicationLogo from "@/Components/ApplicationLogo";
+// import Dropdown from "@/Components/Dropdown";
+// import NavLink from "@/Components/NavLink";
+// import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
 import { Link } from "@inertiajs/react";
 
-export default function AuthenticatedLayout({ user, header, children, userRole }) {
+export default function AuthenticatedLayout({ user, header, children }) {
   const [showingNavigationDropdown, setShowingNavigationDropdown] =
     useState(false);
 
@@ -270,7 +270,8 @@ export default function AuthenticatedLayout({ user, header, children, userRole }
               <li>
                 <Link href={route("user.create")} className="group">
                   <button
-                    className="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
+                    className=
+                      "middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                     type="button"
                   >
                     <svg
