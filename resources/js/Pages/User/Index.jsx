@@ -45,7 +45,7 @@ function Index({ auth, users, queryParams = null, success }) {
         onSuccess: () => {
           success = "User deleted successfully";
         },
-    });
+      });
     }
     return;
   };
@@ -54,7 +54,6 @@ function Index({ auth, users, queryParams = null, success }) {
     const timer = setTimeout(() => {
       setVisible(false);
     }, 4000);
-
     return () => clearTimeout(timer); // Cleanup the timer if the component unmounts
   }, []);
 
@@ -82,7 +81,7 @@ function Index({ auth, users, queryParams = null, success }) {
         </div>
       </div> */}
 
-      {/* { success && (<div className="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
+      {/* { success && (<div className="p-4 sm:p-8 bg-white dark:bg-green-800 shadow sm:rounded-lg">
         {success}
       </div>)} */}
 
@@ -285,7 +284,7 @@ function Index({ auth, users, queryParams = null, success }) {
                           <button
                             type="button"
                             onClick={(e) => deleteUser(users)}
-                            // onClick={() => destroy(users.id)}
+                            // onClick={() => deleteUser(users.id)}
                             className="text-gray-500 transition-colors duration-200 dark:hover:text-red-500 dark:text-red-400 hover:text-red-500 focus:outline-none"
                           >
                             Delete
