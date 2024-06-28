@@ -77,7 +77,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
                 <Link
                   href={route("dashboard")}
                   active={route().current("dashboard")}
-                  className="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs  rounded-lg bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85] w-full flex items-center gap-4  capitalize"
+                  className="group middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs  rounded-lg bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85] w-full flex items-center gap-4  capitalize"
                 >
                   <button
                     className="middle none font-sans  center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-base py-3 rounded-lg text-white w-full flex items-center gap-4 px-4 capitalize"
@@ -88,7 +88,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
                       viewBox="0 0 24 24"
                       fill="currentColor"
                       aria-hidden="true"
-                      className="w-5 h-5 text-inherit"
+                      className="size-5 group-hover:size-6 text-inherit"
                     >
                       <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
                       <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
@@ -101,10 +101,10 @@ export default function AuthenticatedLayout({ user, header, children }) {
                 <Link
                   href={route("project.index")}
                   active={route().current("project.index")}
-                  className="block antialiased font-sans  leading-relaxed text-inherit capitalize {{(request()->routeIsActive('project.index')) ? 'bg-blue-800' : ''}}"
+                  className="block antialiased font-sans  leading-relaxed text-inherit capitalize group"
                 >
                   <button
-                    className="middle none font-sans  center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-base py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
+                    className="middle none font-sans  center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-base py-3  rounded-lg text-white group-hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                     type="button"
                   >
                     <svg
@@ -113,7 +113,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
                       viewBox="0 0 24 24"
                       strokeWidth="1.5"
                       stroke="currentColor"
-                      className="w-5 h-5 text-inherit"
+                      className="size-5 group-hover:size-6 text-inherit hover:mr-0"
                     >
                       <path
                         strokeLinecap="round"
@@ -129,10 +129,10 @@ export default function AuthenticatedLayout({ user, header, children }) {
                 <Link
                   href={route("task.index")}
                   active={route().current("task.index")}
-                  className="block antialiased font-sans  leading-relaxed text-inherit capitalize"
+                  className="block antialiased font-sans  leading-relaxed text-inherit capitalize group"
                 >
                   <button
-                    className="middle none font-sans  center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-base py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
+                    className="middle none font-sans  center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-base py-3 rounded-lg text-white group-hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                     type="button"
                   >
                     <svg
@@ -140,7 +140,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
                       viewBox="0 0 24 24"
                       fill="currentColor"
                       aria-hidden="true"
-                      className="w-5 h-5 text-inherit"
+                      className="size-5 group-hover:size-6 text-inherit"
                     >
                       <path
                         fillRule="evenodd"
@@ -156,10 +156,10 @@ export default function AuthenticatedLayout({ user, header, children }) {
                 <Link
                   href={route("user.index")}
                   active={route().current("user.index")}
-                  className="block antialiased font-sans  leading-relaxed text-inherit capitalize"
+                  className="block antialiased font-sans  leading-relaxed text-inherit capitalize group"
                 >
                   <button
-                    className="middle none font-sans  center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-base py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
+                    className="middle none font-sans  center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-base py-3 rounded-lg text-white group-hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                     type="button"
                   >
                     <svg
@@ -167,7 +167,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
                       viewBox="0 0 24 24"
                       fill="currentColor"
                       aria-hidden="true"
-                      className="w-5 h-5 text-inherit"
+                      className="size-5 group-hover:size-6 text-inherit"
                     >
                       <path
                         fillRule="evenodd"
@@ -183,10 +183,10 @@ export default function AuthenticatedLayout({ user, header, children }) {
                 <Link
                   href={route("task.myTasks")}
                   active={route().current("task.myTasks")}
-                  className="block antialiased font-sans  leading-relaxed text-inherit capitalize"
+                  className="block antialiased font-sans  leading-relaxed text-inherit capitalize group"
                 >
                   <button
-                    className="middle none font-sans  center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-base py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
+                    className="middle none font-sans  center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-base py-3 rounded-lg text-white group-hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                     type="button"
                   >
                     <svg
@@ -195,7 +195,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
                       viewBox="0 0 24 24"
                       stroke-width="1.5"
                       stroke="currentColor"
-                      class="size-5 text-inherit"
+                      class="size-5 group-hover:size-6 text-inherit"
                     >
                       <path
                         stroke-linecap="round"

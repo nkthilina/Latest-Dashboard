@@ -46,11 +46,7 @@ function Index({ auth, projects, queryParams = null, success }) {
 
   const deleteProject = (project) => {
     if (window.confirm("Are you sure you want to delete this project?")) {
-      router.delete(route("project.destroy", project.id), {
-        onSuccess: () => {
-          success = "Project deleted successfully";
-        },
-      });
+      router.delete(route("project.destroy", project.id))
     }
     return;
   };
