@@ -54,7 +54,7 @@ function Index({ auth, projects, queryParams = null, success }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setVisible(false);
-    }, 3000);
+    }, 6000);
 
     return () => clearTimeout(timer); // Cleanup the timer if the component unmounts
   }, []);
@@ -263,9 +263,6 @@ function Index({ auth, projects, queryParams = null, success }) {
                           >
                             Actions
                           </th>
-                          {/* <th scope="col" className="relative py-3.5 px-4">
-                        <span className="sr-only">Actions</span>
-                      </th> */}
                         </tr>
                       </thead>
                       <tbody className=" divide-y  dark:divide-gray-700 dark:bg-gray-900 ">

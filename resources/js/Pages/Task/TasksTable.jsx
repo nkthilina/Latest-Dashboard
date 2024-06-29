@@ -64,7 +64,7 @@ function TasksTable({
 
   return (
     <div>
-      {/* alert */} 
+      {/* alert */}
       {success && (
         <div>
           <link
@@ -165,9 +165,6 @@ function TasksTable({
                       scope="col"
                       className="px-4 py-3.5 text-sm font-normal text-right rtl:text-right text-gray-500 dark:text-gray-400"
                     ></th>
-                    {/* <th scope="col" className="relative py-3.5 px-4">
-                        <span className="sr-only">Actions</span>
-                      </th> */}
                   </tr>
                 </thead>
                 <thead className="bg-gray-50 dark:bg-gray-800">
@@ -244,9 +241,6 @@ function TasksTable({
                     >
                       Actions
                     </th>
-                    {/* <th scope="col" className="relative py-3.5 px-4">
-                        <span className="sr-only">Actions</span>
-                      </th> */}
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
@@ -265,7 +259,7 @@ function TasksTable({
                         />
                       </td>
                       {!hideProjectColumn && (
-                        <td className=" py-3 text-sm   items-center px-3  gap-x-2 text-white hover:underline  font-normal cursor-pointer">
+                        <td className=" py-3 text-sm   items-center px-3  gap-x-2 text-white  font-normal">
                           {tasks.project.name}
                         </td>
                       )}
