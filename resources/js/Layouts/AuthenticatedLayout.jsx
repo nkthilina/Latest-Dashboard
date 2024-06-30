@@ -248,8 +248,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
               <li>
                 <Link href={route("user.create")} className="group">
                   <button
-                    className=
-                      "middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
+                    className="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                     type="button"
                   >
                     <svg
@@ -276,6 +275,8 @@ export default function AuthenticatedLayout({ user, header, children }) {
             </ul>
           </div>
         </aside>
+
+        {/* <!-- header --> */}
         <div className="p-4 xl:ml-80">
           {header && (
             <header>
@@ -355,28 +356,25 @@ export default function AuthenticatedLayout({ user, header, children }) {
                             aria-orientation="vertical"
                             aria-labelledby="dropdown-button"
                           >
-                            <a
+                            <Link
+                              href={route("profile.edit")}
                               className=" block rounded-md px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 active:bg-blue-100 cursor-pointer"
                               role="menuitem"
                               onClick={() =>
                                 console.log("Light theme selected")
                               }
                             >
-                              <Link href={route("profile.edit")}>Profile</Link>
-                            </a>
-                            <a
+                              Profile
+                            </Link>
+                            <Link
+                              method="post"
+                              href={route("logout")}
                               className=" block rounded-md px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 active:bg-blue-100 cursor-pointer"
                               role="menuitem"
                               onClick={() => console.log("Dark theme selected")}
                             >
-                              <Link
-                                method="post"
-                                href={route("logout")}
-                                as="button"
-                              >
-                                Log Out
-                              </Link>
-                            </a>
+                              Log Out
+                            </Link>
                           </div>
                         </div>
                       </div>

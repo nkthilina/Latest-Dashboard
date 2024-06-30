@@ -36,7 +36,7 @@ class ProjectController extends Controller
         // $projects = $query->paginate(10)->onEachSide(1);
         return Inertia::render('Project/Index', [
             'projects' => ProjectResource::collection($projects),
-            'queryParams' => request()->query() ? : null,
+            'queryParams' => request()->query() ?: null,
             'success' => session('success'),
         ]);
     }
@@ -62,12 +62,11 @@ class ProjectController extends Controller
         $data['updated_by'] = Auth::id();
         // dd($data);
         if ($image) {
-            $data['image_path'] = $image->store('project/'. Str::random(), 'public');
+            $data['image_path'] = $image->store('project/' . Str::random(), 'public');
             // $data['image'] = $image->store('uploads', 'public');
         }
         Project::create($data);
         return to_route('project.index')->with('success', 'Project created successfully');
-
     }
 
     /**
@@ -89,7 +88,7 @@ class ProjectController extends Controller
         return Inertia::render('Project/Show', [
             'project' => new ProjectResource($project),
             'tasks' => TaskResource::collection($tasks),
-            'queryParams' => request()->query() ? : null,
+            'queryParams' => request()->query() ?: null,
             'success' => session('success'),
         ]);
     }
@@ -117,7 +116,7 @@ class ProjectController extends Controller
             if ($project->image_path) {
                 Storage::disk('public')->deleteDirectory(dirname($project->image_path));
             }
-            $data['image_path'] = $image->store('project/'. Str::random(), 'public');
+            $data['image_path'] = $image->store('project/' . Str::random(), 'public');
         }
         $name = $project->name;
         $project->update($data);
@@ -136,4 +135,5 @@ class ProjectController extends Controller
         }
         return to_route('project.index')->with('success', "Project \"$name\" deleted successfully.");
     }
+
 }
