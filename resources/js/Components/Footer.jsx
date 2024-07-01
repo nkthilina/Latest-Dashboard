@@ -122,20 +122,26 @@ function Footer() {
                       </div>
                     </div>
                     <div className="flex flex-col justify-center items-center">
-                      <p className="mt-10 text-md text-neutral-600">
+                      <a
+                        href="https://www.linkedin.com/in/thilina-madhusanka-9585a81a9/"
+                        className="mt-5 capitalize underline subpixel-antialiased decoration-sky-400 decoration-solid hover:decoration-blue-500 text-xl cursor-pointer font-bold text-gray-700"
+                      >
+                        Thilina Madhusanka
+                      </a>
+                      <p className="mt-2 text-sm text-neutral-600">
                         Software Engineer
                       </p>
-                      <span className="text-md text-neutral-600">
+                      <span className="text-sm text-neutral-600">
                         Graduate in Computer Science, Statistics & Mathematics
                       </span>
-                      <span className="text-md text-neutral-600">
-                        Front-end Web Development
+                      <span className="text-sm text-neutral-600">
+                        Front-end Web Developer
                       </span>
-                      <span className="text-md text-neutral-600">
-                        Back-end Web Development
+                      <span className="text-sm text-neutral-600">
+                        Back-end Web Developer
                       </span>
-                      <span className="text-md text-neutral-600">
-                        Full Stack Web Development
+                      <span className="text-sm text-neutral-600">
+                        Full Stack Web Developer
                       </span>
                     </div>
                     <span></span>
@@ -230,7 +236,7 @@ function Footer() {
                     <div className="mt-10 sm:text-right">
                       <a
                         href="https://www.linkedin.com/in/thilina-madhusanka-9585a81a9/"
-                        className="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
+                        className="inline-block rounded-lg bg-blue-500 hover:bg-blue-600 px-5 py-3 text-sm font-medium text-white"
                       >
                         Find out more
                       </a>
