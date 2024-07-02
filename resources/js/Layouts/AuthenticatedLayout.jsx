@@ -308,8 +308,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
                   </div>
 
                   <div className="flex items-center mr-5">
-                    <div className="mr-auto md:mr-4 md:w-56"></div>
-                    <div className="bg-gray-100 ml-4 flex items-center justify-center">
+                    <div className="bg-gray-100 flex items-center justify-center">
                       <div className="relative inline-block text-left">
                         <button
                           ref={dropdownButtonRef}

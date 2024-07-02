@@ -41,9 +41,14 @@ function Index({ auth, users, queryParams = null, success }) {
 
   const deleteUser = (user) => {
     if (window.confirm("Are you sure you want to delete this user?")) {
-      router.delete(route("user.destroy", user.id), {
+      router.delete(route("user.destroy", user.id),
+      {
         onSuccess: () => {
-          success = "User deleted successfully";
+          setVisible(true);
+          const timer = setTimeout(() => {
+            setVisible(false);
+          }, 3000);
+          return () => clearTimeout(timer); // Cleanup the timer if the component unmounts
         },
       });
     }
@@ -53,7 +58,7 @@ function Index({ auth, users, queryParams = null, success }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setVisible(false);
-    }, 4000);
+    }, 3000);
     return () => clearTimeout(timer); // Cleanup the timer if the component unmounts
   }, []);
 

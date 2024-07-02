@@ -45,9 +45,14 @@ function TasksTable({
 
   const deleteTask = (task) => {
     if (window.confirm("Are you sure you want to delete this task?")) {
-      router.delete(route("task.destroy", task.id), {
+      router.delete(route("task.destroy", task.id),
+      {
         onSuccess: () => {
-          success = "Task deleted successfully";
+          setVisible(true);
+          const timer = setTimeout(() => {
+            setVisible(false);
+          }, 3000);
+          return () => clearTimeout(timer); // Cleanup the timer if the component unmounts
         },
       });
     }

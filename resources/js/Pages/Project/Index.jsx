@@ -46,7 +46,16 @@ function Index({ auth, projects, queryParams = null, success }) {
 
   const deleteProject = (project) => {
     if (window.confirm("Are you sure you want to delete this project?")) {
-      router.delete(route("project.destroy", project.id))
+      router.delete(route("project.destroy", project.id),
+        {
+          onSuccess: () => {
+            setVisible(true);
+            const timer = setTimeout(() => {
+              setVisible(false);
+            }, 3000);
+            return () => clearTimeout(timer); // Cleanup the timer if the component unmounts
+          },
+        })
     }
     return;
   };
@@ -54,7 +63,7 @@ function Index({ auth, projects, queryParams = null, success }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setVisible(false);
-    }, 6000);
+    }, 3000);
 
     return () => clearTimeout(timer); // Cleanup the timer if the component unmounts
   }, []);
