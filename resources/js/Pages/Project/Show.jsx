@@ -51,7 +51,7 @@ function Show({ auth, success, project, tasks, queryParams = null }) {
                       >
                         Project Name
                       </label>
-                      <p className=" block text-md font-medium text-gray-700 dark:text-gray-300">
+                      <p className=" block text-md font-medium text-gray-700 dark:text-gray-300 capitalize">
                         {project.name}
                       </p>
                     </div>
@@ -80,7 +80,7 @@ function Show({ auth, success, project, tasks, queryParams = null }) {
                       >
                         Created By
                       </label>
-                      <p className=" block text-md font-medium text-gray-700 dark:text-gray-300">
+                      <p className=" block text-md font-medium text-gray-700 dark:text-gray-300 capitalize">
                         {project.createdBy.name}
                       </p>
                     </div>
@@ -115,7 +115,7 @@ function Show({ auth, success, project, tasks, queryParams = null }) {
                       >
                         Updated By
                       </label>
-                      <p className=" block text-md font-medium text-gray-700 dark:text-gray-300">
+                      <p className=" block text-md font-medium text-gray-700 dark:text-gray-300 capitalize">
                         {project.updatedBy.name}
                       </p>
                     </div>

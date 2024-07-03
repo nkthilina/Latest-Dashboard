@@ -53,7 +53,7 @@ function Show({ auth, task }) {
                       >
                         Task Name
                       </label>
-                      <p className=" block text-md font-medium text-gray-700 dark:text-gray-300">
+                      <p className=" block text-md font-medium text-gray-700 dark:text-gray-300 capitalize">
                         {task.name}
                       </p>
                     </div>
@@ -100,7 +100,7 @@ function Show({ auth, task }) {
                       >
                         Created By
                       </label>
-                      <p className=" block text-md font-medium text-gray-700 dark:text-gray-300">
+                      <p className=" block text-md font-medium text-gray-700 dark:text-gray-300 capitalize">
                         {task.createdBy.name}
                       </p>
                     </div>
@@ -130,7 +130,7 @@ function Show({ auth, task }) {
                     </div>
                     <div className="">
                       <label
-                        className=" block text-md font-medium text-gray-700 dark:text-gray-300"
+                        className=" block text-md font-medium text-gray-700 dark:text-gray-300 capitalize"
                         htmlFor="name"
                       >
                         Updated By
@@ -146,7 +146,7 @@ function Show({ auth, task }) {
                       >
                         Project
                       </label>
-                      <p className=" block text-md font-medium text-gray-700 dark:text-gray-300 hover:underline">
+                      <p className=" block text-md font-medium text-gray-700 dark:text-gray-300 hover:underline capitalize">
                         <Link href={route("project.show", task.project.id)}>
                           {task.project.name}
                         </Link>
@@ -159,7 +159,7 @@ function Show({ auth, task }) {
                       >
                         Assigned User
                       </label>
-                      <p className=" block text-md font-medium text-gray-700 dark:text-gray-300">
+                      <p className=" block text-md font-medium text-gray-700 dark:text-gray-300 capitalize">
                         {task.assignedUser.name}
                       </p>
                     </div>

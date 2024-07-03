@@ -220,7 +220,7 @@ export default function Dashboard({
                     {activeTasks.data.map((task) => (
                       <tr key={task.id}>
                         <td className="p-4 ">{task.id}</td>
-                        <td className="p-4 ">
+                        <td className="p-4 capitalize">
                           <Link
                             href={route("task.show", task.id)}
                             className="hover:underline"
@@ -228,7 +228,7 @@ export default function Dashboard({
                             {task.project.name}
                           </Link>
                         </td>
-                        <td className="p-4">{task.name}</td>
+                        <td className="p-4 capitalize">{task.name}</td>
                         <td className="p-4 ">
                           <span
                             className={

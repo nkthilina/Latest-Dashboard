@@ -268,8 +268,8 @@ function TasksTable({
                           {tasks.project.name}
                         </td>
                       )}
-                      <td className=" py-3 text-sm items-center px-3  gap-x-2 text-white hover:underline  font-normal cursor-pointer">
-                        <Link href={route("task.show", tasks.id)}>
+                      <td className=" py-3 text-sm items-center px-3  gap-x-2 text-white hover:underline  font-normal cursor-pointer capitalize">
+                        <Link href={route("task.show", tasks.id)} >
                           {tasks.name}
                         </Link>
                       </td>
@@ -297,7 +297,7 @@ function TasksTable({
                       <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
                         {tasks.due_date}
                       </td>
-                      <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                      <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap capitalize">
                         {tasks.createdBy.name}
                       </td>
                       <td className="px-4 py-4 text-sm whitespace-nowrap space-x-2">

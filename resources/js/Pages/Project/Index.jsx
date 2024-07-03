@@ -289,7 +289,7 @@ function Index({ auth, projects, queryParams = null, success }) {
                                 className="w-28 h-12"
                               />
                             </td>
-                            <td className=" py-3 text-sm font-medium text-gray-700 ">
+                            <td className=" py-3 text-sm font-medium text-gray-700 capitalize">
                               <div className="inline-flex items-center px-3 py-1 gap-x-2 text-white hover:underline ">
                                 <h2 className=" text-sm font-normal cursor-pointer">
                                   <Link
@@ -321,7 +321,7 @@ function Index({ auth, projects, queryParams = null, success }) {
                             <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
                               {projects.due_date}
                             </td>
-                            <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                            <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap capitalize">
                               {projects.createdBy.name}
                             </td>
                             <td className="px-4 py-4 text-sm whitespace-nowrap space-x-2">

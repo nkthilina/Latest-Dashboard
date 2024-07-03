@@ -302,7 +302,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
                         </li>
                       </ol>
                     </nav>
-                    <h6 className="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-gray-900">
+                    <h6 className="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-gray-900 cursor-pointer">
                       {header}
                     </h6>
                   </div>

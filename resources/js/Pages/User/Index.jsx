@@ -261,7 +261,7 @@ function Index({ auth, users, queryParams = null, success }) {
                             />
                           )}
                         </td>
-                        <td className=" py-3 text-sm font-medium text-gray-700 ">
+                        <td className=" py-3 text-sm font-medium text-gray-700 capitalize">
                           <div className="inline-flex items-center px-3 py-1 gap-x-2 text-white ">
                             <h2 className=" text-sm font-normal cursor-pointer">
                               {users.name}
