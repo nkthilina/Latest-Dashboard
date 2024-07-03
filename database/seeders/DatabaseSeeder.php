@@ -23,19 +23,26 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $users = [
-            // [
-            //     'name' => 'Test Super Admin',
-            //     'email' => 'superadmin@example.com',
-            //     'password' => bcrypt('password@123'),
-            //     'email_verified_at' => now(),
-            //     'role' => 'superAdmin',
-            // ],
             [
-                'name' => 'Test Admin',
-                'email' => 'admin@example.com',
+                'name' => 'Thilina',
+                'email' => 'thilina@example.com',
                 'password' => bcrypt('password@123'),
                 'email_verified_at' => now(),
                 'role' => 'admin',
+            ],
+            [
+                'name' => 'Hirunika',
+                'email' => 'hirunika@example.com',
+                'password' => bcrypt('password@123'),
+                'email_verified_at' => now(),
+                'role' => 'admin',
+            ],
+            [
+                'name' => 'Madhusanka',
+                'email' => 'madhusanka@example.com',
+                'password' => bcrypt('password@123'),
+                'email_verified_at' => now(),
+                'role' => 'user',
             ],
             [
                 'name' => 'Test User',
@@ -52,9 +59,9 @@ class DatabaseSeeder extends Seeder
 
         // User::factory()->count(5)->create();
 
-        Project::factory()
-            ->count(15)
-            ->hasTasks(6)
-            ->create();
+        // Project::factory()
+        //     ->count(15)
+        //     ->hasTasks(6)
+        //     ->create();
     }
 }
