@@ -48,7 +48,7 @@ function Index({ auth, users, queryParams = null, success }) {
           const timer = setTimeout(() => {
             setVisible(false);
           }, 3000);
-          return () => clearTimeout(timer); // Cleanup the timer if the component unmounts
+          return () => clearTimeout(timer); 
         },
       });
     }
@@ -175,13 +175,6 @@ function Index({ auth, users, queryParams = null, success }) {
                         scope="col"
                         className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       ></th>
-                      {/* <th
-                        scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400 text-nowrap"
-                      ></th> */}
-                      {/* <th scope="col" className="relative py-3.5 px-4">
-                        <span className="sr-only">Actions</span>
-                      </th> */}
                     </tr>
                   </thead>
                   <thead className="bg-gray-50 dark:bg-gray-800">
@@ -224,12 +217,6 @@ function Index({ auth, users, queryParams = null, success }) {
                       >
                         Created date
                       </TableHeading>
-                      {/* <th
-                        scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400 text-nowrap"
-                      >
-                        Created by
-                      </th> */}
                       <th
                         scope="col"
                         className="px-4 py-3.5 text-sm font-normal text-right rtl:text-right text-gray-500 dark:text-gray-400"
@@ -271,7 +258,6 @@ function Index({ auth, users, queryParams = null, success }) {
                         <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
                           <div className="flex items-center gap-x-2">
                             <h2 className="text-sm font-medium text-gray-800 dark:text-white ">
-                              {/* <span className=" text-sm font-medium text-gray-700 whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2 text-emerald-500 bg-emerald-100/60 dark:bg-gray-800"> */}
                               {users.email}
                             </h2>
                           </div>
