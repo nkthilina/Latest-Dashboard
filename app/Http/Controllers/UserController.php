@@ -64,7 +64,8 @@ class UserController extends Controller
 
         $name = $data['name'];
         User::create($data);
-        return to_route('user.index')->with('success', "User \"$name\" created successfully");
+        // return to_route('user.index')->with('success', "User \"$name\" created successfully");
+        return to_route('user.index')->with('success', "User created successfully");
     }
 
     /**
@@ -104,7 +105,8 @@ class UserController extends Controller
             $data['image_path'] = $image->store('user/'. Str::random(), 'public');
         }
         $user->update($data);
-        return to_route('user.index')->with('success', "User \"$name\" updated successfully");
+        // return to_route('user.index')->with('success', "User \"$name\" updated successfully");
+        return to_route('user.index')->with('success', "User updated successfully");
     }
 
     /**
@@ -117,7 +119,7 @@ class UserController extends Controller
         if ($user->image_path) {
             Storage::disk('public')->deleteDirectory(dirname($user->image_path));
         }
-        // return to_route('user.index');
-        return to_route('user.index')->with('success', "User \"$name\" deleted successfully");
+        // return to_route('user.index')->with('success', "User \"$name\" deleted successfully");
+        return to_route('user.index')->with('success', "User deleted successfully");
     }
 }

@@ -222,13 +222,20 @@ export default function Dashboard({
                         <td className="p-4 ">{task.id}</td>
                         <td className="p-4 capitalize">
                           <Link
-                            href={route("task.show", task.id)}
+                            href={route("project.show", task.project.id)}
                             className="hover:underline"
                           >
                             {task.project.name}
                           </Link>
                         </td>
-                        <td className="p-4 capitalize">{task.name}</td>
+                        <td className="p-4 capitalize">
+                          <Link
+                            href={route("task.show", task.id)}
+                            className="hover:underline"
+                          >
+                          {task.name}
+                          </Link>
+                          </td>
                         <td className="p-4 ">
                           <span
                             className={
