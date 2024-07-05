@@ -8,7 +8,8 @@ use App\Http\Controllers\UserController;
 // use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 
-Route::redirect('/', '/dashboard');
+Route::redirect('/', '/login');
+// Route::redirect('/', '/dashboard');
 
 // Route::get('/dash', function () {
 //     return Inertia::render('Dashboard');
