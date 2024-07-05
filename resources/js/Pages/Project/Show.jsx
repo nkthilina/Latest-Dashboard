@@ -6,6 +6,7 @@ import {
 } from "@/constants.jsx";
 import TasksTable from "../Task/TasksTable";
 import Footer from "@/Components/Footer";
+import { Link } from "@inertiajs/react";
 
 function Show({ auth, success, project, tasks, queryParams = null }) {
   return (
@@ -131,6 +132,14 @@ function Show({ auth, success, project, tasks, queryParams = null }) {
                   <p className=" block text-md font-medium text-gray-700 dark:text-gray-300">
                     {project.description}
                   </p>
+                </div>
+                <div className="pt-0 p-6 flex justify-end">
+                  <Link
+                    href={route("project.index")}
+                    class="text-white bg-orange-600 hover:bg-orange-700 font-medium rounded-lg text-md px-5 py-2 text-center inline-flex items-center  me-2 mb-2"
+                  >
+                    Back
+                  </Link>
                 </div>
               </div>
             </div>

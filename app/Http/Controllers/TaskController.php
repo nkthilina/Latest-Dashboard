@@ -70,7 +70,8 @@ class TaskController extends Controller
             $data['image_path'] = $image->store('task/'. Str::random(), 'public');
         }
         $task = Task::create($data);
-        return to_route('task.index')->with('success', "Task \"$task->name\" created successfully");
+        // return to_route('task.index')->with('success', "Task \"$task->name\" created successfully");
+        return to_route('task.index')->with('success', "Task created successfully");
     }
 
     /**
@@ -115,7 +116,8 @@ class TaskController extends Controller
             $data['image_path'] = $image->store('task/'. Str::random(), 'public');
         }
         $task->update($data);
-        return to_route('task.index')->with('success', "Task \"$task->name\" updated successfully");
+        // return to_route('task.index')->with('success', "Task \"$task->name\" updated successfully");
+        return to_route('task.index')->with('success', "Task updated successfully");
     }
 
     /**
@@ -127,7 +129,8 @@ class TaskController extends Controller
         if ($task->image_path) {
             Storage::disk('public')->deleteDirectory(dirname($task->image_path));
         }
-        return to_route('task.index')->with('success', "Task \"$task->name\" deleted successfully");
+        // return to_route('task.index')->with('success', "Task \"$task->name\" deleted successfully");
+        return to_route('task.index')->with('success', "Task deleted successfully");
     }
 
     public function myTasks()

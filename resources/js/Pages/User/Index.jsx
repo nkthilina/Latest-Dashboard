@@ -48,7 +48,7 @@ function Index({ auth, users, queryParams = null, success }) {
           const timer = setTimeout(() => {
             setVisible(false);
           }, 3000);
-          return () => clearTimeout(timer); 
+          return () => clearTimeout(timer);
         },
       });
     }
@@ -250,7 +250,7 @@ function Index({ auth, users, queryParams = null, success }) {
                         </td>
                         <td className=" py-3 text-sm font-medium text-gray-700 capitalize">
                           <div className="inline-flex items-center px-3 py-1 gap-x-2 text-white ">
-                            <h2 className=" text-sm font-normal cursor-pointer">
+                            <h2 className=" text-sm font-normal cursor-point">
                               {users.name}
                             </h2>
                           </div>
@@ -371,6 +371,7 @@ function Index({ auth, users, queryParams = null, success }) {
                       </td>
                     </tr> */}
                     {/* end testing */}
+
                   </tbody>
                 </table>
               </div>

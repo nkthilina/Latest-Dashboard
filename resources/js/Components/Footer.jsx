@@ -9,6 +9,7 @@ function Footer() {
     "/storage/Login.png",
     "/storage/contact.png",
     "/storage/dashboard.png",
+    "/storage/portfolio.png",
     "/storage/restaurant.png",
   ];
 

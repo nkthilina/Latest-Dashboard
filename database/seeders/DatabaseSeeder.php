@@ -31,20 +31,6 @@ class DatabaseSeeder extends Seeder
                 'role' => 'admin',
             ],
             [
-                'name' => 'Hirunika',
-                'email' => 'hirunika@example.com',
-                'password' => bcrypt('password@123'),
-                'email_verified_at' => now(),
-                'role' => 'admin',
-            ],
-            [
-                'name' => 'Madhusanka',
-                'email' => 'madhusanka@example.com',
-                'password' => bcrypt('password@123'),
-                'email_verified_at' => now(),
-                'role' => 'user',
-            ],
-            [
                 'name' => 'Test User',
                 'email' => 'user@example.com',
                 'password' => bcrypt('password@123'),

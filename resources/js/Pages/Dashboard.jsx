@@ -286,7 +286,7 @@ export default function Dashboard({
               </div>
               <div className="w-full ">
                 <h5 className=" text-md font-semibold text-red-800 leading-relaxed">
-                  Error! No tasks are found. Create a new one.
+                  Error! No tasks are found related to you. Create a new one.
                 </h5>
               </div>
             </div>
