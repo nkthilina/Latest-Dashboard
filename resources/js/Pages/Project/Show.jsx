@@ -136,9 +136,15 @@ function Show({ auth, success, project, tasks, queryParams = null }) {
                 <div className="pt-0 p-6 flex justify-end">
                   <Link
                     href={route("project.index")}
-                    class="text-white bg-orange-600 hover:bg-orange-700 font-medium rounded-lg text-md px-5 py-2 text-center inline-flex items-center  me-2 mb-2"
+                    className="text-white bg-orange-600 hover:bg-orange-700 font-medium rounded-lg text-md px-5 py-2 text-center inline-flex items-center  me-2 mb-2"
                   >
                     Back
+                  </Link>
+                  <Link
+                    href={route("project.edit", project.id)}
+                    className="text-white bg-[#3b5998] hover:bg-[#3b5998]/90   font-medium rounded-lg text-md px-5 py-2 text-center inline-flex items-center  me-2 mb-2"
+                  >
+                  Edit
                   </Link>
                 </div>
               </div>

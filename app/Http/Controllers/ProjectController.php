@@ -120,7 +120,8 @@ class ProjectController extends Controller
         }
         $name = $project->name;
         $project->update($data);
-        return to_route('project.index')->with('success', "Project \" $name \" updated successfully.");
+        // return to_route('project.index')->with('success', "Project \" $name \" updated successfully.");
+        return to_route('project.index')->with('success', "Project updated successfully.");
     }
 
     /**

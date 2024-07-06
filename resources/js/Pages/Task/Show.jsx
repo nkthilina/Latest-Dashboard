@@ -179,13 +179,13 @@ function Show({ auth, task }) {
                 <div className="pt-0 p-6 flex justify-end">
                   <Link
                     href={route("task.index")}
-                    class="text-white bg-orange-600 hover:bg-orange-700 font-medium rounded-lg text-md px-5 py-2 text-center inline-flex items-center  me-2 mb-2"
+                    className="text-white bg-orange-600 hover:bg-orange-700 font-medium rounded-lg text-md px-5 py-2 text-center inline-flex items-center  me-2 mb-2"
                   >
                     Back
                   </Link>
                   <Link
                     href={route("task.edit", task.id)}
-                    class="text-white bg-[#3b5998] hover:bg-[#3b5998]/90   font-medium rounded-lg text-md px-5 py-2 text-center inline-flex items-center  me-2 mb-2"
+                    className="text-white bg-[#3b5998] hover:bg-[#3b5998]/90   font-medium rounded-lg text-md px-5 py-2 text-center inline-flex items-center  me-2 mb-2"
                   >
                     Edit
                   </Link>
