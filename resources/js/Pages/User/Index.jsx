@@ -86,10 +86,6 @@ function Index({ auth, users, queryParams = null, success }) {
         </div>
       </div> */}
 
-      {/* { success && (<div className="p-4 sm:p-8 bg-white dark:bg-green-800 shadow sm:rounded-lg">
-        {success}
-      </div>)} */}
-
       {/* new table */}
       <section className="container px-4 mx-auto mt-5">
         {/* alert */}
