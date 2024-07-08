@@ -19,7 +19,6 @@ function Show({ auth, task }) {
         </h2>
       }
     >
-      {/* <Head title={`Task "${task.name}"`} /> */}
       {/* <pre>{JSON.stringify(task, null, 2)}</pre> */}
       <section className="container px-4 mx-auto mt-5 ">
         <div className="flex flex-col rounded-lg bg-gradient-to-br from-gray-800 to-gray-900">

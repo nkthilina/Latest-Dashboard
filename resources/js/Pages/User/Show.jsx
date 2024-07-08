@@ -14,7 +14,6 @@ function Show({ auth, user, tasks, queryParams = null }) {
         </h2>
       }
     >
-      {/* <Head title={`User "${user.name}"`} /> */}
       {/* <pre>{JSON.stringify(user, null, 2)}</pre> */}
       <section className="container px-4 mx-auto mt-5 ">
         <div className="flex flex-col rounded-lg bg-gradient-to-br from-gray-800 to-gray-900">

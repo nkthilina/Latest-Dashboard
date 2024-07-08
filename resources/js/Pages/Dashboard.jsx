@@ -1,5 +1,4 @@
 import Footer from "@/Components/Footer";
-import TableHeading from "@/Components/TableHeading";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import {
   TASK_PRIORITY_CLASS_MAP,
