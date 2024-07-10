@@ -50,10 +50,15 @@ export default function AuthenticatedLayout({ user, header, children }) {
                 <Link
                   href={route("dashboard")}
                   active={route().current("dashboard")}
-                  className="group middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs  rounded-lg bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85] w-full flex items-center gap-4  capitalize"
+                  // className="group middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs  rounded-lg bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85] w-full flex items-center gap-4  capitalize"
+                  className={`block antialiased font-sans  leading-relaxed text-inherit capitalize group ${
+                    route().current("dashboard")
+                      ? "bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 rounded-lg"
+                      : ""} `}
                 >
                   <button
-                    className="middle none font-sans  center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-base py-3 rounded-lg text-white w-full flex items-center gap-4 px-4 capitalize"
+                    // className="middle none font-sans  center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-base py-3 rounded-lg text-white w-full flex items-center gap-4 px-4 capitalize"
+                    className="middle none font-sans  center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-base py-3  rounded-lg text-white group-hover:bg-white/10 group-hover:duration-600 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                     type="button"
                   >
                     <svg
@@ -74,7 +79,11 @@ export default function AuthenticatedLayout({ user, header, children }) {
                 <Link
                   href={route("project.index")}
                   active={route().current("project.index")}
-                  className="block antialiased font-sans  leading-relaxed text-inherit capitalize group"
+                  // className="block antialiased font-sans  leading-relaxed text-inherit capitalize group"
+                  className={`block antialiased font-sans  leading-relaxed text-inherit capitalize group ${
+                    route().current("project.index")
+                      ? "bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 rounded-lg"
+                      : ""} `}
                 >
                   <button
                     className="middle none font-sans  center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-base py-3  rounded-lg text-white group-hover:bg-white/10 group-hover:duration-600 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
@@ -102,7 +111,11 @@ export default function AuthenticatedLayout({ user, header, children }) {
                 <Link
                   href={route("task.index")}
                   active={route().current("task.index")}
-                  className="block antialiased font-sans  leading-relaxed text-inherit capitalize group"
+                  // className="block antialiased font-sans  leading-relaxed text-inherit capitalize group"
+                  className={`block antialiased font-sans  leading-relaxed text-inherit capitalize group ${
+                    route().current("task.index")
+                      ? "bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 rounded-lg"
+                      : ""} `}
                 >
                   <button
                     className="middle none font-sans  center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-base py-3 rounded-lg text-white group-hover:bg-white/10 group-hover:duration-600 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
@@ -129,7 +142,11 @@ export default function AuthenticatedLayout({ user, header, children }) {
                 <Link
                   href={route("user.index")}
                   active={route().current("user.index")}
-                  className="block antialiased font-sans  leading-relaxed text-inherit capitalize group"
+                  // className="block antialiased font-sans  leading-relaxed text-inherit capitalize group"
+                  className={`block antialiased font-sans  leading-relaxed text-inherit capitalize group ${
+                    route().current("user.index")
+                      ? "bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 rounded-lg"
+                      : ""} `}
                 >
                   <button
                     className="middle none font-sans  center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-base py-3 rounded-lg text-white group-hover:bg-white/10 group-hover:duration-600 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
@@ -156,7 +173,11 @@ export default function AuthenticatedLayout({ user, header, children }) {
                 <Link
                   href={route("task.myTasks")}
                   active={route().current("task.myTasks")}
-                  className="block antialiased font-sans  leading-relaxed text-inherit capitalize group"
+                  // className="block antialiased font-sans  leading-relaxed text-inherit capitalize group"
+                  className={`block antialiased font-sans  leading-relaxed text-inherit capitalize group ${
+                    route().current("task.myTasks")
+                      ? "bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 rounded-lg"
+                      : ""} `}
                 >
                   <button
                     className="middle none font-sans  center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-base py-3 rounded-lg text-white group-hover:bg-white/10 group-hover:duration-600 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
@@ -181,6 +202,8 @@ export default function AuthenticatedLayout({ user, header, children }) {
                 </Link>
               </li>
             </ul>
+
+            {/* Auth Pages */}
             <ul className="mb-4 flex flex-col gap-1">
               <li className="mx-3.5 mt-4 mb-2">
                 <p className="block antialiased font-sans text-sm leading-normal text-white font-black uppercase opacity-75">
@@ -190,9 +213,13 @@ export default function AuthenticatedLayout({ user, header, children }) {
               <li>
                 <Link href={route("project.create")} className="group">
                   <button
-                    className="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                     type="button"
-                  >
+                    // className="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
+                    className={`middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize ${
+                      route().current("project.create")
+                        ? "bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 rounded-lg"
+                        : ""
+                    } `}                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -216,8 +243,13 @@ export default function AuthenticatedLayout({ user, header, children }) {
               <li>
                 <Link href={route("task.create")} className="group">
                   <button
-                    className="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                     type="button"
+                    // className="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
+                    className={`middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize ${
+                      route().current("task.create")
+                        ? "bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 rounded-lg"
+                        : ""
+                    }`}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -243,8 +275,13 @@ export default function AuthenticatedLayout({ user, header, children }) {
               <li>
                 <Link href={route("user.create")} className="group">
                   <button
-                    className="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                     type="button"
+                    // className="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
+                    className={`middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize ${
+                      route().current("user.create")
+                        ? "bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 rounded-lg"
+                        : ""
+                    }`}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
