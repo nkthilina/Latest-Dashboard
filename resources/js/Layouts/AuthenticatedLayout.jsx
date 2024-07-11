@@ -38,7 +38,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
       <div className="min-h-screen bg-gray-50/50 ">
         <aside className="bg-gradient-to-br from-gray-800 to-gray-900 -translate-x-80 fixed inset-0 z-50 my-4 ml-4 h-[calc(100vh-32px)] w-72 rounded-xl transition-transform duration-300 xl:translate-x-0">
           <div className="relative border-b border-white/20">
-            <div className="flex items-center gap-4 py-6 px-8" href="#/">
+            <div className="flex items-center gap-4 py-6 px-8">
               <h6 className="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-white">
                 Admin Nexus
               </h6>
@@ -50,14 +50,12 @@ export default function AuthenticatedLayout({ user, header, children }) {
                 <Link
                   href={route("dashboard")}
                   active={route().current("dashboard")}
-                  // className="group middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs  rounded-lg bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85] w-full flex items-center gap-4  capitalize"
                   className={`block antialiased font-sans  leading-relaxed text-inherit capitalize group ${
                     route().current("dashboard")
                       ? "bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 rounded-lg"
                       : ""} `}
                 >
                   <button
-                    // className="middle none font-sans  center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-base py-3 rounded-lg text-white w-full flex items-center gap-4 px-4 capitalize"
                     className="middle none font-sans  center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-base py-3  rounded-lg text-white group-hover:bg-white/10 group-hover:duration-600 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                     type="button"
                   >
@@ -79,7 +77,6 @@ export default function AuthenticatedLayout({ user, header, children }) {
                 <Link
                   href={route("project.index")}
                   active={route().current("project.index")}
-                  // className="block antialiased font-sans  leading-relaxed text-inherit capitalize group"
                   className={`block antialiased font-sans  leading-relaxed text-inherit capitalize group ${
                     route().current("project.index")
                       ? "bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 rounded-lg"
@@ -111,7 +108,6 @@ export default function AuthenticatedLayout({ user, header, children }) {
                 <Link
                   href={route("task.index")}
                   active={route().current("task.index")}
-                  // className="block antialiased font-sans  leading-relaxed text-inherit capitalize group"
                   className={`block antialiased font-sans  leading-relaxed text-inherit capitalize group ${
                     route().current("task.index")
                       ? "bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 rounded-lg"
@@ -142,7 +138,6 @@ export default function AuthenticatedLayout({ user, header, children }) {
                 <Link
                   href={route("user.index")}
                   active={route().current("user.index")}
-                  // className="block antialiased font-sans  leading-relaxed text-inherit capitalize group"
                   className={`block antialiased font-sans  leading-relaxed text-inherit capitalize group ${
                     route().current("user.index")
                       ? "bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 rounded-lg"
@@ -173,7 +168,6 @@ export default function AuthenticatedLayout({ user, header, children }) {
                 <Link
                   href={route("task.myTasks")}
                   active={route().current("task.myTasks")}
-                  // className="block antialiased font-sans  leading-relaxed text-inherit capitalize group"
                   className={`block antialiased font-sans  leading-relaxed text-inherit capitalize group ${
                     route().current("task.myTasks")
                       ? "bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 rounded-lg"
