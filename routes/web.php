@@ -8,8 +8,8 @@ use App\Http\Controllers\UserController;
 // use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 
-Route::redirect('/', '/login');
-// Route::redirect('/', '/dashboard');
+// Route::redirect('/', '/login');
+Route::redirect('/', '/dashboard');
 
 // Route::get('/dash', function () {
 //     return Inertia::render('Dashboard');
@@ -31,6 +31,3 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

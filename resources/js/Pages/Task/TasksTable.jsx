@@ -260,7 +260,7 @@ function TasksTable({
                         />
                       </td>
                       {!hideProjectColumn && (
-                        <td className=" py-3 text-sm   items-center px-3  gap-x-2 text-white  font-normal">
+                        <td className=" py-3 text-sm   items-center px-3  gap-x-2 text-white  font-normal capitalize">
                           {tasks.project.name}
                         </td>
                       )}

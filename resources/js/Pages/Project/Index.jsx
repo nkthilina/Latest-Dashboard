@@ -291,7 +291,7 @@ function Index({ auth, projects, user, queryParams = null, success }) {
                               >
                                 Edit
                               </Link>
-                              {user && user.role === "admin" && (
+                              { user && user.role === "admin" && (
                                 <button
                                 type="button"
                                 onClick={(e) => deleteProject(projects)}
