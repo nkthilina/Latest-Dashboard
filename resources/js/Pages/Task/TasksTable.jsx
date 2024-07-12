@@ -8,6 +8,7 @@ import { TASK_STATUS_CLASS_MAP, TASK_STATUS_TEXT_MAP } from "@/constants.jsx";
 
 function TasksTable({
   tasks,
+  user,
   success,
   queryParams = null,
   hideProjectColumn = false,
@@ -295,20 +296,23 @@ function TasksTable({
                       <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap capitalize">
                         {tasks.createdBy.name}
                       </td>
-                      <td className="px-4 py-4 text-sm whitespace-nowrap space-x-2">
+                      <td className="px-4 py-4 text-sm whitespace-nowrap space-x-2 text-right">
                         <Link
                           href={route("task.edit", tasks.id)}
                           className=" transition-colors duration-200  dark:text-indigo-300 dark:hover:text-blue-500 focus:outline-none"
                         >
                           Edit
                         </Link>
-                        <button
+                        {user && user.role === "admin" && (
+                          <button
                           type="button"
                           onClick={(e) => deleteTask(tasks)}
                           className="text-gray-500 transition-colors duration-200 dark:hover:text-red-500 dark:text-red-400 hover:text-red-500 focus:outline-none"
                         >
                           Delete
                         </button>
+                        )}
+
                       </td>
                     </tr>
                   ))}

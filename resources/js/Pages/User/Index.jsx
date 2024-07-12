@@ -7,7 +7,7 @@ import TextInput from "@/Components/TextInput";
 import SelectInput from "@/Components/SelectInput";
 import TableHeading from "@/Components/TableHeading";
 
-function Index({ auth, users, queryParams = null, success }) {
+function Index({ auth, users, user, queryParams = null, success }) {
   const [visible, setVisible] = useState(true);
   queryParams = queryParams || {};
 
@@ -263,7 +263,11 @@ function Index({ auth, users, queryParams = null, success }) {
                           >
                             Edit
                           </Link>
-                          <button
+                          {/* {user !== users && (
+
+                          )} */}
+                          {user && user.role === "admin" && (
+                            <button
                             type="button"
                             onClick={(e) => deleteUser(users)}
                             // onClick={() => deleteUser(users.id)}
@@ -271,6 +275,8 @@ function Index({ auth, users, queryParams = null, success }) {
                           >
                             Delete
                           </button>
+                          )}
+
                         </td>
                       </tr>
                     ))}

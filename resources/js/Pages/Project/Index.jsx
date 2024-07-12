@@ -12,7 +12,7 @@ import SelectInput from "@/Components/SelectInput";
 import TableHeading from "@/Components/TableHeading";
 import { useState, useEffect } from "react";
 
-function Index({ auth, projects, queryParams = null, success }) {
+function Index({ auth, projects, user, queryParams = null, success }) {
   const [visible, setVisible] = useState(true);
   queryParams = queryParams || {};
 
@@ -284,14 +284,15 @@ function Index({ auth, projects, queryParams = null, success }) {
                             <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap capitalize">
                               {projects.createdBy.name}
                             </td>
-                            <td className="px-4 py-4 text-sm whitespace-nowrap space-x-2">
+                            <td className="px-4 py-4 text-sm whitespace-nowrap space-x-2 text-right">
                               <Link
                                 href={route("project.edit", projects.id)}
                                 className=" transition-colors duration-200  dark:text-indigo-300 dark:hover:text-blue-500 focus:outline-none"
                               >
                                 Edit
                               </Link>
-                              <button
+                              {user && user.role === "admin" && (
+                                <button
                                 type="button"
                                 onClick={(e) => deleteProject(projects)}
                                 // onClick={() => destroy(projects.id)}
@@ -299,6 +300,8 @@ function Index({ auth, projects, queryParams = null, success }) {
                               >
                                 Delete
                               </button>
+                              )}
+
                             </td>
                           </tr>
                         ))}
