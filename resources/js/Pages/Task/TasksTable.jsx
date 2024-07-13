@@ -46,8 +46,7 @@ function TasksTable({
 
   const deleteTask = (task) => {
     if (window.confirm("Are you sure you want to delete this task?")) {
-      router.delete(route("task.destroy", task.id),
-      {
+      router.delete(route("task.destroy", task.id), {
         onSuccess: () => {
           setVisible(true);
           const timer = setTimeout(() => {
@@ -106,8 +105,7 @@ function TasksTable({
                     <th
                       scope="col"
                       className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
-                    >
-                    </th>
+                    ></th>
                     <th
                       scope="col"
                       className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
@@ -265,7 +263,7 @@ function TasksTable({
                         </td>
                       )}
                       <td className=" py-3 text-sm items-center px-3  gap-x-2 text-white hover:underline  font-normal cursor-pointer capitalize">
-                        <Link href={route("task.show", tasks.id)} >
+                        <Link href={route("task.show", tasks.id)}>
                           {tasks.name}
                         </Link>
                       </td>
@@ -303,16 +301,13 @@ function TasksTable({
                         >
                           Edit
                         </Link>
-                        {user && user.role === "admin" && (
-                          <button
+                        <button
                           type="button"
                           onClick={(e) => deleteTask(tasks)}
                           className="text-gray-500 transition-colors duration-200 dark:hover:text-red-500 dark:text-red-400 hover:text-red-500 focus:outline-none"
                         >
                           Delete
                         </button>
-                        )}
-
                       </td>
                     </tr>
                   ))}

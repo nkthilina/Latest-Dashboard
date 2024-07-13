@@ -1,5 +1,5 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Head, Link, router } from "@inertiajs/react";
 import Pagination from "@/Components/Pagination";
 import Footer from "@/Components/Footer";
@@ -41,8 +41,7 @@ function Index({ auth, users, user, queryParams = null, success }) {
 
   const deleteUser = (user) => {
     if (window.confirm("Are you sure you want to delete this user?")) {
-      router.delete(route("user.destroy", user.id),
-      {
+      router.delete(route("user.destroy", user.id), {
         onSuccess: () => {
           setVisible(true);
           const timer = setTimeout(() => {
@@ -61,7 +60,6 @@ function Index({ auth, users, user, queryParams = null, success }) {
     }, 3000);
     return () => clearTimeout(timer); // Cleanup the timer if the component unmounts
   }, []);
-
 
   return (
     <AuthenticatedLayout
@@ -124,8 +122,7 @@ function Index({ auth, users, user, queryParams = null, success }) {
                       <th
                         scope="col"
                         className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
-                      >
-                      </th>
+                      ></th>
                       <th
                         scope="col"
                         className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
@@ -263,20 +260,21 @@ function Index({ auth, users, user, queryParams = null, success }) {
                           >
                             Edit
                           </Link>
-                          {/* {user !== users && (
+                          <button
+                          type="button"
+                          onClick={(e) => deleteUser(users)}
+                          className="text-gray-500 transition-colors duration-200 dark:hover:text-red-500 dark:text-red-400 hover:text-red-500 focus:outline-none"
+                        >
+                          Delete
+                        </button>
 
-                          )} */}
-                          {user && user.role === "admin" && (
-                            <button
+                          {/* <button
                             type="button"
                             onClick={(e) => deleteUser(users)}
-                            // onClick={() => deleteUser(users.id)}
                             className="text-gray-500 transition-colors duration-200 dark:hover:text-red-500 dark:text-red-400 hover:text-red-500 focus:outline-none"
                           >
                             Delete
-                          </button>
-                          )}
-
+                          </button> */}
                         </td>
                       </tr>
                     ))}
@@ -368,7 +366,6 @@ function Index({ auth, users, user, queryParams = null, success }) {
                       </td>
                     </tr> */}
                     {/* end testing */}
-
                   </tbody>
                 </table>
               </div>
