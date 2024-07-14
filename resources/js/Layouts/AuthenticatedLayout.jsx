@@ -35,11 +35,11 @@ export default function AuthenticatedLayout({ user, header, children }) {
 
   return (
     <div>
-      <div className="min-h-screen bg-gray-50/50 ">
+      <div className="min-h-screen bg-gray-50/50">
         <aside className="bg-gradient-to-br from-gray-800 to-gray-900 -translate-x-80 fixed inset-0 z-50 my-4 ml-4 h-[calc(100vh-32px)] w-72 rounded-xl transition-transform duration-300 xl:translate-x-0">
           <div className="relative border-b border-white/20">
             <div className="flex items-center gap-4 py-6 px-8">
-              <h6 className="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-white">
+              <h6 className="block antialiased tracking-normal font-sans text-xl font-semibold leading-relaxed text-white">
                 Admin Nexus
               </h6>
             </div>
@@ -57,7 +57,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
                   } `}
                 >
                   <button
-                    className="middle none font-sans  center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-base py-3  rounded-lg text-white group-hover:bg-white/10 group-hover:duration-600 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
+                    className="middle none font-sans  center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-lg py-3  rounded-lg text-white group-hover:bg-white/10 group-hover:duration-600 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                     type="button"
                   >
                     <svg
@@ -85,7 +85,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
                   } `}
                 >
                   <button
-                    className="middle none font-sans  center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-base py-3  rounded-lg text-white group-hover:bg-white/10 group-hover:duration-600 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
+                    className="middle none font-sans  center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-lg py-3  rounded-lg text-white group-hover:bg-white/10 group-hover:duration-600 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                     type="button"
                   >
                     <svg
@@ -117,7 +117,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
                   } `}
                 >
                   <button
-                    className="middle none font-sans  center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-base py-3 rounded-lg text-white group-hover:bg-white/10 group-hover:duration-600 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
+                    className="middle none font-sans  center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-lg py-3 rounded-lg text-white group-hover:bg-white/10 group-hover:duration-600 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                     type="button"
                   >
                     <svg
@@ -148,7 +148,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
                   } `}
                 >
                   <button
-                    className="middle none font-sans  center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-base py-3 rounded-lg text-white group-hover:bg-white/10 group-hover:duration-600 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
+                    className="middle none font-sans  center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-lg py-3 rounded-lg text-white group-hover:bg-white/10 group-hover:duration-600 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                     type="button"
                   >
                     <svg
@@ -179,7 +179,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
                   } `}
                 >
                   <button
-                    className="middle none font-sans  center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-base py-3 rounded-lg text-white group-hover:bg-white/10 group-hover:duration-600 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
+                    className="middle none font-sans  center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-lg py-3 rounded-lg text-white group-hover:bg-white/10 group-hover:duration-600 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                     type="button"
                   >
                     <svg
@@ -206,7 +206,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
             {user.role === "admin" && (
               <ul className="mb-4 flex flex-col gap-1">
                 <li className="mx-3.5 mt-4 mb-2">
-                  <p className="block antialiased font-sans text-sm leading-normal text-white font-black uppercase opacity-75">
+                  <p className="block antialiased font-sans text-md leading-normal text-white font-black uppercase opacity-75">
                     auth pages
                   </p>
                 </li>
@@ -234,7 +234,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
                           d="M12 4.5v15m7.5-7.5h-15"
                         />
                       </svg>
-                      <span className="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
+                      <span className="block antialiased font-sans text-lg leading-relaxed text-inherit font-medium capitalize">
                         Add projects
                       </span>
                     </button>
@@ -265,7 +265,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
                         />
                       </svg>
 
-                      <span className="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
+                      <span className="block antialiased font-sans text-lg leading-relaxed text-inherit font-medium capitalize">
                         Add tasks
                       </span>
                     </button>
@@ -296,7 +296,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
                         />
                       </svg>
 
-                      <span className="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
+                      <span className="block antialiased font-sans text-lg leading-relaxed text-inherit font-medium capitalize">
                         Add users
                       </span>
                     </button>
@@ -333,7 +333,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
                         </li>
                       </ol>
                     </nav>
-                    <h6 className="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-gray-900 cursor-pointer">
+                    <h6 className="block antialiased tracking-normal font-sans text-lg font-semibold leading-relaxed text-gray-900 cursor-pointer">
                       {header}
                     </h6>
                   </div>
@@ -343,7 +343,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
                       <div className="relative inline-block text-left">
                         <button
                           ref={dropdownButtonRef}
-                          className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-blue-500"
+                          className="inline-flex justify-center w-full px-4 py-2 text-md font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-blue-500"
                           onClick={toggleDropdown}
                         >
                           <svg
@@ -388,7 +388,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
                           >
                             <Link
                               href={route("profile.edit")}
-                              className=" block rounded-md px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 active:bg-blue-100 cursor-pointer"
+                              className=" block rounded-md px-4 py-2 text-md text-gray-700 hover:bg-gray-100 active:bg-blue-100 cursor-pointer"
                               role="menuitem"
                               onClick={() =>
                                 console.log("Light theme selected")
@@ -399,7 +399,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
                             <Link
                               method="post"
                               href={route("logout")}
-                              className=" block rounded-md px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 active:bg-blue-100 cursor-pointer"
+                              className=" block rounded-md px-4 py-2 text-md text-gray-700 hover:bg-gray-100 active:bg-blue-100 cursor-pointer"
                               role="menuitem"
                               onClick={() => console.log("Dark theme selected")}
                             >
