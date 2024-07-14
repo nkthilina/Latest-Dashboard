@@ -166,7 +166,7 @@ function Index({ user = null, auth, projects, queryParams = null, success }) {
                           <th></th>
                         </tr>
                       </thead>
-                      <thead className="bg-gray-50 dark:bg-gray-800">
+                      <thead className="bg-gray-50 dark:bg-gray-800 text-md">
                         <tr>
                           <TableHeading
                             name="id"
@@ -179,7 +179,7 @@ function Index({ user = null, auth, projects, queryParams = null, success }) {
                           </TableHeading>
                           <th
                             scope="col"
-                            className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                            className="px-4 py-3.5  font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                           >
                             Image
                           </th>
@@ -222,13 +222,13 @@ function Index({ user = null, auth, projects, queryParams = null, success }) {
 
                           <th
                             scope="col"
-                            className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400 text-nowrap"
+                            className="px-4 py-3.5  font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400 text-nowrap"
                           >
                             Created by
                           </th>
                           <th
                             scope="col"
-                            className="px-4 py-3.5 text-sm font-normal text-right rtl:text-right text-gray-500 dark:text-gray-400"
+                            className="px-4 py-3.5  font-normal text-right rtl:text-right text-gray-500 dark:text-gray-400"
                           >
                             Actions
                           </th>
@@ -237,21 +237,21 @@ function Index({ user = null, auth, projects, queryParams = null, success }) {
                       <tbody className=" divide-y  dark:divide-gray-700 dark:bg-gray-900 ">
                         {projects.data.map((projects) => (
                           <tr key={projects.id}>
-                            <td className="px-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
+                            <td className="px-4 py-4 font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
                               <div className="inline-flex items-center gap-x-3">
                                 <span>{projects.id}</span>
                               </div>
                             </td>
-                            <td className="px-4 py-2 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                            <td className="px-4 py-2 text-gray-500 dark:text-gray-300 whitespace-nowrap">
                               <img
                                 src={projects.image_path}
                                 alt=""
                                 className="w-28 h-12"
                               />
                             </td>
-                            <td className=" py-3 text-sm font-medium text-gray-700 capitalize">
+                            <td className=" py-3 font-medium text-gray-700 capitalize">
                               <div className="inline-flex items-center px-3 py-1 gap-x-2 text-white hover:underline ">
-                                <h2 className=" text-sm font-normal cursor-pointer">
+                                <h2 className="  font-normal cursor-pointer">
                                   <Link
                                     href={route("project.show", projects.id)}
                                   >
@@ -260,12 +260,12 @@ function Index({ user = null, auth, projects, queryParams = null, success }) {
                                 </h2>
                               </div>
                             </td>
-                            <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                            <td className="px-4 py-4 text-gray-500 dark:text-gray-300 whitespace-nowrap">
                               <div className="flex items-center gap-x-2">
-                                <h2 className="text-sm font-medium text-gray-800 dark:text-white ">
+                                <h2 className=" font-medium text-gray-800 dark:text-white ">
                                   <span
                                     className={
-                                      "text-sm font-medium  whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2  bg-gray-800 " +
+                                      " font-medium  whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2  bg-gray-800 " +
                                       PROJECT_STATUS_CLASS_MAP[projects.status]
                                     }
                                   >
@@ -274,16 +274,16 @@ function Index({ user = null, auth, projects, queryParams = null, success }) {
                                 </h2>
                               </div>
                             </td>
-                            <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                            <td className="px-4 py-4 text-gray-500 dark:text-gray-300 whitespace-nowrap">
                               {projects.created_at}
                             </td>
-                            <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                            <td className="px-4 py-4 text-gray-500 dark:text-gray-300 whitespace-nowrap">
                               {projects.due_date}
                             </td>
-                            <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap capitalize">
+                            <td className="px-4 py-4 text-gray-500 dark:text-gray-300 whitespace-nowrap capitalize">
                               {projects.createdBy.name}
                             </td>
-                            <td className="px-4 py-4 text-sm whitespace-nowrap space-x-2 text-right">
+                            <td className="px-4 py-4 whitespace-nowrap space-x-2 text-right">
                               <Link
                                 href={route("project.edit", projects.id)}
                                 className=" transition-colors duration-200  dark:text-indigo-300 dark:hover:text-blue-500 focus:outline-none"

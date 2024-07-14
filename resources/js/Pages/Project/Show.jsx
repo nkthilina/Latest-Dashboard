@@ -32,7 +32,7 @@ function Show({ auth, success, project, tasks, queryParams = null }) {
                     className="w-full h-64 object-cover"
                   />
                 </div>
-                <div className="p-6 grid gap-1 grid-cols-2 ">
+                <div className="px-6 grid gap-1 grid-cols-2 ">
                   <div className="grid grid-rows-4 grid-flow-col gap-4">
                     <div className="">
                       <label
@@ -66,7 +66,7 @@ function Show({ auth, success, project, tasks, queryParams = null }) {
                       <p className="mt-2 block text-md font-medium text-gray-700 dark:text-gray-300">
                         <span
                           className={
-                            "text-sm font-medium  whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2  bg-gray-800 " +
+                            " font-medium  whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2  bg-gray-800 " +
                             PROJECT_STATUS_CLASS_MAP[project.status]
                           }
                         >

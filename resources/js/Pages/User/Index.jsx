@@ -177,7 +177,7 @@ function Index({ auth, users, user, queryParams = null, success }) {
                       </TableHeading>
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5  font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       >
                         Image
                       </th>
@@ -207,7 +207,7 @@ function Index({ auth, users, user, queryParams = null, success }) {
                       </TableHeading>
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-right rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5  font-normal text-right rtl:text-right text-gray-500 dark:text-gray-400"
                       >
                         Actions
                       </th>
@@ -216,12 +216,12 @@ function Index({ auth, users, user, queryParams = null, success }) {
                   <tbody className="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900 ">
                     {users.data.map((users) => (
                       <tr key={users.id}>
-                        <td className="px-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
+                        <td className="px-4 py-4  font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
                           <div className="inline-flex items-center gap-x-3">
                             <span>{users.id}</span>
                           </div>
                         </td>
-                        <td className="px-4 py-2 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap ">
+                        <td className="px-4 py-2  text-gray-500 dark:text-gray-300 whitespace-nowrap ">
                           {users.image_path ? (
                             <img
                               src={users.image_path}
@@ -236,24 +236,24 @@ function Index({ auth, users, user, queryParams = null, success }) {
                             />
                           )}
                         </td>
-                        <td className=" py-3 text-sm font-medium text-gray-700 capitalize">
+                        <td className=" py-3 font-medium text-gray-700 capitalize">
                           <div className="inline-flex items-center px-3 py-1 gap-x-2 text-white ">
-                            <h2 className=" text-sm font-normal cursor-point">
+                            <h2 className="  font-normal cursor-point">
                               {users.name}
                             </h2>
                           </div>
                         </td>
-                        <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                        <td className="px-4 py-4 text-gray-500 dark:text-gray-300 whitespace-nowrap">
                           <div className="flex items-center gap-x-2">
-                            <h2 className="text-sm font-medium text-gray-800 dark:text-white ">
+                            <h2 className=" font-medium text-gray-800 dark:text-white ">
                               {users.email}
                             </h2>
                           </div>
                         </td>
-                        <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                        <td className="px-4 py-4 text-gray-500 dark:text-gray-300 whitespace-nowrap">
                           {users.created_at}
                         </td>
-                        <td className="px-4 py-4 text-sm whitespace-nowrap space-x-2 text-right">
+                        <td className="px-4 py-4 whitespace-nowrap space-x-2 text-right">
                           <Link
                             href={route("user.edit", users.id)}
                             className=" transition-colors duration-200  dark:text-indigo-300 dark:hover:text-blue-500 focus:outline-none"

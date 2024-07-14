@@ -68,7 +68,7 @@ export default function Dashboard({
               </svg>
             </div>
             <div className="p-4 text-right">
-              <p className="block antialiased font-sans text-md leading-normal font-normal text-blue-gray-600">
+              <p className="block antialiased font-sans text-lg leading-normal font-normal text-blue-gray-600">
                 Pending Tasks
               </p>
               <h4 className="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">
@@ -100,7 +100,7 @@ export default function Dashboard({
               </svg>
             </div>
             <div className="p-4 text-right">
-              <p className="block antialiased font-sans text-md leading-normal font-normal text-blue-gray-600">
+              <p className="block antialiased font-sans text-lg leading-normal font-normal text-blue-gray-600">
                 In Progress Tasks
               </p>
               <h4 className="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">
@@ -132,7 +132,7 @@ export default function Dashboard({
               </svg>
             </div>
             <div className="p-4 text-right">
-              <p className="block antialiased font-sans text-md leading-normal font-normal text-blue-gray-600">
+              <p className="block antialiased font-sans text-lg leading-normal font-normal text-blue-gray-600">
                 Completed Tasks
               </p>
               <h4 className="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">
@@ -164,7 +164,7 @@ export default function Dashboard({
               </svg>
             </div>
             <div className="p-4 text-right -mt-12">
-              <p className="block antialiased font-sans text-md leading-normal font-normal text-blue-gray-600">
+              <p className="block antialiased font-sans text-lg leading-normal font-normal text-blue-gray-600">
                 My Tasks
               </p>
               <h4 className="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">
@@ -189,33 +189,33 @@ export default function Dashboard({
             <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
               <div className="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg text-white">
                 <div className="p-4 dark:bg-gray-800">
-                  <p>My Tasks</p>
+                  <p className="text-lg font-bold">My Tasks</p>
                 </div>
 
                 <table className="min-w-full dark:divide-gray-700">
                   <thead className=" dark:bg-gray-800">
                     <tr>
-                      <th className=" p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal text-left">
+                      <th className=" p-4 text-nowrap text-gray-500 dark:text-gray-400 text-md font-normal text-left">
                         ID
                       </th>
-                      <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal text-left">
+                      <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-md font-normal text-left">
                         Project Name
                       </th>
-                      <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal text-left">
+                      <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-md font-normal text-left">
                         Name
                       </th>
-                      <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal text-left">
+                      <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-md font-normal text-left">
                         Status
                       </th>
-                      <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal text-left">
+                      <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-md font-normal text-left">
                         Priority
                       </th>
-                      <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-sm font-normal text-left">
+                      <th className="p-4 text-nowrap text-gray-500 dark:text-gray-400 text-md font-normal text-left">
                         Due Date
                       </th>
                     </tr>
                   </thead>
-                  <tbody className=" divide-y  dark:divide-gray-700 dark:bg-gray-900 text-sm">
+                  <tbody className=" divide-y  dark:divide-gray-700 dark:bg-gray-900 text-md">
                     {activeTasks.data.map((task) => (
                       <tr key={task.id}>
                         <td className="p-4 ">{task.id}</td>
@@ -238,7 +238,7 @@ export default function Dashboard({
                         <td className="p-4 ">
                           <span
                             className={
-                              "text-sm font-medium  whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2  bg-gray-800 " +
+                              " font-medium  whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2  bg-gray-800 " +
                               TASK_STATUS_CLASS_MAP[task.status]
                             }
                           >
@@ -248,7 +248,7 @@ export default function Dashboard({
                         <td className="p-4 ">
                           <span
                             className={
-                              "text-sm font-medium  whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2  bg-gray-800 " +
+                              " font-medium  whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2  bg-gray-800 " +
                               TASK_PRIORITY_CLASS_MAP[task.priority]
                             }
                           >

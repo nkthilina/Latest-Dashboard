@@ -10,7 +10,7 @@ function TableHeading({
   children,
 }) {
   return (
-    <th className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+    <th className="py-3.5 px-4  font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
       <div className="flex items-center justify-between gap-1">
         <div className="text-nowrap">
           {children}

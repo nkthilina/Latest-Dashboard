@@ -179,14 +179,14 @@ function TasksTable({
                     </TableHeading>
                     <th
                       scope="col"
-                      className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                      className="px-4 py-3.5 font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                     >
                       Image
                     </th>
                     {!hideProjectColumn && (
                       <th
                         scope="col"
-                        className="px-3 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400 text-nowrap"
+                        className="px-3 py-3.5 font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400 text-nowrap"
                       >
                         Project Name
                       </th>
@@ -230,13 +230,13 @@ function TasksTable({
 
                     <th
                       scope="col"
-                      className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400 text-nowrap"
+                      className="px-4 py-3.5 font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400 text-nowrap"
                     >
                       Created by
                     </th>
                     <th
                       scope="col"
-                      className="px-4 py-3.5 text-sm font-normal text-right rtl:text-right text-gray-500 dark:text-gray-400"
+                      className="px-4 py-3.5 font-normal text-right rtl:text-right text-gray-500 dark:text-gray-400"
                     >
                       Actions
                     </th>
@@ -250,7 +250,7 @@ function TasksTable({
                           <span>{tasks.id}</span>
                         </div>
                       </td>
-                      <td className="px-4 py-2 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                      <td className="px-4 py-2  text-gray-500 dark:text-gray-300 whitespace-nowrap">
                         <img
                           src={tasks.image_path}
                           alt=""
@@ -258,11 +258,11 @@ function TasksTable({
                         />
                       </td>
                       {!hideProjectColumn && (
-                        <td className=" py-3 text-sm   items-center px-3  gap-x-2 text-white  font-normal capitalize">
+                        <td className=" py-3   items-center px-3  gap-x-2 text-white  font-normal capitalize">
                           {tasks.project.name}
                         </td>
                       )}
-                      <td className=" py-3 text-sm items-center px-3  gap-x-2 text-white hover:underline  font-normal cursor-pointer capitalize">
+                      <td className=" py-3 items-center px-3  gap-x-2 text-white hover:underline  font-normal cursor-pointer capitalize">
                         <Link href={route("task.show", tasks.id)}>
                           {tasks.name}
                         </Link>
@@ -270,13 +270,13 @@ function TasksTable({
                       {/* <Link href={route("project.show", projects.id)}>
                                 {projects.name}
                               </Link> */}
-                      <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                      <td className="px-4 py-4  text-gray-500 dark:text-gray-300 whitespace-nowrap">
                         <div className="flex items-center gap-x-2">
-                          <h2 className="text-sm font-medium text-gray-800 dark:text-white ">
+                          <h2 className=" font-medium text-gray-800 dark:text-white ">
                             {/* <span className=" text-sm font-medium text-gray-700 whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2 text-emerald-500 bg-emerald-100/60 dark:bg-gray-800"> */}
                             <span
                               className={
-                                "text-sm font-medium  whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2  bg-gray-800 " +
+                                " font-medium  whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2  bg-gray-800 " +
                                 TASK_STATUS_CLASS_MAP[tasks.status]
                               }
                             >
@@ -285,16 +285,16 @@ function TasksTable({
                           </h2>
                         </div>
                       </td>
-                      <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                      <td className="px-4 py-4 text-gray-500 dark:text-gray-300 whitespace-nowrap">
                         {tasks.created_at}
                       </td>
-                      <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                      <td className="px-4 py-4 text-gray-500 dark:text-gray-300 whitespace-nowrap">
                         {tasks.due_date}
                       </td>
-                      <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap capitalize">
+                      <td className="px-4 py-4 text-gray-500 dark:text-gray-300 whitespace-nowrap capitalize">
                         {tasks.createdBy.name}
                       </td>
-                      <td className="px-4 py-4 text-sm whitespace-nowrap space-x-2 text-right">
+                      <td className="px-4 py-4 whitespace-nowrap space-x-2 text-right">
                         <Link
                           href={route("task.edit", tasks.id)}
                           className=" transition-colors duration-200  dark:text-indigo-300 dark:hover:text-blue-500 focus:outline-none"
