@@ -66,7 +66,7 @@ function Show({ auth, task }) {
                       <p className="mt-2 block text-md font-medium text-gray-700 dark:text-gray-300">
                         <span
                           className={
-                            "text-sm font-medium  whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2  bg-gray-800 " +
+                            " font-medium  whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2  bg-gray-800 " +
                             TASK_STATUS_CLASS_MAP[task.status]
                           }
                         >
@@ -84,7 +84,7 @@ function Show({ auth, task }) {
                       <p className="mt-2 block text-md font-medium text-gray-700 dark:text-gray-300">
                         <span
                           className={
-                            "text-sm font-medium  whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2  bg-gray-800 " +
+                            " font-medium  whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full gap-x-2  bg-gray-800 " +
                             TASK_PRIORITY_CLASS_MAP[task.priority]
                           }
                         >
