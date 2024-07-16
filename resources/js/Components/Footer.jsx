@@ -79,6 +79,7 @@ function Footer() {
           </li>
         </ul>
       </div>
+      
       {/* Modal component */}
       <div>
         {showModal && (

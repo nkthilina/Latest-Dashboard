@@ -294,7 +294,6 @@ function Index({ user = null, auth, projects, queryParams = null, success }) {
                               <button
                                 type="button"
                                 onClick={(e) => deleteProject(projects)}
-                                // onClick={() => destroy(projects.id)}
                                 className="text-gray-500 transition-colors duration-200 dark:hover:text-red-500 dark:text-red-400 hover:text-red-500 focus:outline-none"
                               >
                                 Delete
