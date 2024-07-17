@@ -267,14 +267,6 @@ function Index({ auth, users, user, queryParams = null, success }) {
                         >
                           Delete
                         </button>
-
-                          {/* <button
-                            type="button"
-                            onClick={(e) => deleteUser(users)}
-                            className="text-gray-500 transition-colors duration-200 dark:hover:text-red-500 dark:text-red-400 hover:text-red-500 focus:outline-none"
-                          >
-                            Delete
-                          </button> */}
                         </td>
                       </tr>
                     ))}
@@ -366,12 +358,14 @@ function Index({ auth, users, user, queryParams = null, success }) {
                       </td>
                     </tr> */}
                     {/* end testing */}
+
                   </tbody>
                 </table>
               </div>
             </div>
           </div>
         </div>
+        
         {/* pagination */}
         <Pagination links={users.meta.links} />
         {/* pagination end */}

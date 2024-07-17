@@ -52,7 +52,7 @@ function TasksTable({
           const timer = setTimeout(() => {
             setVisible(false);
           }, 3000);
-          return () => clearTimeout(timer); // Cleanup the timer if the component unmounts
+          return () => clearTimeout(timer); 
         },
       });
     }
