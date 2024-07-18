@@ -266,6 +266,7 @@ export default function Dashboard({
         </div>
         // end table
       ) : (
+        // error message
         <div className="py-5 bg-white dark:bg-dark">
           <div className="container">
             <div className="border-red-700 bg-red-200 flex w-full rounded-lg border-l-[6px] px-7 py-8  ">
@@ -298,6 +299,8 @@ export default function Dashboard({
             </div>
           </div>
         </div>
+        // end error message
+
       )}
 
       <Footer className="items-end" />
