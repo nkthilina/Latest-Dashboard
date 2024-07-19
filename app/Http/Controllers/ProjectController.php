@@ -88,7 +88,7 @@ class ProjectController extends Controller
         return Inertia::render('Project/Show', [
             'project' => new ProjectResource($project),
             'tasks' => TaskResource::collection($tasks),
-            'queryParams' => request()->query() ?: null,
+            'queryParams' => (object)request()->query() ?: null,
             'success' => session('success'),
         ]);
     }
@@ -110,7 +110,6 @@ class ProjectController extends Controller
     {
         $data = $request->validated();
         $image = $data['image'] ?? null;
-        // $data['updated_by'] = auth()->user()->id;
         $data['updated_by'] = Auth::id();
         if ($image) {
             if ($project->image_path) {
