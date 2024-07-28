@@ -302,6 +302,7 @@ export default function Dashboard({
       )}
 
       <Footer className="items-end" />
+      <Footer className="items-end" />
     </AuthenticatedLayout>
   );
 }
